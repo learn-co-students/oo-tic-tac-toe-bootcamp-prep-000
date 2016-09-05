@@ -44,7 +44,7 @@ end
   def turn
     puts "Please enter 1-9:"
     user_input = gets.strip
-    token = turn_count
+    token = current_player
       if valid_move?(user_input)
          move(user_input, token)
          display_board
@@ -62,19 +62,19 @@ end
   end
 
   def won?
-    WIN_COMBINATIONS.each do |win_combo|
-      if   (@board[win_combo[0]] == "X" && @board[win_combo[1]] == "X" && @board[win_combo[2]] == "X")  ||
-           (@board[win_combo[0]] == "O" && @board[win_combo[1]] == "O" && @board[win_combo[2]] == "O")
-      return win_combo
-    else
-      return false
+      WIN_COMBINATIONS.detect do |win_combo|
+        (@board[win_combo[0]] == "X" && @board[win_combo[1]] == "X" && @board[win_combo[2]] == "X")  ||
+        (@board[win_combo[0]] == "O" && @board[win_combo[1]] == "O" && @board[win_combo[2]] == "O")
       end
     end
-  end
 
   def full?
-    @board.each{|a| a == ("X" || "O")}
+    if @board.detect{|a| a == " "}
+      return false
+    else
+      return true
   end
+end
 
   def draw?
     full? && !won?
@@ -85,16 +85,21 @@ end
   end
 
   def winner
-      return @board[win_combo[0]]
+      if won?
+        return @board[won?[0]]
+      end
   end
 
   def play
-    if !over?
+
+    until over?
       turn
-    elsif draw?
-      puts "Cats game!"
-    else
+    end
+
+    if won?
       puts "Congratulations " + winner + "!"
+    else
+      puts "Cats Game!"
     end
   end
 
