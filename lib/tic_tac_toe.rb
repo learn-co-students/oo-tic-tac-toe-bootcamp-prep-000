@@ -28,7 +28,7 @@ end
   end
 
   def move(index, token = "X")
-    input_to_index(index)
+    index = input_to_index(index)
     @board[index] = token
   end
 
@@ -37,16 +37,17 @@ end
   end
 
   def valid_move?(index)
-      input_to_index(index)
+      index = input_to_index(index)
       !position_taken?(index) && index.between?(0,8)
   end
 
   def turn
     puts "Please enter 1-9:"
     user_input = gets.strip
-    if valid_move?
-      move(index, token)
-      display_board
+    token = turn_count
+      if valid_move?(user_input)
+         move(user_input, token)
+         display_board
     else
       turn
     end
@@ -60,39 +61,40 @@ end
       turn_count % 2 == 0 ? "X" : "O"
   end
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do |win_combo|
-      if (board[win_combo[0]] == "X" && board[win_combo[1]] == "X" && board[win_combo[2]] == "X")  || (board[win_combo[0]] == "O" && board[win_combo[1]] == "O" && board[win_combo[2]] == "O")
-        return win_combo
+      if   (@board[win_combo[0]] == "X" && @board[win_combo[1]] == "X" && @board[win_combo[2]] == "X")  ||
+           (@board[win_combo[0]] == "O" && @board[win_combo[1]] == "O" && @board[win_combo[2]] == "O")
+      return win_combo
+    else
+      return false
       end
     end
   end
 
-  def full?(board)
-    board.each{|a| a == ("X" || "O")}
+  def full?
+    @board.each{|a| a == ("X" || "O")}
   end
 
-  def draw?(board)
+  def draw?
     full? && !won?
   end
 
-  def over?(board)
+  def over?
     won? || draw?
   end
 
-  def winner(board)
-    if won?
-      return board[win_combo[0]]
-    end
+  def winner
+      return @board[win_combo[0]]
   end
 
-  def play(board)
+  def play
     if !over?
-      turn(board)
+      turn
     elsif draw?
       puts "Cats game!"
     else
-      puts "Congratulations " + winner(board) + "!"
+      puts "Congratulations " + winner + "!"
     end
   end
 
