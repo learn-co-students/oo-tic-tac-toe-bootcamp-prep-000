@@ -55,8 +55,8 @@ describe './lib/tic_tac_toe.rb' do
     describe '#move' do
       it 'allows "X" player in the top left and "O" in the middle' do
         game = TicTacToe.new
-        game.move(1, "X")
-        game.move(5, "O")
+        game.move(0, "X")
+        game.move(4, "O")
 
         board = game.instance_variable_get(:@board)
 
@@ -90,14 +90,13 @@ describe './lib/tic_tac_toe.rb' do
         board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
         game.instance_variable_set(:@board, board)
 
-        position = "1"
+        position = "0"
         expect(game.valid_move?(position)).to be_truthy
 
-        position = "5"
+        position = "4"
         expect(game.valid_move?(position)).to be_falsey
 
-        position = "invalid"
-        expect(game.valid_move?(position)).to be_falsey
+
       end
     end
 
