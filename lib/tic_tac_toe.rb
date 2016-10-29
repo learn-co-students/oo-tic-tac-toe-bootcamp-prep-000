@@ -27,7 +27,7 @@ class TicTacToe
   end
 
   def move(index, current_player)
-    @board[index] = current_player
+    @board[index.to_i - 1] = current_player
   end
 
   def position_taken?(location)
@@ -35,7 +35,7 @@ class TicTacToe
   end
 
   def valid_move?(index)
-    index.between?(0,8) && !position_taken?(index)
+    index.to_i.between?(0,8) && !position_taken?(index.to_i - 1)
   end
 
   def turn
