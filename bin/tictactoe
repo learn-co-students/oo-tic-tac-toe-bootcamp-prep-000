@@ -2,8 +2,8 @@
 require 'pry'
 require_relative '../lib/two_player.rb'
 require_relative '../lib/one_player_x.rb'
-require_relative '../lib/new_game.rb'
+require_relative '../lib/game.rb'
 
-game = NewGame.new
+game = Game.new
 game.get_players
 game.play

@@ -1,7 +1,7 @@
 require_relative 'cpu.rb'
 require_relative 'board.rb'
 require_relative 'player.rb'
-require_relative 'new_game.rb'
+require_relative 'game.rb'
 
 class TwoPlayer
   def initialize

@@ -1,7 +1,7 @@
 require_relative 'cpu.rb'
 require_relative 'board.rb'
 require_relative 'player.rb'
-require_relative 'new_game.rb'
+require_relative 'game.rb'
 
 class OnePlayerX
   def initialize
@@ -43,7 +43,7 @@ class OnePlayerX
   end
 
   def turn
-    if player_turn?
+    if players_turn?
       token = current_token
       puts "#{@player.name}, please enter 1-9:"
       input = gets.strip
@@ -101,7 +101,7 @@ class OnePlayerX
     turn_count.even? ? @player : @cpu
   end
 
-  def player_turn?
+  def players_turn?
   	current_player == @player ? true : false
   end
 
