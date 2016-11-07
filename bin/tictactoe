@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require 'pry'
-require_relative '../lib/tic_tac_toe.rb'
+require_relative '../lib/two_player.rb'
+require_relative '../lib/one_player_x.rb'
+require_relative '../lib/new_game.rb'
 
-puts 'Welcome to Tic Tac Toe!'
-
-game = TicTacToe.new
-
+game = NewGame.new
+game.get_players
 game.play
