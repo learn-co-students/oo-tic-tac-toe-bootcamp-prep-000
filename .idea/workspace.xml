@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaaee0b8-6167-4d3f-a4c1-ea61844cd649" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OOTicTacToe.iml" afterPath="$PROJECT_DIR$/.idea/OOTicTacToe.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/cpu.rb" afterPath="$PROJECT_DIR$/lib/cpu.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +16,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/OOTicTacToe@tictactoe.coverage" NAME="tictactoe Coverage Results" MODIFIED="1478497192400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="OOTicTacToe" />
+    <SUITE FILE_PATH="coverage/OOTicTacToe@tictactoe.coverage" NAME="tictactoe Coverage Results" MODIFIED="1478636802766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="OOTicTacToe" />
+    <SUITE FILE_PATH="coverage/OOTicTacToe@one_player.coverage" NAME="one_player Coverage Results" MODIFIED="1478636784254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="OOTicTacToe" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -29,9 +31,14 @@
       <file leaf-file-name="game.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="105">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#95#150#0" expanded="false" />
+                <element signature="e#154#406#0" expanded="false" />
+                <element signature="e#410#706#0" expanded="false" />
+                <element signature="e#710#901#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,19 +46,15 @@
       <file leaf-file-name="two_player.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="one_player.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="150">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding>
+                <element signature="e#156#403#0" expanded="false" />
+                <element signature="e#407#615#0" expanded="false" />
+                <element signature="e#619#703#0" expanded="false" />
+                <element signature="e#707#787#0" expanded="false" />
+                <element signature="e#791#886#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,19 +62,31 @@
       <file leaf-file-name="game_rules.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+              <folding>
+                <element signature="e#357#451#0" expanded="false" />
+                <element signature="e#455#551#0" expanded="false" />
+                <element signature="e#555#668#0" expanded="false" />
+                <element signature="e#672#903#0" expanded="false" />
+                <element signature="e#907#1033#0" expanded="false" />
+                <element signature="e#1037#1525#0" expanded="false" />
+                <element signature="e#1529#1596#0" expanded="false" />
+                <element signature="e#1600#1634#0" expanded="false" />
+                <element signature="e#1638#1671#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cpu.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cpu.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/cpu.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="90">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#57#148#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,9 +94,14 @@
       <file leaf-file-name="board.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/board.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+              <folding>
+                <element signature="e#14#65#0" expanded="false" />
+                <element signature="e#69#300#0" expanded="false" />
+                <element signature="e#304#334#0" expanded="false" />
+                <element signature="e#338#365#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,9 +109,11 @@
       <file leaf-file-name="player.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/player.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="105">
               <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-              <folding />
+              <folding>
+                <element signature="e#60#103#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,12 +153,12 @@
         <option value="$PROJECT_DIR$/lib/new_game.rb" />
         <option value="$PROJECT_DIR$/bin/tictactoe" />
         <option value="$PROJECT_DIR$/lib/player.rb" />
-        <option value="$PROJECT_DIR$/lib/cpu.rb" />
         <option value="$PROJECT_DIR$/lib/game_rules.rb" />
         <option value="$PROJECT_DIR$/lib/game.rb" />
-        <option value="$PROJECT_DIR$/lib/two_player.rb" />
         <option value="$PROJECT_DIR$/lib/one_player_x.rb" />
         <option value="$PROJECT_DIR$/lib/one_player.rb" />
+        <option value="$PROJECT_DIR$/lib/two_player.rb" />
+        <option value="$PROJECT_DIR$/lib/cpu.rb" />
       </list>
     </option>
   </component>
@@ -236,6 +258,25 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/tictactoe" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="one_player" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="OOTicTacToe" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/lib" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/one_player.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
@@ -375,12 +416,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Ruby.tictactoe" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.one_player" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Ruby.tictactoe" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.one_player" />
       </list>
     </recent_temporary>
   </component>
@@ -402,12 +445,12 @@
       <workItem from="1478574960896" duration="3971000" />
       <workItem from="1478625152130" duration="248000" />
       <workItem from="1478630258653" duration="4045000" />
-      <workItem from="1478636491300" duration="60000" />
+      <workItem from="1478636491300" duration="1030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34750000" />
+    <option name="totallyTimeSpent" value="35720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,24 +466,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18416801" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25132275" sideWeight="0.5129241" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25132275" sideWeight="0.5226171" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.48707592" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25132275" sideWeight="0.48707592" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25132275" sideWeight="0.47738287" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994709" sideWeight="0.49353796" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994709" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +512,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -478,7 +521,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#60#103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -495,7 +540,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#95#150#0" expanded="false" />
+            <element signature="e#154#406#0" expanded="false" />
+            <element signature="e#410#706#0" expanded="false" />
+            <element signature="e#710#901#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -503,7 +553,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#156#403#0" expanded="false" />
+            <element signature="e#407#615#0" expanded="false" />
+            <element signature="e#619#703#0" expanded="false" />
+            <element signature="e#707#787#0" expanded="false" />
+            <element signature="e#791#886#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -519,7 +575,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#57#148#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -527,7 +585,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#14#65#0" expanded="false" />
+            <element signature="e#69#300#0" expanded="false" />
+            <element signature="e#304#334#0" expanded="false" />
+            <element signature="e#338#365#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -535,7 +598,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#60#103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -552,7 +617,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
+          <folding>
+            <element signature="e#95#150#0" expanded="false" />
+            <element signature="e#154#406#0" expanded="false" />
+            <element signature="e#410#706#0" expanded="false" />
+            <element signature="e#710#901#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -560,7 +630,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="52" column="7" lean-forward="true" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="e#156#403#0" expanded="false" />
+            <element signature="e#407#615#0" expanded="false" />
+            <element signature="e#619#703#0" expanded="false" />
+            <element signature="e#707#787#0" expanded="false" />
+            <element signature="e#791#886#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,7 +652,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#57#148#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -584,7 +662,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#14#65#0" expanded="false" />
+            <element signature="e#69#300#0" expanded="false" />
+            <element signature="e#304#334#0" expanded="false" />
+            <element signature="e#338#365#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -592,7 +675,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#60#103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -609,7 +694,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1485">
           <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#156#403#0" expanded="false" />
+            <element signature="e#407#615#0" expanded="false" />
+            <element signature="e#619#703#0" expanded="false" />
+            <element signature="e#707#787#0" expanded="false" />
+            <element signature="e#791#886#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -625,7 +716,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="e#95#150#0" expanded="false" />
+            <element signature="e#154#406#0" expanded="false" />
+            <element signature="e#410#706#0" expanded="false" />
+            <element signature="e#710#901#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -641,7 +737,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#57#148#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -649,7 +747,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
+          <folding>
+            <element signature="e#14#65#0" expanded="false" />
+            <element signature="e#69#300#0" expanded="false" />
+            <element signature="e#304#334#0" expanded="false" />
+            <element signature="e#338#365#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -657,7 +760,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#60#103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,7 +771,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#156#403#0" expanded="false" />
+            <element signature="e#407#615#0" expanded="false" />
+            <element signature="e#619#703#0" expanded="false" />
+            <element signature="e#707#787#0" expanded="false" />
+            <element signature="e#791#886#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -691,7 +802,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#156#403#0" expanded="false" />
+            <element signature="e#407#615#0" expanded="false" />
+            <element signature="e#619#703#0" expanded="false" />
+            <element signature="e#707#787#0" expanded="false" />
+            <element signature="e#791#886#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -748,10 +865,10 @@
     <entry file="file://$PROJECT_DIR$/lib/cpu_token_x.rb" />
     <entry file="file://$PROJECT_DIR$/lib/global_game_rules.rb" />
     <entry file="file://$PROJECT_DIR$/lib/one_player_o.rb" />
-    <entry file="file://$PROJECT_DIR$/lib/player.rb">
+    <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state relative-caret-position="465">
+          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -764,51 +881,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
+    <entry file="file://$PROJECT_DIR$/lib/player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/cpu.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="105">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#60#103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/board.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="e#14#65#0" expanded="false" />
+            <element signature="e#69#300#0" expanded="false" />
+            <element signature="e#304#334#0" expanded="false" />
+            <element signature="e#338#365#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/game.rb">
+    <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#357#451#0" expanded="false" />
+            <element signature="e#455#551#0" expanded="false" />
+            <element signature="e#555#668#0" expanded="false" />
+            <element signature="e#672#903#0" expanded="false" />
+            <element signature="e#907#1033#0" expanded="false" />
+            <element signature="e#1037#1525#0" expanded="false" />
+            <element signature="e#1529#1596#0" expanded="false" />
+            <element signature="e#1600#1634#0" expanded="false" />
+            <element signature="e#1638#1671#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="150">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="e#156#403#0" expanded="false" />
+            <element signature="e#407#615#0" expanded="false" />
+            <element signature="e#619#703#0" expanded="false" />
+            <element signature="e#707#787#0" expanded="false" />
+            <element signature="e#791#886#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
+    <entry file="file://$PROJECT_DIR$/lib/game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#95#150#0" expanded="false" />
+            <element signature="e#154#406#0" expanded="false" />
+            <element signature="e#410#706#0" expanded="false" />
+            <element signature="e#710#901#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/cpu.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#57#148#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
