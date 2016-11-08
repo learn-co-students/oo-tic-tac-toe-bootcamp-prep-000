@@ -11,14 +11,16 @@ class OnePlayerX
     @board = Board.new
     puts 'Player, please enter your name.'
     @player = Player.new
+    @player.token = 'X'
     puts "Hello #{@player.name}, my name is HAL. If you're fine with calling me HAL, just press <return>. If you'd like to call me something else, type my new name and press <return>."
     @cpu = CPU.new
+    @cpu.token = 'O'
     puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
   end
 
   def turn
     if players_turn?
-      token = current_token
+      token = @player.token
       puts "#{@player.name}, please enter 1-9:"
       input = gets.strip
       if valid_move?(input)
@@ -93,7 +95,7 @@ class OnePlayerX
   def cpu_turn
     input = best_move + 1
     if valid_move?(input)
-        move(input, current_token)
+        move(input, @cpu.token)
         puts "#{@cpu.name}: I'll pick #{input}."
         @board.display
     else

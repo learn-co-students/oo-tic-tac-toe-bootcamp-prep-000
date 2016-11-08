@@ -12,7 +12,7 @@ module GameRules
       [6, 4, 2] # bottom left to top right diagonal
   ]
 
-  def move(position, token = 'X')
+  def move(position, token)
     index = position.to_i - 1
     @board.status[index] = token
   end
@@ -42,10 +42,6 @@ module GameRules
   def turn_count
     occupied_cells = @board.status.select { |cell| cell == 'X' || cell == 'O' }
     occupied_cells.length
-  end
-
-  def current_token
-    turn_count.even? ? 'X' : 'O'
   end
 
   def won?

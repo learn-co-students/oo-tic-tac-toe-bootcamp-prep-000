@@ -11,8 +11,10 @@ class TwoPlayer
     @board = Board.new
     puts 'Player 1, please enter your name.'
     @player_one = Player.new
+    @player_one.token = 'X'
     puts 'Player 2, please enter your name.'
     @player_two = Player.new
+    @player_two.token = 'O'
   end
 
   def turn
@@ -27,11 +29,15 @@ class TwoPlayer
     end
   end
 
+  def current_token
+    turn_count.even? ? @player_one.token : @player_two.token
+  end
+
   def player_name
-    current_token == 'X' ? @player_one.name : @player_two.name
+    turn_count.even? ? @player_one.name : @player_two.name
   end
 
   def winner
-    @board.status[won?.first] == 'X' ? @player_one : @player_two
+    @board.status[won?.first] == @player_one.token ? @player_one : @player_two
   end
 end
