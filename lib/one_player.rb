@@ -111,6 +111,6 @@ class OnePlayer
   end
 
   def winner
-    @board.status[won?.first] == 'X' ? @player : @cpu
+    @board.status[won?.first] == @player.token ? @player : @cpu
   end
 end
