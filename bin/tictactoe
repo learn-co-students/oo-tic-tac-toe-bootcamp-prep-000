@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/two_player.rb'
-require_relative '../lib/one_player_x.rb'
+require_relative '../lib/one_player.rb'
 require_relative '../lib/game.rb'
 
 game = Game.new
