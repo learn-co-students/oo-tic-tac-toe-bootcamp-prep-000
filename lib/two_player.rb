@@ -4,16 +4,15 @@ require_relative 'player.rb'
 require_relative 'game.rb'
 
 class TwoPlayer
+
+  attr_reader :board
+
   def initialize
     @board = Board.new
     puts 'Player 1, please enter your name.'
     @player_one = Player.new
     puts 'Player 2, please enter your name.'
     @player_two = Player.new
-  end
-
-  def board
-    @board
   end
 
   WIN_COMBINATIONS = [

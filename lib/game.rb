@@ -2,15 +2,22 @@ require_relative '../lib/two_player.rb'
 require_relative '../lib/one_player_x.rb'
 
 class Game
+  attr_reader :game
+
   def initialize
     puts 'Welcome to Tic Tac Toe!'
   end
 
   def get_players
     puts 'One or two players? (press 1 or 2 and hit <return>)'
-    input = gets.strip
-    (input == '1') || (input == '2') ? @players = input : get_players
-    @players == '2' ? @game = TwoPlayer.new : @game = OnePlayerX.new
+    @players = gets.strip
+    if @players == '1'
+      @game = OnePlayerX.new
+    elsif @players == '2'
+      @game = TwoPlayer.new
+    else
+      get_players
+    end
   end
 
   def play

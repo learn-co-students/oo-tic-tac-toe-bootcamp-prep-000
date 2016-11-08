@@ -1,9 +1,9 @@
 class Player
+
+  attr_reader :name
+
   def initialize
     @name = gets.strip
   end
 
-  def name
-    @name
-  end
 end
