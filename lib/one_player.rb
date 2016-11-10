@@ -41,52 +41,11 @@ class OnePlayer
     end
   end
 
-  def cpu_win_possible?
-    win_combos = WIN_COMBINATIONS
-    win_combos.each do |win_combo|
-      win_combo.each do |win_index|
-        @cpu.token_set.each do |cpu_token|
-          if win_index == cpu_token
-            win_combo -= [win_index]
-            if win_combo.length == 1
-              @cpu.winning_position = win_combo[0]
-              if @player.token_set.none? { |i| i == @cpu.winning_position}
-                return true
-              end
-            end
-          end
-        end
-      end
-    end
-    false
-  end
-
-  def player_win_possible?
-    win_combos = WIN_COMBINATIONS
-    win_combos.each do |win_combo|
-      win_combo.each do |win_index|
-        @player.token_set.each do |player_token|
-          if win_index == player_token
-            win_combo -= [win_index]
-            if win_combo.length == 1
-              @player.winning_position = win_combo[0]
-              if @cpu.token_set.none? { |i| i == @player.winning_position}
-                return true
-              end
-            end
-          end
-        end
-      end
-    end
-    false
-  end
-
-
-  def best_move
+  def cpu_best_move
     status
-    if cpu_win_possible?
+    if @cpu.win_possible?(@player)
       @cpu.winning_position
-    elsif player_win_possible?
+    elsif @player.win_possible?(@cpu)
       @player.winning_position
     elsif @player.token_set.length == 1
       if @player.token_set[0] == 4
@@ -100,7 +59,7 @@ class OnePlayer
   end
 
   def cpu_turn
-    input = best_move + 1
+    input = cpu_best_move + 1
     if valid_move?(input)
         move(input, @cpu.token)
         puts "#{@cpu.name}: I'll pick #{input}."

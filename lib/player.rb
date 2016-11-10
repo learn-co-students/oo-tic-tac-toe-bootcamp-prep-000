@@ -1,5 +1,8 @@
+require_relative 'win_logic.rb'
+
 class Player
 
+  include WinLogic
   attr_reader :name
   attr_accessor :token, :token_set, :winning_position
 
