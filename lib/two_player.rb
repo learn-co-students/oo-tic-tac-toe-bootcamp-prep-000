@@ -15,11 +15,15 @@ class TwoPlayer
     @player_one.get_token
     puts 'Player 2, please enter your name.'
     @player_two = Player.new
-    @player_one.token == 'X' ? @player_two.token = 'O' : @player_two.token = 'X'
+    set_player_two_token
     puts ''
     puts "New match: #{@player_one.name}(#{@player_one.token}) vs. #{@player_two.name}(#{@player_two.token})!"
     puts ''
     sleep(2)
+  end
+
+  def set_player_two_token
+    @player_one.token == 'X' ? @player_two.token = 'O' : @player_two.token = 'X'
   end
 
   def turn

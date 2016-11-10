@@ -1,7 +1,7 @@
 class Player
 
   attr_reader :name
-  attr_accessor :token
+  attr_accessor :token, :token_set, :winning_position
 
   def initialize
     @name = gets.strip

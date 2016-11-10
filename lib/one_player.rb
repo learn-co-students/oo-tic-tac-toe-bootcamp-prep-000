@@ -8,13 +8,21 @@ class OnePlayer
 
   def initialize
     @board = Board.new
+    puts ''
     puts 'Player, please enter your name.'
     @player = Player.new
-    @player.token = 'X'
+    puts ''
+    @player.get_token
+    puts ''
     puts "Hello #{@player.name}, my name is HAL. If you're fine with calling me HAL, just press <return>. If you'd like to call me something else, type my new name and press <return>."
     @cpu = CPU.new
-    @cpu.token = 'O'
+    set_cpu_token
+    puts ''
     puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
+  end
+
+  def set_cpu_token
+    @player.token == 'X' ? @cpu.token = 'O' : @cpu.token = 'X'
   end
 
   def turn
@@ -33,16 +41,16 @@ class OnePlayer
     end
   end
 
-  def win_possible?
+  def cpu_win_possible?
     win_combos = WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
-        @o_cells.each do |o_cell|
-          if win_index == o_cell
+        @cpu.token_set.each do |cpu_token|
+          if win_index == cpu_token
             win_combo -= [win_index]
             if win_combo.length == 1
-              @winning_position = win_combo[0]
-              if @x_cells.none? { |i| i == @winning_position}
+              @cpu.winning_position = win_combo[0]
+              if @player.token_set.none? { |i| i == @cpu.winning_position}
                 return true
               end
             end
@@ -53,16 +61,16 @@ class OnePlayer
     false
   end
 
-  def lose_possible?
+  def player_win_possible?
     win_combos = WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
-        @x_cells.each do |x_cell|
-          if win_index == x_cell
+        @player.token_set.each do |player_token|
+          if win_index == player_token
             win_combo -= [win_index]
             if win_combo.length == 1
-              @losing_position = win_combo[0]
-              if @o_cells.none? { |i| i == @losing_position}
+              @player.winning_position = win_combo[0]
+              if @cpu.token_set.none? { |i| i == @player.winning_position}
                 return true
               end
             end
@@ -76,12 +84,12 @@ class OnePlayer
 
   def best_move
     status
-    if win_possible?
-      @winning_position
-    elsif lose_possible?
-      @losing_position
-    elsif @x_cells.length == 1
-      if @x_cells[0] == 4
+    if cpu_win_possible?
+      @cpu.winning_position
+    elsif player_win_possible?
+      @player.winning_position
+    elsif @player.token_set.length == 1
+      if @player.token_set[0] == 4
         0
       else
         4

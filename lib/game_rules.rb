@@ -27,14 +27,14 @@ module GameRules
   end
 
   def status
-    @x_cells = []
-    @o_cells = []
+    @player.token_set = []
+    @cpu.token_set = []
     @board.status.each_with_index do |cell, index|
-      if cell == 'X'
-        @x_cells.push(index)
+      if cell == @player.token
+        @player.token_set.push(index)
       end
-      if cell == 'O'
-        @o_cells.push(index)
+      if cell == @cpu.token
+        @cpu.token_set.push(index)
       end
     end
   end
