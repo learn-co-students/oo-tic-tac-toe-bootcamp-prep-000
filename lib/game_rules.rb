@@ -26,15 +26,13 @@ module GameRules
     index.between?(0, 8) && !position_taken?(index)
   end
 
-  def status
-    @player.token_set = []
-    @cpu.token_set = []
+  def status(player1, player2)
     @board.status.each_with_index do |cell, index|
-      if cell == @player.token
-        @player.token_set.push(index)
+      if cell == player1.token
+        player1.token_set.push(index)
       end
-      if cell == @cpu.token
-        @cpu.token_set.push(index)
+      if cell == player2.token
+        player2.token_set.push(index)
       end
     end
   end

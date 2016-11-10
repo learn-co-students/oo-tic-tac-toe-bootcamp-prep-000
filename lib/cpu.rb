@@ -9,6 +9,7 @@ class CPU
   def initialize
     input = gets.strip
     input != '' ? @name = input : @name = 'HAL'
+    @token_set = Array.new
   end
 
 end

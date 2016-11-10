@@ -8,6 +8,7 @@ class Player
 
   def initialize
     @name = gets.strip
+    @token_set = Array.new
   end
 
   def get_token

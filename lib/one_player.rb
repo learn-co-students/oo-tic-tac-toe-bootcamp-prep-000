@@ -46,7 +46,7 @@ class OnePlayer
   end
 
   def cpu_best_move
-    status
+    status(@player, @cpu)
     if @cpu.win_possible?(@player)
       @cpu.winning_position
     elsif @player.win_possible?(@cpu)
