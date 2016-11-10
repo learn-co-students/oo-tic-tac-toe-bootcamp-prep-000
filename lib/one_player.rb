@@ -13,12 +13,12 @@ class OnePlayer
     @player = Player.new
     puts ''
     @player.get_token
-    puts ''
     puts "Hello #{@player.name}, my name is HAL. If you're fine with calling me HAL, just press <return>. If you'd like to call me something else, type my new name and press <return>."
     @cpu = CPU.new
     set_cpu_token
     puts ''
     puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
+    puts ''
   end
 
   def set_cpu_token
@@ -28,11 +28,15 @@ class OnePlayer
   def turn
     if players_turn?
       token = @player.token
+      puts ''
       puts "#{@player.name}, please enter 1-9:"
       input = gets.strip
       if valid_move?(input)
         move(input, token)
+        puts ''
         @board.display
+        puts ''
+        sleep(1)
       else
         turn
       end
@@ -64,6 +68,7 @@ class OnePlayer
         move(input, @cpu.token)
         puts "#{@cpu.name}: I'll pick #{input}."
         @board.display
+        puts ''
     else
         cpu_turn
     end

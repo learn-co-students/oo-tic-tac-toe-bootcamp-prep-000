@@ -8,6 +8,7 @@ class Game
   end
 
   def get_players
+    puts ''
     puts 'One or two players? (press 1 or 2 and hit <return>)'
     @players = gets.strip
     if @players == '1'
