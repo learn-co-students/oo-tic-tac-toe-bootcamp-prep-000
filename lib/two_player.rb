@@ -55,6 +55,6 @@ vs.
   end
 
   def winner
-    @board.status[won?(@board).first] == @player_one.token ? @player_one : @player_two
+    winning_token(@board) == @player_one.token ? @player_one : @player_two
   end
 end

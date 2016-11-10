@@ -23,11 +23,11 @@ class CPU
              end
   end
 
-  def best_move(board, cpu, opponent)
-    status(board, cpu, opponent)
-    if cpu.win_possible?(opponent)
-      cpu.winning_position
-    elsif opponent.win_possible?(cpu)
+  def best_move(board, opponent)
+    status(board, self, opponent)
+    if win_possible?(opponent)
+      winning_position
+    elsif opponent.win_possible?(self)
       opponent.winning_position
     elsif opponent.token_set.length == 1
       opponent.token_set[0] == 4 ? 0 : 4
@@ -37,14 +37,14 @@ class CPU
   end
 
   def turn(board, opponent)
-    input = best_move(board, self, opponent) + 1
+    input = best_move(board, opponent) + 1
     make_move(board, opponent, input)
   end
 
   def make_move(board, opponent, input)
     if valid_move?(board, input)
       move(board, input, @token)
-      puts "#{self.name}: I'll pick #{input}."
+      puts "#{@name}: I'll pick #{input}."
       sleep(1)
       puts ''
       board.display

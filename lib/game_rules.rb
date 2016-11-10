@@ -62,4 +62,8 @@ module GameRules
   def over?(board)
     draw?(board) || won?(board)
   end
+
+  def winning_token(board)
+    board.status[won?(board).first]
+  end
 end

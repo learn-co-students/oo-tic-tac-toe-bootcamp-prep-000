@@ -39,8 +39,11 @@ type my new name and press <return>."
   end
 
   def turn
-    @player.turn (@board) if current_player == @player
-    @cpu.turn(@board, @player)
+    if current_player == @player
+      @player.turn(@board)
+    else
+      @cpu.turn(@board, @player)
+    end
   end
 
   def current_player
@@ -48,6 +51,6 @@ type my new name and press <return>."
   end
 
   def winner
-    @board.status[won?(@board).first] == @player.token ? @player : @cpu
+    winning_token(@board) == @player.token ? @player : @cpu
   end
 end
