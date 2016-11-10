@@ -37,8 +37,8 @@ vs.
   end
 
   def make_move(input, token)
-    if valid_move?(input)
-      move(input, token)
+    if valid_move?(@board, input)
+      move(@board, input, token)
       puts ''
       @board.display
     else
@@ -47,14 +47,14 @@ vs.
   end
 
   def current_token
-    turn_count.even? ? @player_one.token : @player_two.token
+    turn_count(@board).even? ? @player_one.token : @player_two.token
   end
 
   def player_name
-    turn_count.even? ? @player_one.name : @player_two.name
+    turn_count(@board).even? ? @player_one.name : @player_two.name
   end
 
   def winner
-    @board.status[won?.first] == @player_one.token ? @player_one : @player_two
+    @board.status[won?(@board).first] == @player_one.token ? @player_one : @player_two
   end
 end

@@ -37,4 +37,23 @@ class Player
                end
     end
   end
+
+  def turn(board)
+    puts ''
+    puts "#{@name}, please enter 1-9:"
+    input = gets.strip
+    make_move(board, input)
+  end
+end
+
+def make_move(board, input)
+  if valid_move?(board, input)
+    move(board, input, @token)
+    puts ''
+    board.display
+    puts ''
+    puts ''
+  else
+    turn(board)
+  end
 end

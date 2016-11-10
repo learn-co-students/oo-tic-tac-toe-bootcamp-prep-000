@@ -40,65 +40,14 @@ type my new name and press <return>."
 
   def turn
     if players_turn?
-      players_turn
+      @player.turn(@board)
     else
-      cpu_turn
-    end
-  end
-
-  def players_turn
-    token = @player.token
-    puts ''
-    puts "#{@player.name}, please enter 1-9:"
-    input = gets.strip
-    player_move(input, token)
-  end
-
-  def player_move(input, token)
-    if valid_move?(input)
-      move(input, token)
-      puts ''
-      @board.display
-      puts ''
-      puts ''
-    else
-      players_turn
-    end
-  end
-
-  def cpu_best_move
-    status(@player, @cpu)
-    if @cpu.win_possible?(@player)
-      @cpu.winning_position
-    elsif @player.win_possible?(@cpu)
-      @player.winning_position
-    elsif @player.token_set.length == 1
-      @player.token_set[0] == 4 ? 0 : 4
-    else
-      rand(9)
-    end
-  end
-
-  def cpu_turn
-    input = cpu_best_move + 1
-    cpu_move(input)
-  end
-
-  def cpu_move(input)
-    if valid_move?(input)
-      move(input, @cpu.token)
-      puts "#{@cpu.name}: I'll pick #{input}."
-      sleep(1)
-      puts ''
-      @board.display
-      puts ''
-    else
-      cpu_turn
+      @cpu.turn(@board, @player)
     end
   end
 
   def current_player
-    turn_count.even? ? @player : @cpu
+    turn_count(@board).even? ? @player : @cpu
   end
 
   def players_turn?
@@ -106,6 +55,6 @@ type my new name and press <return>."
   end
 
   def winner
-    @board.status[won?.first] == @player.token ? @player : @cpu
+    @board.status[won?(@board).first] == @player.token ? @player : @cpu
   end
 end

@@ -12,22 +12,22 @@ module GameRules
       [6, 4, 2] # bottom left to top right diagonal
   ].freeze
 
-  def move(position, token)
+  def move(board, position, token)
     index = position.to_i - 1
-    @board.status[index] = token
+    board.status[index] = token
   end
 
-  def position_taken?(index)
-    !(@board.status[index].nil? || @board.status[index] == ' ')
+  def position_taken?(board, index)
+    !(board.status[index].nil? || board.status[index] == ' ')
   end
 
-  def valid_move?(position)
+  def valid_move?(board, position)
     index = position.to_i - 1
-    index.between?(0, 8) && !position_taken?(index)
+    index.between?(0, 8) && !position_taken?(board, index)
   end
 
-  def status(player1, player2)
-    @board.status.each_with_index do |cell, index|
+  def status(board, player1, player2)
+    board.status.each_with_index do |cell, index|
       if cell == player1.token
         player1.token_set.push(index)
       elsif cell == player2.token
@@ -36,30 +36,30 @@ module GameRules
     end
   end
 
-  def turn_count
-    occupied_cells = @board.status.select { |cell| cell == 'X' || cell == 'O' }
+  def turn_count(board)
+    occupied_cells = board.status.select { |cell| cell == 'X' || cell == 'O' }
     occupied_cells.length
   end
 
-  def won?
+  def won?(board)
     WIN_COMBINATIONS.each do |win_combination|
-      if  win_combination.all? { |index| @board.status[index] == 'X' } ||
-          win_combination.all? { |index| @board.status[index] == 'O' }
+      if  win_combination.all? { |index| board.status[index] == 'X' } ||
+          win_combination.all? { |index| board.status[index] == 'O' }
         return win_combination
       end
     end
     false
   end
 
-  def full?
-    @board.status.all? { |i| i != ' ' }
+  def full?(board)
+    board.status.all? { |i| i != ' ' }
   end
 
-  def draw?
-    !won? && full?
+  def draw?(board)
+    !won?(board) && full?(board)
   end
 
-  def over?
-    draw? || won?
+  def over?(board)
+    draw?(board) || won?(board)
   end
 end
