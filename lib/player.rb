@@ -26,4 +26,13 @@ class Player
     sleep(1)
   end
 
+  def set_token(opposition)
+    if opposition == nil
+      get_token
+      puts_token
+    else
+      opposition.token == 'X' ? @token = 'O' : @token = 'X'
+    end
+  end
+
 end
