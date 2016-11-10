@@ -8,20 +8,28 @@ class TwoPlayer
 
   def initialize
     @board = Board.new
+    puts ''
     puts 'Player 1, please enter your name.'
     @player_one = Player.new
-    @player_one.token = 'X'
+    puts ''
+    @player_one.get_token
     puts 'Player 2, please enter your name.'
     @player_two = Player.new
-    @player_two.token = 'O'
+    @player_one.token == 'X' ? @player_two.token = 'O' : @player_two.token = 'X'
+    puts ''
+    puts "New match: #{@player_one.name}(#{@player_one.token}) vs. #{@player_two.name}(#{@player_two.token})!"
+    puts ''
+    sleep(2)
   end
 
   def turn
     token = current_token
+    puts ''
     puts "#{player_name}, please enter 1-9:"
     input = gets.strip
     if valid_move?(input)
       move(input, token)
+      puts ''
       @board.display
     else
       turn

@@ -21,6 +21,8 @@ class Game
 
   def play
     puts "Let's play!"
+    sleep(1)
+    puts ''
     @match.board.display
     until @match.over?
       @match.turn

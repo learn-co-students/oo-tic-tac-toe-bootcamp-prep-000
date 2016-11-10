@@ -60,7 +60,7 @@ module GameRules
   end
 
   def full?
-    @board.status.all? { |i| i == 'X' || i == 'O' }
+    @board.status.all? { |i| i != ' ' }
   end
 
   def draw?

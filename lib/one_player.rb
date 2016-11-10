@@ -36,10 +36,10 @@ class OnePlayer
   def win_possible?
     win_combos = WIN_COMBINATIONS
     win_combos.each do |win_combo|
-      win_combo.each do |index|
-        @o_cells.each do |cell|
-          if index == cell
-            win_combo -= [index]
+      win_combo.each do |win_index|
+        @o_cells.each do |o_cell|
+          if win_index == o_cell
+            win_combo -= [win_index]
             if win_combo.length == 1
               @winning_position = win_combo[0]
               if @x_cells.none? { |i| i == @winning_position}
