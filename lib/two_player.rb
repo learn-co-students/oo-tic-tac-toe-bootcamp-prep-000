@@ -9,17 +9,23 @@ class TwoPlayer
   def initialize
     @board = Board.new
     puts ''
-    puts 'Player 1, please enter your name.'
-    @player_one = Player.new
+    init_players
     puts ''
-    @player_one.set_token(@player_two)
-    puts 'Player 2, please enter your name.'
-    @player_two = Player.new
-    @player_two.set_token(@player_one)
-    puts ''
-    puts "New match: #{@player_one.name}(#{@player_one.token}) vs. #{@player_two.name}(#{@player_two.token})!"
+    puts "New match:
+#{@player_one.name}(#{@player_one.token})
+vs.
+#{@player_two.name}(#{@player_two.token})!"
     puts ''
     sleep(2)
+  end
+
+  def init_players
+    puts 'Player 1, please enter your name.'
+    @player_one = Player.new
+    @player_one.sets_token(@player_two)
+    puts 'Player 2, please enter your name.'
+    @player_two = Player.new
+    @player_two.sets_token(@player_one)
   end
 
   def turn
@@ -27,6 +33,10 @@ class TwoPlayer
     puts ''
     puts "#{player_name}, please enter 1-9:"
     input = gets.strip
+    make_move(input, token)
+  end
+
+  def make_move(input, token)
     if valid_move?(input)
       move(input, token)
       puts ''

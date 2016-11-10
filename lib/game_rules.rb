@@ -10,7 +10,7 @@ module GameRules
       [2, 5, 8], # right column
       [0, 4, 8], # top left to bottom right diagonal
       [6, 4, 2] # bottom left to top right diagonal
-  ]
+  ].freeze
 
   def move(position, token)
     index = position.to_i - 1
@@ -30,8 +30,7 @@ module GameRules
     @board.status.each_with_index do |cell, index|
       if cell == player1.token
         player1.token_set.push(index)
-      end
-      if cell == player2.token
+      elsif cell == player2.token
         player2.token_set.push(index)
       end
     end
@@ -43,18 +42,13 @@ module GameRules
   end
 
   def won?
-    if WIN_COMBINATIONS.any? do |win_combination|
-      win_combination.all? { |index| @board.status[index] == 'X' } ||
+    WIN_COMBINATIONS.each do |win_combination|
+      if  win_combination.all? { |index| @board.status[index] == 'X' } ||
           win_combination.all? { |index| @board.status[index] == 'O' }
-    end
-      WIN_COMBINATIONS.each do |win_combination|
-        if win_combination.all? { |index| @board.status[index] == 'X' } ||
-            win_combination.all? { |index| @board.status[index] == 'O' }
-          return win_combination
-        end
+        return win_combination
       end
-    else false
     end
+    false
   end
 
   def full?

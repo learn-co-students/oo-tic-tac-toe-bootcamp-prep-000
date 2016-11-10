@@ -8,44 +8,61 @@ class OnePlayer
 
   def initialize
     @board = Board.new
+    player_init
+    cpu_init
+    sleep(1)
+    puts "New match:
+#{@player.name}(#{@player.token})
+vs.
+#{@cpu.name}(#{@cpu.token})!"
+    puts ''
+  end
+
+  def cpu_init
+    puts "Hello #{@player.name}, my name is HAL.
+If you're fine with calling me HAL, just press <return>.
+If you'd like to call me something else,
+type my new name and press <return>."
+    @cpu = CPU.new
+    @cpu.sets_token(@player)
+    puts ''
+    puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
+    puts ''
+  end
+
+  def player_init
     puts ''
     puts 'Player, please enter your name.'
     @player = Player.new
     puts ''
-    @player.get_token
-    @player.puts_token
-    puts "Hello #{@player.name}, my name is HAL. If you're fine with calling me HAL, just press <return>. If you'd like to call me something else, type my new name and press <return>."
-    @cpu = CPU.new
-    set_cpu_token
-    puts ''
-    puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
-    puts ''
-    sleep(1)
-    puts "New match: #{@player.name}(#{@player.token}) vs. #{@cpu.name}(#{@cpu.token})!"
-    puts ''
-  end
-
-  def set_cpu_token
-    @player.token == 'X' ? @cpu.token = 'O' : @cpu.token = 'X'
+    @player.sets_token(@cpu)
   end
 
   def turn
     if players_turn?
-      token = @player.token
-      puts ''
-      puts "#{@player.name}, please enter 1-9:"
-      input = gets.strip
-      if valid_move?(input)
-        move(input, token)
-        puts ''
-        @board.display
-        puts ''
-        puts ''
-      else
-        turn
-      end
+      players_turn
     else
       cpu_turn
+    end
+  end
+
+  def players_turn
+    token = @player.token
+    puts ''
+    puts "#{@player.name}, please enter 1-9:"
+    input = gets.strip
+    player_move(input, token)
+  end
+
+  def player_move(input, token)
+    if valid_move?(input)
+      move(input, token)
+      puts ''
+      @board.display
+      puts ''
+      puts ''
+    else
+      players_turn
     end
   end
 
@@ -56,11 +73,7 @@ class OnePlayer
     elsif @player.win_possible?(@cpu)
       @player.winning_position
     elsif @player.token_set.length == 1
-      if @player.token_set[0] == 4
-        0
-      else
-        4
-      end
+      @player.token_set[0] == 4 ? 0 : 4
     else
       rand(9)
     end
@@ -68,15 +81,19 @@ class OnePlayer
 
   def cpu_turn
     input = cpu_best_move + 1
+    cpu_move(input)
+  end
+
+  def cpu_move(input)
     if valid_move?(input)
-        move(input, @cpu.token)
-        puts "#{@cpu.name}: I'll pick #{input}."
-        sleep(1)
-        puts ''
-        @board.display
-        puts ''
+      move(input, @cpu.token)
+      puts "#{@cpu.name}: I'll pick #{input}."
+      sleep(1)
+      puts ''
+      @board.display
+      puts ''
     else
-        cpu_turn
+      cpu_turn
     end
   end
 
@@ -85,7 +102,7 @@ class OnePlayer
   end
 
   def players_turn?
-  	current_player == @player ? true : false
+    current_player == @player ? true : false
   end
 
   def winner

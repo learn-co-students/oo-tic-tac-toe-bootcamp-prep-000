@@ -5,5 +5,5 @@ require_relative '../lib/one_player.rb'
 require_relative '../lib/game.rb'
 
 game = Game.new
-game.get_players
+game.gets_players
 game.play

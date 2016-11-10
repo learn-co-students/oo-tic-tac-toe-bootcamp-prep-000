@@ -1,22 +1,21 @@
 require_relative 'win_logic.rb'
 
 class Player
-
   include WinLogic
   attr_reader :name
   attr_accessor :token, :token_set, :winning_position
 
   def initialize
     @name = gets.strip
-    @token_set = Array.new
+    @token_set = []
   end
 
-  def get_token
+  def gets_token
+    puts ''
     puts "#{@name}, please select a token. (X/O)"
     @token = gets.strip.upcase
-    if @token != 'X' && @token != 'O'
-      get_token
-    end
+    return unless @token != 'X' && @token != 'O'
+    gets_token
   end
 
   def puts_token
@@ -26,13 +25,16 @@ class Player
     sleep(1)
   end
 
-  def set_token(opposition)
-    if opposition == nil
-      get_token
+  def sets_token(opposition)
+    if opposition.nil?
+      gets_token
       puts_token
     else
-      opposition.token == 'X' ? @token = 'O' : @token = 'X'
+      @token = if opposition.token == 'X'
+                 'O'
+               else
+                 'X'
+               end
     end
   end
-
 end
