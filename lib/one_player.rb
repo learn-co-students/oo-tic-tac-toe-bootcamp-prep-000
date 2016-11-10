@@ -39,19 +39,12 @@ type my new name and press <return>."
   end
 
   def turn
-    if players_turn?
-      @player.turn(@board)
-    else
-      @cpu.turn(@board, @player)
-    end
+    @player.turn (@board) if current_player == @player
+    @cpu.turn(@board, @player)
   end
 
   def current_player
     turn_count(@board).even? ? @player : @cpu
-  end
-
-  def players_turn?
-    current_player == @player ? true : false
   end
 
   def winner
