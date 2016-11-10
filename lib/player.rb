@@ -17,6 +17,9 @@ class Player
     if @token != 'X' && @token != 'O'
       get_token
     end
+  end
+
+  def puts_token
     puts ''
     puts "You have selected #{@token}."
     puts ''

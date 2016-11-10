@@ -13,6 +13,7 @@ class TwoPlayer
     @player_one = Player.new
     puts ''
     @player_one.get_token
+    @player_one.puts_token
     puts 'Player 2, please enter your name.'
     @player_two = Player.new
     set_player_two_token

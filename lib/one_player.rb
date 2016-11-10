@@ -13,6 +13,7 @@ class OnePlayer
     @player = Player.new
     puts ''
     @player.get_token
+    @player.puts_token
     puts "Hello #{@player.name}, my name is HAL. If you're fine with calling me HAL, just press <return>. If you'd like to call me something else, type my new name and press <return>."
     @cpu = CPU.new
     set_cpu_token
