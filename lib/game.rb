@@ -42,14 +42,14 @@ class Game
   end
 
   def play_again?
-    y = 'y'
-    n = 'n'
     puts 'Play again? (y/n)'
     input = gets.strip.downcase
-    if input == y
+    if input == 'y'
       true
+    elsif input == 'n'
+      false
     else
-      input == n ? false : play_again?
+      play_again?
     end
   end
 end
