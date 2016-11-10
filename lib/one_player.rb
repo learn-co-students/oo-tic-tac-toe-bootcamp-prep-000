@@ -20,6 +20,9 @@ class OnePlayer
     puts ''
     puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
     puts ''
+    sleep(1)
+    puts "New match: #{@player.name}(#{@player.token}) vs. #{@cpu.name}(#{@cpu.token})!"
+    puts ''
   end
 
   def set_cpu_token
@@ -37,7 +40,7 @@ class OnePlayer
         puts ''
         @board.display
         puts ''
-        sleep(1)
+        puts ''
       else
         turn
       end
@@ -68,6 +71,8 @@ class OnePlayer
     if valid_move?(input)
         move(input, @cpu.token)
         puts "#{@cpu.name}: I'll pick #{input}."
+        sleep(1)
+        puts ''
         @board.display
         puts ''
     else
