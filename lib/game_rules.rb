@@ -1,3 +1,5 @@
+# The GameRules module defines the basic rules of the game
+# including winning conditions, moves, draw conditions, and more
 module GameRules
   attr_reader :board
 

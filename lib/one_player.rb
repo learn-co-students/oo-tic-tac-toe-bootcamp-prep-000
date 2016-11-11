@@ -3,6 +3,8 @@ require_relative 'board.rb'
 require_relative 'human.rb'
 require_relative 'game_rules.rb'
 
+# The OnePlayer class is the set of specific rules and scripts
+# governing a one player human v. cpu game
 class OnePlayer
   include GameRules
 

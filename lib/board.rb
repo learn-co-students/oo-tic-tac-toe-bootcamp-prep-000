@@ -1,3 +1,5 @@
+# The Board class defines the game board itself
+# including the layout and current game status
 class Board
   def initialize
     @board = Array.new(9, ' ')

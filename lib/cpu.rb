@@ -1,5 +1,9 @@
 require_relative 'player.rb'
 
+# The CPU class is a subclass of Player. It is the script that
+# governs the way the computer plays the game against a human player,
+# including how to determine its name, token, best move at any time,
+# and how to play a turn
 class CPU < Player
   def initialize
     input = gets.strip

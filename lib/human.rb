@@ -1,5 +1,9 @@
 require_relative 'player.rb'
 
+# The human class is a subclass of player.
+# It is instantiated within a one or two player game.
+# This is the script that takes input from a human player
+# to place tokens on the board.
 class Human < Player
   def initialize
     @name = gets.strip

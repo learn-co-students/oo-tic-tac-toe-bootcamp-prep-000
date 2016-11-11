@@ -1,5 +1,8 @@
 require_relative 'game_rules.rb'
 
+# The Player class is the basic player object
+# setting player attributes and game logic to determine
+# a winning play
 class Player
   include GameRules
   attr_accessor :name, :token, :token_set, :winning_position

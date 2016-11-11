@@ -1,4 +1,4 @@
-class TicTacToe
+class TicTacToe # :nodoc:
   def initialize
     @board = Array.new(9, ' ')
   end
