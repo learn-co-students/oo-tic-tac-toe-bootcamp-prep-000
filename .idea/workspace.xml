@@ -4,9 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaaee0b8-6167-4d3f-a4c1-ea61844cd649" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="aaaee0b8-6167-4d3f-a4c1-ea61844cd649" name="Default" comment="" />
     <list id="48493568-87b5-4301-9b3d-3d8e6714a72b" name="Revert: refactored some OnePlayer methods to be terser" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="404">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1035">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/lib/cpu.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+              <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -102,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/lib/player.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="388">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -465,12 +463,12 @@
       <workItem from="1478630258653" duration="4045000" />
       <workItem from="1478636491300" duration="1124000" />
       <workItem from="1478754641100" duration="26283000" />
-      <workItem from="1478816354583" duration="4459000" />
+      <workItem from="1478816354583" duration="5057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66556000" />
+    <option name="totallyTimeSpent" value="67154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,7 +525,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="edits" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -825,7 +823,7 @@
     <entry file="file://$PROJECT_DIR$/lib/cpu.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -833,7 +831,7 @@
     <entry file="file://$PROJECT_DIR$/lib/player.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -857,7 +855,7 @@
     <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -865,7 +863,7 @@
     <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -873,7 +871,7 @@
     <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>
