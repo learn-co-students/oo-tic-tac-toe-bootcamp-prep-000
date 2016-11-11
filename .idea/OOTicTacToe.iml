@@ -42,24 +42,204 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="RVM: ruby-2.3.1" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.13.6, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.0, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="docile (v1.1.5, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.0.2, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.2, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.1, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v11.3.0, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="require_all (v1.3.3, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec (v3.3.0, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.3.2, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.3.1, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.3.2, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.3.0, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov (v0.12.0, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simplecov-html (v0.10.0, RVM: ruby-2.2.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="slop (v3.6.0, RVM: ruby-2.2.0) [gem]" level="application" />
+    <orderEntry type="module-library">
+      <library name="coderay (vbundled(1.1.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/coderay-1.1.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/coderay-1.1.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/coderay-1.1.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/coderay-1.1.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/coderay-1.1.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="diff-lcs (vbundled(1.2.5), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/diff-lcs-1.2.5) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/diff-lcs-1.2.5/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/diff-lcs-1.2.5/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/diff-lcs-1.2.5/autotest" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/diff-lcs-1.2.5/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/diff-lcs-1.2.5/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/diff-lcs-1.2.5/autotest" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="docile (vbundled(1.1.5), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/docile-1.1.5) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/docile-1.1.5/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/docile-1.1.5/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="json (vbundled(2.0.2), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/json-2.0.2) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/data" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/java" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/tests" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/tools" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/diagrams" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/references" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/data" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/java" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/tests" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/tools" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/diagrams" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/json-2.0.2/references" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="method_source (vbundled(0.8.2), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/method_source-0.8.2) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/method_source-0.8.2/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/method_source-0.8.2/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="pry (vbundled(0.10.1), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/pry-0.10.1) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/pry-0.10.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/pry-0.10.1/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/pry-0.10.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/pry-0.10.1/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rake (vbundled(11.3.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/rake-11.3.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rake-11.3.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rake-11.3.0/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rake-11.3.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rake-11.3.0/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rake-11.3.0/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rake-11.3.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="require_all (vbundled(1.3.3), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/require_all-1.3.3) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/require_all-1.3.3/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/require_all-1.3.3/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rspec (vbundled(3.3.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/rspec-3.3.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-3.3.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-3.3.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rspec-core (vbundled(3.3.2), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/rspec-core-3.3.2) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-core-3.3.2/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-core-3.3.2/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-core-3.3.2/exe" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-core-3.3.2/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rspec-expectations (vbundled(3.3.1), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/rspec-expectations-3.3.1) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-expectations-3.3.1/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-expectations-3.3.1/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rspec-mocks (vbundled(3.3.2), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/rspec-mocks-3.3.2) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-mocks-3.3.2/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-mocks-3.3.2/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rspec-support (vbundled(3.3.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/rspec-support-3.3.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-support-3.3.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/rspec-support-3.3.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="simplecov (vbundled(0.12.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/simplecov-0.12.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-0.12.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-0.12.0/features" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-0.12.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-0.12.0/features" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="simplecov-html (vbundled(0.10.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/simplecov-html-0.10.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/views" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/assets" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/public" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/views" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/assets" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/simplecov-html-0.10.0/public" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slop (vbundled(3.6.0), /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/slop-3.6.0) [path][gem]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/slop-3.6.0/lib" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/gems/slop-3.6.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.13.6, RVM: ruby-2.3.1) [gem]" level="application" />
   </component>
 </module>

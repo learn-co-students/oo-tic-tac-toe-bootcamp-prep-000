@@ -12,13 +12,13 @@ class Game
     puts ''
     puts 'One or two players? (press 1 or 2 and hit <return>)'
     @players = gets.strip
-    if @players == '1'
-      @match = OnePlayer.new
-    elsif @players == '2'
-      @match = TwoPlayer.new
-    else
-      gets_players
-    end
+    @match = if @players == '1'
+               OnePlayer.new
+             elsif @players == '2'
+               TwoPlayer.new
+             end
+    return unless @match.nil?
+    gets_players
   end
 
   def play
