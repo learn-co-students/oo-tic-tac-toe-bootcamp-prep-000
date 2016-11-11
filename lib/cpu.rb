@@ -46,6 +46,7 @@ class CPU < Player
       move(board, input, @token)
       puts "#{@name}: I'll pick #{input}."
       sleep(1)
+      puts "#{input}"
       puts ''
       board.display
       puts ''

@@ -31,29 +31,11 @@ vs.
   end
 
   def turn
-    token = current_token
-    puts ''
-    puts "#{player_name}, please enter 1-9:"
-    input = gets.strip
-    make_move(input, token)
+    current_player.turn(@board)
   end
 
-  def make_move(input, token)
-    if valid_move?(@board, input)
-      move(@board, input, token)
-      puts ''
-      @board.display
-    else
-      turn
-    end
-  end
-
-  def current_token
-    turn_count(@board).even? ? @player_one.token : @player_two.token
-  end
-
-  def player_name
-    turn_count(@board).even? ? @player_one.name : @player_two.name
+  def current_player
+    turn_count(@board).even? ? @player_one : @player_two
   end
 
   def winner

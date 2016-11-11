@@ -26,6 +26,7 @@ class Game
     sleep(1)
     puts ''
     @match.board.display
+    puts ''
     @match.turn until @match.over?(@match.board)
     won_or_draw
     return unless play_again?
