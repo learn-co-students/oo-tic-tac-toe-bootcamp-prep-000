@@ -42,16 +42,13 @@ class CPU < Player
   end
 
   def make_move(board, opponent, input)
-    if valid_move?(board, input)
-      move(board, input, @token)
-      puts "#{@name}: I'll pick #{input}."
-      sleep(1)
-      puts "#{input}"
-      puts ''
-      board.display
-      puts ''
-    else
-      turn(board, opponent)
-    end
+    turn(board, opponent) unless valid_move?(board, input)
+    move(board, input, @token)
+    puts "#{@name}: I'll pick #{input}."
+    sleep(1)
+    puts input.to_s
+    puts ''
+    board.display
+    puts ''
   end
 end

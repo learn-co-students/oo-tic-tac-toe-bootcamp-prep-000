@@ -35,22 +35,15 @@ class Game
   end
 
   def won_or_draw
-    if @match.won?(@match.board)
-      puts "Congratulations, #{@match.winner.name}!"
-    elsif @match.draw?(@match.board)
-      puts 'Cats Game!'
-    end
+    puts "Congratulations, #{@match.winner.name}!" if @match.won?(@match.board)
+    puts 'Cats Game!' if @match.draw?(@match.board)
   end
 
   def play_again?
     puts 'Play again? (y/n)'
     input = gets.strip.downcase
-    if input == 'y'
-      true
-    elsif input == 'n'
-      false
-    else
-      play_again?
-    end
+    return true if input == 'y'
+    return false if input == 'n'
+    play_again?
   end
 end
