@@ -1,10 +1,6 @@
-require_relative 'win_logic.rb'
+require_relative 'player.rb'
 
-class CPU
-  include WinLogic
-  attr_reader :name
-  attr_accessor :token, :token_set, :winning_position
-
+class CPU < Player
   def initialize
     input = gets.strip
     @name = if input != ''

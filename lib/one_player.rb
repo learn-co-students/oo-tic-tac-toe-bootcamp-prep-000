@@ -1,6 +1,6 @@
 require_relative 'cpu.rb'
 require_relative 'board.rb'
-require_relative 'player.rb'
+require_relative 'human.rb'
 require_relative 'game_rules.rb'
 
 class OnePlayer
@@ -33,7 +33,7 @@ type my new name and press <return>."
   def player_init
     puts ''
     puts 'Player, please enter your name.'
-    @player = Player.new
+    @player = Human.new
     puts ''
     @player.sets_token(@cpu)
   end

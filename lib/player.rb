@@ -1,59 +1,23 @@
-require_relative 'win_logic.rb'
+require_relative 'game_rules.rb'
 
 class Player
-  include WinLogic
-  attr_reader :name
-  attr_accessor :token, :token_set, :winning_position
+  include GameRules
+  attr_accessor :name, :token, :token_set, :winning_position
 
-  def initialize
-    @name = gets.strip
-    @token_set = []
-  end
-
-  def gets_token
-    puts ''
-    puts "#{@name}, please select a token. (X/O)"
-    @token = gets.strip.upcase
-    return unless @token != 'X' && @token != 'O'
-    gets_token
-  end
-
-  def puts_token
-    puts ''
-    puts "You have selected #{@token}."
-    puts ''
-    sleep(1)
-  end
-
-  def sets_token(opposition)
-    if opposition.nil?
-      gets_token
-      puts_token
-    else
-      @token = if opposition.token == 'X'
-                 'O'
-               else
-                 'X'
-               end
+  def win_possible?(opposition)
+    win_combos = WIN_COMBINATIONS
+    win_combos.each do |win_combo|
+      win_combo.each do |win_index|
+        @token_set.each do |token|
+          next unless win_index == token
+          win_combo -= [win_index]
+          next unless win_combo.length == 1
+          @winning_position = win_combo[0]
+          next unless opposition.token_set.none? { |i| i == @winning_position }
+          return true
+        end
+      end
     end
-  end
-
-  def turn(board)
-    puts ''
-    puts "#{@name}, please enter 1-9:"
-    input = gets.strip
-    make_move(board, input)
-  end
-end
-
-def make_move(board, input)
-  if valid_move?(board, input)
-    move(board, input, @token)
-    puts ''
-    board.display
-    puts ''
-    puts ''
-  else
-    turn(board)
+    false
   end
 end
