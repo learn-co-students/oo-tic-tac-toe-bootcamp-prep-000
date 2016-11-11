@@ -8,19 +8,6 @@ require_relative 'game_rules.rb'
 class TwoPlayer
   include GameRules
 
-  def initialize
-    @board = Board.new
-    puts ''
-    init_players
-    puts ''
-    puts "New match:
-#{@player_one.name}(#{@player_one.token})
-vs.
-#{@player_two.name}(#{@player_two.token})!"
-    puts ''
-    sleep(2)
-  end
-
   def init_players
     puts 'Player 1, please enter your name.'
     @player_one = Human.new
@@ -28,17 +15,5 @@ vs.
     puts 'Player 2, please enter your name.'
     @player_two = Human.new
     @player_two.sets_token(@player_one)
-  end
-
-  def turn
-    current_player.turn(@board)
-  end
-
-  def current_player
-    turn_count(@board).even? ? @player_one : @player_two
-  end
-
-  def winner
-    winning_token(@board) == @player_one.token ? @player_one : @player_two
   end
 end

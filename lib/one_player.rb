@@ -8,51 +8,22 @@ require_relative 'game_rules.rb'
 class OnePlayer
   include GameRules
 
-  def initialize
-    @board = Board.new
-    player_init
-    cpu_init
-    sleep(1)
-    puts "New match:
-#{@player.name}(#{@player.token})
-vs.
-#{@cpu.name}(#{@cpu.token})!"
-    puts ''
-  end
-
   def cpu_init
-    puts "Hello #{@player.name}, my name is HAL.
+    puts "Hello #{@player_one.name}, my name is HAL.
 If you're fine with calling me HAL, just press <return>.
 If you'd like to call me something else,
 type my new name and press <return>."
-    @cpu = CPU.new
-    @cpu.sets_token(@player)
+    @player_two = CPU.new
+    @player_two.sets_token(@player_one)
     puts ''
-    puts "Thanks for naming me #{@cpu.name}, #{@player.name}."
-    puts ''
+    puts "Thanks for naming me #{@player_two.name}, #{@player_one.name}."
   end
 
-  def player_init
-    puts ''
+  def init_players
     puts 'Player, please enter your name.'
-    @player = Human.new
+    @player_one = Human.new
     puts ''
-    @player.sets_token(@cpu)
-  end
-
-  def turn
-    if current_player == @player
-      @player.turn(@board)
-    else
-      @cpu.turn(@board, @player)
-    end
-  end
-
-  def current_player
-    turn_count(@board).even? ? @player : @cpu
-  end
-
-  def winner
-    winning_token(@board) == @player.token ? @player : @cpu
+    @player_one.sets_token(@player_two)
+    cpu_init
   end
 end

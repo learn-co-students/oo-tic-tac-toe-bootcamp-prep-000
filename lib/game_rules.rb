@@ -14,6 +14,20 @@ module GameRules
       [6, 4, 2] # bottom left to top right diagonal
   ].freeze
 
+  def initialize
+    @board = Board.new
+    puts ''
+    init_players
+    puts ''
+    sleep(1)
+    puts "New match:
+#{@player_one.name}(#{@player_one.token})
+vs.
+#{@player_two.name}(#{@player_two.token})!"
+    puts ''
+    sleep(2)
+  end
+
   def move(board, position, token)
     index = position.to_i - 1
     board.status[index] = token
@@ -67,5 +81,21 @@ module GameRules
 
   def winning_token(board)
     board.status[won?(board).first]
+  end
+
+  def turn
+    current_player.turn(@board, opposition)
+  end
+
+  def current_player
+    turn_count(@board).even? ? @player_one : @player_two
+  end
+
+  def opposition
+    current_player == @player_two ? @player_one : @player_two
+  end
+
+  def winner
+    winning_token(@board) == @player_one.token ? @player_one : @player_two
   end
 end
