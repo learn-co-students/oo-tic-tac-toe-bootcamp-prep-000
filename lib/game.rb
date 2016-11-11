@@ -29,7 +29,7 @@ class Game
     puts ''
     @match.board.display
     puts ''
-    @match.turn until @match.over?(@match.board)
+    @match.turn until @match.over?
     won_or_draw
     return unless play_again?
     gets_players
@@ -37,8 +37,8 @@ class Game
   end
 
   def won_or_draw
-    puts "Congratulations, #{@match.winner.name}!" if @match.won?(@match.board)
-    puts 'Cats Game!' if @match.draw?(@match.board)
+    puts "Congratulations, #{@match.winner.name}!" if @match.won?
+    puts 'Cats Game!' if @match.draw?
   end
 
   def play_again?
