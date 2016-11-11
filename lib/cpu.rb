@@ -27,7 +27,7 @@ class CPU < Player
     status(board, self, opponent)
     return winning_position if win_possible?(opponent)
     return opponent.winning_position if opponent.win_possible?(self)
-    return rand (9) unless opponent.token_set.length == 1
+    return rand(9) unless opponent.token_set.length == 1
     opponent.token_set[0] == 4 ? 0 : 4
   end
 
