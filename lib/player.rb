@@ -18,7 +18,7 @@ class Player
   end
 
   def win_possible?(opposition)
-    win_combos = WIN_COMBINATIONS
+    win_combos = GameRules::WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
         @token_set.each do |token|
