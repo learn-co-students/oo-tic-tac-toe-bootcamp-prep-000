@@ -25,15 +25,10 @@ class CPU < Player
 
   def best_move(board, opponent)
     status(board, self, opponent)
-    if win_possible?(opponent)
-      winning_position
-    elsif opponent.win_possible?(self)
-      opponent.winning_position
-    elsif opponent.token_set.length == 1
-      opponent.token_set[0] == 4 ? 0 : 4
-    else
-      rand(9)
-    end
+    return winning_position if win_possible?(opponent)
+    return opponent.winning_position if opponent.win_possible?(self)
+    return rand (9) unless opponent.token_set.length == 1
+    opponent.token_set[0] == 4 ? 0 : 4
   end
 
   def turn(board, opponent)
