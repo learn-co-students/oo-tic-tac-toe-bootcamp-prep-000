@@ -5,16 +5,6 @@ require_relative 'player.rb'
 # including how to determine its name, token, best move at any time,
 # and how to play a turn
 class CPU < Player
-  def initialize
-    input = gets.strip
-    @name = if input != ''
-              input
-            else
-              'HAL'
-            end
-    @token_set = []
-  end
-
   def sets_token(opposition)
     @token = if opposition.token == 'X'
                'O'

@@ -7,6 +7,16 @@ class Player
   include GameRules
   attr_accessor :name, :token, :token_set, :winning_position
 
+  def initialize
+    input = gets.strip
+    @name = if input != ''
+              input
+            else
+              'HAL'
+            end
+    @token_set = []
+  end
+
   def win_possible?(opposition)
     win_combos = WIN_COMBINATIONS
     win_combos.each do |win_combo|

@@ -5,11 +5,6 @@ require_relative 'player.rb'
 # This is the script that takes input from a human player
 # to place tokens on the board.
 class Human < Player
-  def initialize
-    @name = gets.strip
-    @token_set = []
-  end
-
   def gets_token
     puts ''
     puts "#{@name}, please select a token. (X/O)"
