@@ -21,13 +21,13 @@ class CPU < Player
     opponent.token_set[0] == 4 ? 0 : 4
   end
 
-  def turn(board, opponent)
+  def go(board, opponent)
     input = best_move(board, opponent) + 1
     make_move(board, opponent, input)
   end
 
   def make_move(board, opponent, input)
-    turn(board, opponent) unless valid_move?(board, input)
+    go(board, opponent) unless valid_move?(board, input)
     move(board, input, @token)
     puts "#{@name}: I'll pick #{input}."
     sleep(1)

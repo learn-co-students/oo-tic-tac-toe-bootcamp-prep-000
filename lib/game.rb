@@ -14,12 +14,12 @@ class Game
     puts ''
     puts 'One or two players? (press 1 or 2 and hit <return>)'
     @players = gets.strip
-    $match = if @players == '1'
+    @match = if @players == '1'
                OnePlayer.new
              elsif @players == '2'
                TwoPlayer.new
              end
-    return unless $match.nil?
+    return unless @match.nil?
     gets_players
   end
 
@@ -27,9 +27,9 @@ class Game
     puts "Let's play!"
     sleep(1)
     puts ''
-    $match.board.display
+    @match.board.display
     puts ''
-    $match.turn until $match.over?($match.board)
+    @match.turn until @match.over?(@match.board)
     won_or_draw
     return unless play_again?
     gets_players
@@ -37,8 +37,8 @@ class Game
   end
 
   def won_or_draw
-    puts "Congratulations, #{$match.winner.name}!" if $match.won?($match.board)
-    puts 'Cats Game!' if $match.draw?($match.board)
+    puts "Congratulations, #{@match.winner.name}!" if @match.won?(@match.board)
+    puts 'Cats Game!' if @match.draw?(@match.board)
   end
 
   def play_again?

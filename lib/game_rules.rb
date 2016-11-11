@@ -84,7 +84,7 @@ vs.
   end
 
   def turn
-    current_player.turn(@board, opposition)
+    current_player.go(@board, opposition)
   end
 
   def current_player

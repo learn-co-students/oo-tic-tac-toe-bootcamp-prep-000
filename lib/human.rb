@@ -33,7 +33,7 @@ class Human < Player
     end
   end
 
-  def turn(board, _)
+  def go(board, _)
     puts "#{@name}, please enter 1-9:"
     input = gets.strip
     make_move(board, input)
@@ -46,7 +46,7 @@ class Human < Player
       board.display
       puts ''
     else
-      turn(board, '')
+      go(board, '')
     end
   end
 end
