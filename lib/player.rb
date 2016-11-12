@@ -1,4 +1,4 @@
-require_relative 'game_rules.rb'
+require_relative 'match_rules.rb'
 
 # The Player class is the basic player object
 # setting player attributes and game logic to determine
@@ -34,7 +34,7 @@ class Player
   end
 
   def win_possible?(opponent)
-    win_combos = GameRules::WIN_COMBINATIONS
+    win_combos = MatchRules::WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
         @token_set.each do |token|

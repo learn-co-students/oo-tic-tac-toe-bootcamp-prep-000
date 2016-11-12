@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaaee0b8-6167-4d3f-a4c1-ea61844cd649" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/cpu.rb" afterPath="$PROJECT_DIR$/lib/cpu.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/human.rb" afterPath="$PROJECT_DIR$/lib/human.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/game_rules.rb" afterPath="$PROJECT_DIR$/lib/match_rules.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/one_player.rb" afterPath="$PROJECT_DIR$/lib/one_player.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/player.rb" afterPath="$PROJECT_DIR$/lib/player.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/two_player.rb" afterPath="$PROJECT_DIR$/lib/two_player.rb" />
     </list>
     <list id="48493568-87b5-4301-9b3d-3d8e6714a72b" name="Revert: refactored some OnePlayer methods to be terser" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="game.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="675">
               <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
               <folding />
             </state>
@@ -43,18 +44,18 @@
       <file leaf-file-name="two_player.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="one_player.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="one_player.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,7 +74,7 @@
       <file leaf-file-name="human.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/human.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="480">
               <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
               <folding />
             </state>
@@ -84,17 +85,17 @@
         <entry file="file://$PROJECT_DIR$/lib/player.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="780">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game_rules.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
+      <file leaf-file-name="match_rules.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/match_rules.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            <state relative-caret-position="135">
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -170,15 +171,17 @@
         <option value="$PROJECT_DIR$/lib/win_logic.rb" />
         <option value="$PROJECT_DIR$/lib/Player.rb" />
         <option value="$PROJECT_DIR$/lib/tic_tac_toe.rb" />
-        <option value="$PROJECT_DIR$/lib/one_player.rb" />
         <option value="$PROJECT_DIR$/lib/environment.rb" />
-        <option value="$PROJECT_DIR$/lib/two_player.rb" />
         <option value="$PROJECT_DIR$/lib/game.rb" />
         <option value="$PROJECT_DIR$/lib/board.rb" />
-        <option value="$PROJECT_DIR$/lib/game_rules.rb" />
         <option value="$PROJECT_DIR$/lib/player.rb" />
         <option value="$PROJECT_DIR$/lib/human.rb" />
         <option value="$PROJECT_DIR$/lib/cpu.rb" />
+        <option value="$PROJECT_DIR$/lib/game_rules.rb" />
+        <option value="$PROJECT_DIR$/lib/match.rb" />
+        <option value="$PROJECT_DIR$/lib/match_rules.rb" />
+        <option value="$PROJECT_DIR$/lib/one_player.rb" />
+        <option value="$PROJECT_DIR$/lib/two_player.rb" />
       </list>
     </option>
   </component>
@@ -475,12 +478,12 @@
       <workItem from="1478816354583" duration="12833000" />
       <workItem from="1478850828603" duration="118000" />
       <workItem from="1478888184655" duration="6728000" />
-      <workItem from="1478899822535" duration="11731000" />
+      <workItem from="1478899822535" duration="12102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93507000" />
+    <option name="totallyTimeSpent" value="93878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -828,14 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/game.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/tictactoe">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -852,26 +847,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/game_rules.rb">
+    <entry file="file://$PROJECT_DIR$/lib/player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+        <state relative-caret-position="780">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/human.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="480">
           <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/player.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -884,18 +871,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
+    <entry file="file://$PROJECT_DIR$/lib/match_rules.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/one_player.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/two_player.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/game.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
           <folding />
         </state>
       </provider>
