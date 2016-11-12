@@ -2,5 +2,4 @@
 require_relative '../config/environment.rb'
 
 game = Game.new
-game.gets_players
-game.play
+game.new_game

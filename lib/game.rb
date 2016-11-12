@@ -23,6 +23,7 @@ class Game
   end
 
   def play
+    puts ''
     puts "Let's play!"
     sleep(1)
     puts ''
@@ -31,8 +32,7 @@ class Game
     @match.turn until @match.over?
     won_or_draw
     return unless play_again?
-    gets_players
-    play
+    re_match? ? re_match : new_game
   end
 
   def won_or_draw
@@ -46,5 +46,26 @@ class Game
     return true if input == 'y'
     return false if input == 'n'
     play_again?
+  end
+
+  def re_match?
+    puts ''
+    puts 'Rematch? (y/n)'
+    input = gets.strip.downcase
+    return true if input == 'y'
+    return false if input == 'n'
+    re_match?
+  end
+
+  def re_match
+    @match.board.reset
+    @match.player_one.token_set.clear
+    @match.player_two.token_set.clear
+    play
+  end
+
+  def new_game
+    gets_players
+    play
   end
 end

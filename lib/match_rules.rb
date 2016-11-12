@@ -3,7 +3,7 @@ require_relative '../config/environment.rb'
 # The GameRules module defines the basic rules of the game
 # including winning conditions, moves, draw conditions, and more
 class MatchRules
-  attr_reader :board
+  attr_accessor :board, :player_one, :player_two
 
   WIN_COMBINATIONS = [
       [0, 1, 2], # top row
@@ -26,7 +26,6 @@ class MatchRules
 #{@player_one.name}(#{@player_one.token})
 vs.
 #{@player_two.name}(#{@player_two.token})!"
-    puts ''
     sleep(2)
   end
 
