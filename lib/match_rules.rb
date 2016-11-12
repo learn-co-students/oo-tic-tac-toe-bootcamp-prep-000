@@ -1,3 +1,5 @@
+require_relative '../config/environment.rb'
+
 # The GameRules module defines the basic rules of the game
 # including winning conditions, moves, draw conditions, and more
 class MatchRules

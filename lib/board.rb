@@ -1,3 +1,5 @@
+require_relative '../config/environment.rb'
+
 # The Board class defines the game board itself
 # including the layout and current game status
 class Board < Array

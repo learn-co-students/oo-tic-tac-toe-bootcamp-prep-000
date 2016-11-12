@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
-require 'pry'
-require_relative '../lib/two_player.rb'
-require_relative '../lib/one_player.rb'
-require_relative '../lib/game.rb'
+require_relative '../config/environment.rb'
 
 game = Game.new
 game.gets_players

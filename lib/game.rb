@@ -1,5 +1,4 @@
-require_relative '../lib/two_player.rb'
-require_relative '../lib/one_player.rb'
+require_relative '../config/environment.rb'
 
 # The Game class is the actual game object that controls the flow
 # of one or more game(s) of Tic Tac Toe

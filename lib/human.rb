@@ -1,4 +1,4 @@
-require_relative 'player.rb'
+require_relative '../config/environment.rb'
 
 # The human class is a subclass of player.
 # It is instantiated within a one or two player game.

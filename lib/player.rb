@@ -1,4 +1,4 @@
-require_relative 'match_rules.rb'
+require_relative '../config/environment.rb'
 
 # The Player class is the basic player object
 # setting player attributes and game logic to determine

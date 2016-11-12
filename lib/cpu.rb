@@ -1,4 +1,4 @@
-require_relative 'player.rb'
+require_relative '../config/environment.rb'
 
 # The CPU class is a subclass of Player. It is the script that
 # governs the way the computer plays the game against a human player,

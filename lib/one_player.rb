@@ -1,7 +1,4 @@
-require_relative 'cpu.rb'
-require_relative 'board.rb'
-require_relative 'human.rb'
-require_relative 'match_rules.rb'
+require_relative '../config/environment.rb'
 
 # The OnePlayer class is the set of specific rules and scripts
 # governing a one player human v. cpu game
