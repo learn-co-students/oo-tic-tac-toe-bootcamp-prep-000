@@ -20,12 +20,12 @@ class Human < Player
     sleep(1)
   end
 
-  def sets_token(opposition)
-    if opposition.nil?
+  def sets_token(opponent)
+    if opponent.nil?
       gets_token
       puts_token
     else
-      @token = if opposition.token == 'X'
+      @token = if opponent.token == 'X'
                  'O'
                else
                  'X'

@@ -33,7 +33,7 @@ class Player
     index.between?(0, 8) && !square_taken?(board, index)
   end
 
-  def win_possible?(opposition)
+  def win_possible?(opponent)
     win_combos = GameRules::WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
@@ -42,7 +42,7 @@ class Player
           win_combo -= [win_index]
           next unless win_combo.length == 1
           @winning_index = win_combo[0]
-          next unless opposition.token_set.none? { |i| i == @winning_index }
+          next unless opponent.token_set.none? { |i| i == @winning_index }
           return true
         end
       end
