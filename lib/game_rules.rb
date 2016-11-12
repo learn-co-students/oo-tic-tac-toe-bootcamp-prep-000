@@ -28,20 +28,6 @@ vs.
     sleep(2)
   end
 
-  def move(board, position, token)
-    index = position.to_i - 1
-    board[index] = token
-  end
-
-  def square_taken?(board, index)
-    !(board[index].nil? || board[index] == ' ')
-  end
-
-  def valid_move?(board, position)
-    index = position.to_i - 1
-    index.between?(0, 8) && !square_taken?(board, index)
-  end
-
   def status
     @board.each_with_index do |cell, index|
       if cell == @player_one.token

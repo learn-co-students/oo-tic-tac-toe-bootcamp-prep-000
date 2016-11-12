@@ -14,8 +14,8 @@ class CPU < Player
   end
 
   def best_move(opponent)
-    return winning_position if win_possible?(opponent)
-    return opponent.winning_position if opponent.win_possible?(self)
+    return winning_index if win_possible?(opponent)
+    return opponent.winning_index if opponent.win_possible?(self)
     return rand(9) unless opponent.token_set.length == 1
     opponent.token_set[0] == 4 ? 0 : 4
   end
@@ -23,13 +23,10 @@ class CPU < Player
   def go(board, opponent)
     input = best_move(opponent) + 1
     if valid_move?(board, input)
-      move(board, input, @token)
       puts "#{@name}: I'll pick #{input}."
       sleep(1)
-      puts input.to_s
-      puts ''
-      board.display
-      puts ''
+      puts input
+      move(board, input, @token)
     else
       go(board, opponent)
     end

@@ -4,8 +4,7 @@ require_relative 'game_rules.rb'
 # setting player attributes and game logic to determine
 # a winning play
 class Player
-  include GameRules
-  attr_accessor :name, :token, :token_set, :winning_position
+  attr_accessor :name, :token, :token_set, :winning_index
 
   def initialize
     input = gets.strip
@@ -17,6 +16,23 @@ class Player
     @token_set = []
   end
 
+  def move(board, position, token)
+    index = position.to_i - 1
+    board[index] = token
+    puts ''
+    board.display
+    puts ''
+  end
+
+  def square_taken?(board, index)
+    !(board[index].nil? || board[index] == ' ')
+  end
+
+  def valid_move?(board, position)
+    index = position.to_i - 1
+    index.between?(0, 8) && !square_taken?(board, index)
+  end
+
   def win_possible?(opposition)
     win_combos = GameRules::WIN_COMBINATIONS
     win_combos.each do |win_combo|
@@ -25,8 +41,8 @@ class Player
           next unless win_index == token
           win_combo -= [win_index]
           next unless win_combo.length == 1
-          @winning_position = win_combo[0]
-          next unless opposition.token_set.none? { |i| i == @winning_position }
+          @winning_index = win_combo[0]
+          next unless opposition.token_set.none? { |i| i == @winning_index }
           return true
         end
       end

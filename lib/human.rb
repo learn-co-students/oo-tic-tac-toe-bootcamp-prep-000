@@ -38,9 +38,6 @@ class Human < Player
     input = gets.strip
     if valid_move?(board, input)
       move(board, input, @token)
-      puts ''
-      board.display
-      puts ''
     else
       go(board, '')
     end
