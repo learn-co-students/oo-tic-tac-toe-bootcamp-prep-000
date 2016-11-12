@@ -29,16 +29,6 @@ vs.
     sleep(2)
   end
 
-  def status
-    @board.each_with_index do |cell, index|
-      if cell == @player_one.token
-        @player_one.token_set.push(index)
-      elsif cell == @player_two.token
-        @player_two.token_set.push(index)
-      end
-    end
-  end
-
   def turn_count
     occupied_cells = @board.select { |cell| cell == 'X' || cell == 'O' }
     occupied_cells.length
@@ -71,7 +61,6 @@ vs.
   end
 
   def turn
-    status
     current_player.go(@board, opponent)
   end
 

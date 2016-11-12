@@ -13,6 +13,7 @@ class Player
             else
               'HAL'
             end
+    puts @name if @name == 'HAL'
     @token_set = []
   end
 

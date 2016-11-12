@@ -38,6 +38,7 @@ class Human < Player
     input = gets.strip
     if valid_move?(board, input)
       move(board, input, @token)
+      @token_set.push(input.to_i - 1)
     else
       go(board, '')
     end

@@ -27,6 +27,7 @@ class CPU < Player
       sleep(1)
       puts input
       move(board, input, @token)
+      @token_set.push(input.to_i - 1)
     else
       go(board, opponent)
     end
