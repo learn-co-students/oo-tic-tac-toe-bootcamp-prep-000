@@ -1,0 +1,13 @@
+current directory: /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/json-2.0.2/ext/json
+/Users/matthewborg/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20161111-21238-zxz8da.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/json-2.0.2/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/json-2.0.2/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/matthewborg/developing/ruby-CLI-apps/OOTicTacToe/vendor/bundle/gems/json-2.0.2/ext/json
+make "DESTDIR=" install
