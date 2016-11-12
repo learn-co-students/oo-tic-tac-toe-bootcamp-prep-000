@@ -19,6 +19,10 @@ class Player
   def move(board, position, token)
     index = position.to_i - 1
     board[index] = token
+    display_board(board)
+  end
+
+  def display_board(board)
     puts ''
     board.display
     puts ''
