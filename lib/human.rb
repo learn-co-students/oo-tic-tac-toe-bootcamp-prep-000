@@ -35,10 +35,10 @@ class Human < Player
 
   def go(board, _)
     puts "#{@name}, please enter 1-9:"
-    input = gets.strip
-    if valid_move?(board, input)
-      move(board, input, @token)
-      @token_set.push(input.to_i - 1)
+    index = gets.strip.to_i - 1
+    if valid_move?(board, index)
+      move(board, index, @token)
+      @token_set.push(index)
     else
       go(board, '')
     end

@@ -13,16 +13,23 @@ class CPU < Player
              end
   end
 
-  def best_move(opponent)
+  def best_move(board, opponent)
     return winning_index if win_possible?(opponent)
     return opponent.winning_index if opponent.win_possible?(self)
-    return best_early_move_for_player_two(opponent) unless is_player_one?
+    return best_early_move_for_player_two(board, opponent) unless is_player_one?
     best_early_move_for_player_one(opponent)
   end
 
-  def best_early_move_for_player_two(opponent)
-    return rand(9) unless @token_set.length == 0
-    opponent.token_set[0] == CENTER ? CORNERS.sample : CENTER
+  def best_early_move_for_player_two(board, opponent)
+    if @token_set.length == 0
+      opponent.token_set[0] == CENTER ? CORNERS.sample : CENTER
+    elsif CORNERS.all? { |i| valid_move?(board, i) }
+      CORNERS.sample
+    elsif SIDES.all? { |i| valid_move?(board, i) }
+      SIDES.sample unless @token_set.length == 0
+    else
+      rand(9)
+    end
   end
 
   def best_early_move_for_player_one(opponent)
@@ -33,13 +40,13 @@ class CPU < Player
   end
 
   def go(board, opponent)
-    input = best_move(opponent) + 1
-    if valid_move?(board, input)
-      puts "#{@name}: I'll pick #{input}."
+    index = best_move(board, opponent)
+    if valid_move?(board, index)
+      puts "#{@name}: I'll pick #{index + 1}."
       sleep(1)
-      puts input
-      move(board, input, @token)
-      @token_set.push(input.to_i - 1)
+      puts index + 1
+      move(board, index, @token)
+      @token_set.push(index)
     else
       go(board, opponent)
     end

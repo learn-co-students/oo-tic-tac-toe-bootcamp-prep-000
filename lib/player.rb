@@ -25,8 +25,7 @@ class Player
     @player_num == 1
   end
 
-  def move(board, position, token)
-    index = position.to_i - 1
+  def move(board, index, token)
     board[index] = token
     display_board(board)
   end
@@ -41,8 +40,7 @@ class Player
     !(board[index].nil? || board[index] == ' ')
   end
 
-  def valid_move?(board, position)
-    index = position.to_i - 1
+  def valid_move?(board, index)
     index.between?(0, 8) && !square_taken?(board, index)
   end
 
