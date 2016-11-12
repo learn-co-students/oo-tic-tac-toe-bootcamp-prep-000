@@ -2,7 +2,7 @@ require_relative '../config/environment.rb'
 
 # The TwoPlayer class is the set of specific rules and scripts
 # governing a one player human v. human game
-class TwoPlayer < MatchRules
+class TwoPlayer < Match
   def init_players
     puts 'Player 1, please enter your name.'
     @player_one = Human.new

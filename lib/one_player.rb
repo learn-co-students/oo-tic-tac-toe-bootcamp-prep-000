@@ -2,7 +2,7 @@ require_relative '../config/environment.rb'
 
 # The OnePlayer class is the set of specific rules and scripts
 # governing a one player human v. cpu game
-class OnePlayer < MatchRules
+class OnePlayer < Match
   def cpu_init
     puts "Hello #{@player_one.name}, my name is HAL.
 If you're fine with calling me HAL, just press <return>.

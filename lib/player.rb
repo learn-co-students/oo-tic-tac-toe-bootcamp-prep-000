@@ -34,7 +34,7 @@ class Player
   end
 
   def win_possible?(opponent)
-    win_combos = MatchRules::WIN_COMBINATIONS
+    win_combos = Match::WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
         @token_set.each do |token|
