@@ -22,10 +22,6 @@ class CPU < Player
 
   def go(board, opponent)
     input = best_move(opponent) + 1
-    make_move(board, opponent, input)
-  end
-
-  def make_move(board, opponent, input)
     if valid_move?(board, input)
       move(board, input, @token)
       puts "#{@name}: I'll pick #{input}."
