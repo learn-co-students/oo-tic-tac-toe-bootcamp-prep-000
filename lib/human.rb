@@ -14,9 +14,7 @@ class Human < Player
   end
 
   def puts_token
-    puts ''
-    puts "You have selected #{@token}."
-    puts ''
+    puts '', "You have selected #{@token}.", ''
     sleep(1)
   end
 

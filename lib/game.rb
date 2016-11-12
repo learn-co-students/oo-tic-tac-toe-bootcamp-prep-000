@@ -10,8 +10,7 @@ class Game
   end
 
   def gets_players
-    puts ''
-    puts 'One or two players? (press 1 or 2 and hit <return>)'
+    puts '', 'One or two players? (press 1 or 2 and hit <return>)'
     @players = gets.strip
     @match = if @players == '1'
                OnePlayer.new
@@ -31,8 +30,7 @@ class Game
   end
 
   def display_board
-    puts ''
-    puts "Let's play!"
+    puts '', "Let's play!"
     sleep(1)
     puts ''
     @match.board.display
@@ -53,8 +51,7 @@ class Game
   end
 
   def re_match?
-    puts ''
-    puts 'Rematch? (y/n)'
+    puts '', 'Rematch? (y/n)'
     input = gets.strip.downcase
     return true if input == 'y' || input == ''
     return false if input == 'n'

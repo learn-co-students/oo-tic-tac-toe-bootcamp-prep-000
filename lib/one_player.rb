@@ -31,16 +31,14 @@ class OnePlayer < Match
     cpu_greeting(@player_two)
     @player_one = CPU.new
     @player_one.sets_token(@player_two)
-    puts ''
-    puts "Thanks for naming me #{@player_one.name}, #{@player_two.name}."
+    puts '', "Thanks for naming me #{@player_one.name}, #{@player_two.name}."
   end
 
   def init_cpu_as_player_two
     cpu_greeting(@player_one)
     @player_two = CPU.new
     @player_two.sets_token(@player_one)
-    puts ''
-    puts "Thanks for naming me #{@player_two.name}, #{@player_one.name}."
+    puts '', "Thanks for naming me #{@player_two.name}, #{@player_one.name}."
   end
 
   def cpu_greeting(human)
