@@ -16,27 +16,25 @@ class CPU < Player
   def best_move(board, opponent)
     return winning_index if win_possible?(opponent)
     return opponent.winning_index if opponent.win_possible?(self)
-    return best_early_move_for_player_two(board, opponent) unless is_player_one?
-    best_early_move_for_player_one(opponent)
+    return best_early_move_for_player_two(board, opponent) unless player_one?
+    best_early_move_for_player_one(board, opponent)
   end
 
   def best_early_move_for_player_two(board, opponent)
-    if @token_set.length == 0
-      opponent.token_set[0] == CENTER ? CORNERS.sample : CENTER
-    elsif CORNERS.all? { |i| valid_move?(board, i) }
-      CORNERS.sample
-    elsif SIDES.all? { |i| valid_move?(board, i) }
-      SIDES.sample unless @token_set.length == 0
-    else
-      rand(9)
+    if @token_set.empty?
+      return opponent.token_set[0] == CENTER ? CORNERS.sample : CENTER
     end
+    return CORNERS.sample if CORNERS.all? { |i| valid_move?(board, i) }
+    return SIDES.sample if SIDES.all? { |i| valid_move?(board, i) }
+    rand(9)
   end
 
-  def best_early_move_for_player_one(opponent)
-    return CORNERS.sample if @token_set.length == 0
+  def best_early_move_for_player_one(board, opponent)
+    return CORNERS.sample if @token_set.empty?
     opposite_corner = (@token_set[0] - 8).abs
-    return opposite_corner if opponent.token_set[0] != opposite_corner
-    CORNERS.sample
+    return opposite_corner if valid_move?(board, opposite_corner)
+    return CORNERS.sample if CORNERS.any? { |i| valid_move?(board, i) }
+    rand(9)
   end
 
   def go(board, opponent)

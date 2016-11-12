@@ -4,8 +4,14 @@ require_relative '../config/environment.rb'
 # setting player attributes and game logic to determine
 # a winning play
 class Player
-  attr_accessor :name, :token, :token_set, :winning_index, :player_num, :opponent
+  attr_accessor :name,
+                :token,
+                :token_set,
+                :winning_index,
+                :player_num,
+                :opponent
 
+  WIN_COMBINATIONS = Match::WIN_COMBINATIONS
   CORNERS = Match::CORNERS
   SIDES = Match::SIDES
   CENTER = Match::CENTER
@@ -21,7 +27,7 @@ class Player
     @token_set = []
   end
 
-  def is_player_one?
+  def player_one?
     @player_num == 1
   end
 
@@ -45,7 +51,7 @@ class Player
   end
 
   def win_possible?(opponent)
-    win_combos = Match::WIN_COMBINATIONS
+    win_combos = WIN_COMBINATIONS
     win_combos.each do |win_combo|
       win_combo.each do |win_index|
         @token_set.each do |token|

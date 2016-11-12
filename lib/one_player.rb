@@ -54,7 +54,7 @@ type my new name and press <return>."
     puts 'Do you want to go first? (y/n)'
     input = gets.strip.downcase
     puts ''
-    return true if (input == 'y' || input == '')
+    return true if input == 'y' || input == ''
     return false if input == 'n'
     human_goes_first?
   end

@@ -20,7 +20,6 @@ class Match
   SIDES = [1, 3, 5, 7].freeze
   CENTER = 4
 
-
   def initialize
     @board = Board.new
     puts ''
