@@ -16,8 +16,20 @@ class CPU < Player
   def best_move(opponent)
     return winning_index if win_possible?(opponent)
     return opponent.winning_index if opponent.win_possible?(self)
-    return rand(9) unless opponent.token_set.length == 1
-    opponent.token_set[0] == 4 ? 0 : 4
+    return best_early_move_for_player_two(opponent) unless is_player_one?
+    best_early_move_for_player_one(opponent)
+  end
+
+  def best_early_move_for_player_two(opponent)
+    return rand(9) unless @token_set.length == 0
+    opponent.token_set[0] == CENTER ? CORNERS.sample : CENTER
+  end
+
+  def best_early_move_for_player_one(opponent)
+    return CORNERS.sample if @token_set.length == 0
+    opposite_corner = (@token_set[0] - 8).abs
+    return opposite_corner if opponent.token_set[0] != opposite_corner
+    CORNERS.sample
   end
 
   def go(board, opponent)

@@ -16,11 +16,22 @@ class Match
       [6, 4, 2] # bottom left to top right diagonal
   ].freeze
 
+  CORNERS = [0, 2, 6, 8].freeze
+  SIDES = [1, 3, 5, 7].freeze
+  CENTER = 4
+
+
   def initialize
     @board = Board.new
     puts ''
     init_players
     puts ''
+    @player_one.player_num = 1
+    @player_two.player_num = 2
+    display_match_up
+  end
+
+  def display_match_up
     sleep(1)
     puts "New match:
 #{@player_one.name}(#{@player_one.token})

@@ -4,7 +4,11 @@ require_relative '../config/environment.rb'
 # setting player attributes and game logic to determine
 # a winning play
 class Player
-  attr_accessor :name, :token, :token_set, :winning_index
+  attr_accessor :name, :token, :token_set, :winning_index, :player_num, :opponent
+
+  CORNERS = Match::CORNERS
+  SIDES = Match::SIDES
+  CENTER = Match::CENTER
 
   def initialize
     input = gets.strip
@@ -15,6 +19,10 @@ class Player
             end
     puts @name if @name == 'HAL'
     @token_set = []
+  end
+
+  def is_player_one?
+    @player_num == 1
   end
 
   def move(board, position, token)

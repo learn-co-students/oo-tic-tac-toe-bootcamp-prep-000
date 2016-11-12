@@ -47,7 +47,7 @@ class Game
   def play_again?
     puts 'Play again? (y/n)'
     input = gets.strip.downcase
-    return true if input == 'y'
+    return true if (input == 'y' || input == '')
     return false if input == 'n'
     play_again?
   end
@@ -56,7 +56,7 @@ class Game
     puts ''
     puts 'Rematch? (y/n)'
     input = gets.strip.downcase
-    return true if input == 'y'
+    return true if (input == 'y' || input == '')
     return false if input == 'n'
     re_match?
   end
