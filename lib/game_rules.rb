@@ -42,12 +42,12 @@ vs.
     index.between?(0, 8) && !square_taken?(board, index)
   end
 
-  def status(board, player1, player2)
-    board.each_with_index do |cell, index|
-      if cell == player1.token
-        player1.token_set.push(index)
-      elsif cell == player2.token
-        player2.token_set.push(index)
+  def status
+    @board.each_with_index do |cell, index|
+      if cell == @player_one.token
+        @player_one.token_set.push(index)
+      elsif cell == @player_two.token
+        @player_two.token_set.push(index)
       end
     end
   end
@@ -84,6 +84,7 @@ vs.
   end
 
   def turn
+    status
     current_player.go(@board, opponent)
   end
 

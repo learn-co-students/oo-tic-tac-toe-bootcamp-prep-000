@@ -13,8 +13,7 @@ class CPU < Player
              end
   end
 
-  def best_move(board, opponent)
-    status(board, self, opponent)
+  def best_move(opponent)
     return winning_position if win_possible?(opponent)
     return opponent.winning_position if opponent.win_possible?(self)
     return rand(9) unless opponent.token_set.length == 1
@@ -22,7 +21,7 @@ class CPU < Player
   end
 
   def go(board, opponent)
-    input = best_move(board, opponent) + 1
+    input = best_move(opponent) + 1
     make_move(board, opponent, input)
   end
 
