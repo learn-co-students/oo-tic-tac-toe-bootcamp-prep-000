@@ -23,16 +23,20 @@ class Game
   end
 
   def play
+    display_board
+    @match.turn until @match.over?
+    won_or_draw
+    return unless play_again?
+    re_match? ? re_match : new_game
+  end
+
+  def display_board
     puts ''
     puts "Let's play!"
     sleep(1)
     puts ''
     @match.board.display
     puts ''
-    @match.turn until @match.over?
-    won_or_draw
-    return unless play_again?
-    re_match? ? re_match : new_game
   end
 
   def won_or_draw
