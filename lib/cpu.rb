@@ -17,7 +17,7 @@ class CPU < Player
     return winning_index if win_possible?(opponent)
     return opponent.winning_index if opponent.win_possible?(self)
     return best_early_move_for_player_two(board, opponent) unless player_one?
-    best_early_move_for_player_one(board, opponent)
+    best_early_move_for_player_one(board)
   end
 
   def best_early_move_for_player_two(board, opponent)
@@ -29,7 +29,7 @@ class CPU < Player
     rand(9)
   end
 
-  def best_early_move_for_player_one(board, opponent)
+  def best_early_move_for_player_one(board)
     return CORNERS.sample if @token_set.empty?
     opposite_corner = (@token_set[0] - 8).abs
     return opposite_corner if valid_move?(board, opposite_corner)
