@@ -30,11 +30,11 @@ vs.
 
   def move(board, position, token)
     index = position.to_i - 1
-    board.status[index] = token
+    board[index] = token
   end
 
   def square_taken?(board, index)
-    !(board.status[index].nil? || board.status[index] == ' ')
+    !(board[index].nil? || board[index] == ' ')
   end
 
   def valid_move?(board, position)
@@ -43,7 +43,7 @@ vs.
   end
 
   def status(board, player1, player2)
-    board.status.each_with_index do |cell, index|
+    board.each_with_index do |cell, index|
       if cell == player1.token
         player1.token_set.push(index)
       elsif cell == player2.token
@@ -53,14 +53,14 @@ vs.
   end
 
   def turn_count
-    occupied_cells = @board.status.select { |cell| cell == 'X' || cell == 'O' }
+    occupied_cells = @board.select { |cell| cell == 'X' || cell == 'O' }
     occupied_cells.length
   end
 
   def won?
     WIN_COMBINATIONS.each do |win_combination|
-      if  win_combination.all? { |index| @board.status[index] == 'X' } ||
-          win_combination.all? { |index| @board.status[index] == 'O' }
+      if  win_combination.all? { |index| @board[index] == 'X' } ||
+          win_combination.all? { |index| @board[index] == 'O' }
         return win_combination
       end
     end
@@ -68,7 +68,7 @@ vs.
   end
 
   def full?
-    @board.status.all? { |i| i != ' ' }
+    @board.all? { |i| i != ' ' }
   end
 
   def draw?
@@ -80,7 +80,7 @@ vs.
   end
 
   def winning_token
-    @board.status[won?.first]
+    @board[won?.first]
   end
 
   def turn

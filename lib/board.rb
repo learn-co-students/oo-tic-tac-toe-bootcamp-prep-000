@@ -1,23 +1,22 @@
 # The Board class defines the game board itself
 # including the layout and current game status
-class Board
+class Board < Array
   def initialize
-    @board = Array.new(9, ' ')
+    9.times do
+      push(' ')
+    end
   end
 
   def display
-    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+    puts " #{self[0]} | #{self[1]} | #{self[2]} "
     puts '-----------'
-    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+    puts " #{self[3]} | #{self[4]} | #{self[5]} "
     puts '-----------'
-    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+    puts " #{self[6]} | #{self[7]} | #{self[8]} "
   end
 
   def reset
+    clear
     initialize
-  end
-
-  def status
-    @board
   end
 end
