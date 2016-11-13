@@ -17,36 +17,34 @@ def move(position, char = "X")
 @board[position-1] = char
 end
 
-def position_taken?(index)
-  if @board[index] == " " || @board[index] == "" || @board[index] == nil
+def position_taken?(position)
+  if @board[position] == " " || @board[position] == "" || @board[position] == nil
     return false
   else
     return true
   end
 end
 
-def valid_move?(index)
-  if index.between?(0, 8) && !position_taken?(index)
-    return true
-  else
-    return false
-  end
+def valid_move?(user_input)
+  index= input_to_index(user_input)
+  index.to_i.between?(0, 8) && !position_taken?(index)
 end
 
 def input_to_index(user_input)
-index= user_input.to_i - 1
+position= user_input.to_i - 1
 end
 
 def turn
   puts "Please enter 1-9:"
   user_input= gets.strip
-  index= input_to_index(user_input)
-  if valid_move?(index)
-    move(index, current_player)
+
+  if valid_move?(user_input)
+    move(user_input.to_i, current_player)
     display_board
   else
       turn
   end
+
 end
 
 def turn_count
