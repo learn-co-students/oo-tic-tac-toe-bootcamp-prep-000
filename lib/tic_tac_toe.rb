@@ -39,9 +39,10 @@ class TicTacToe
   def valid_move?(position)
     index = position.to_i - 1
     !position_taken?(index) && index.between?(0, 8)
-  end    
+  end
 
   def turn
+    display_board
     puts "Please enter 1-9"
     input = gets.strip
     position = input.to_i
@@ -108,7 +109,6 @@ class TicTacToe
     if draw? == true
       puts "Cats Game!"
     elsif won? != false
-      winner = self.winner
       puts "Congratulations #{winner}!"
     end
   end
