@@ -89,13 +89,8 @@ class TicTacToe
     end
     if won?
       puts "Congratulations #{winner()}!"
-      return
     elseif draw?
-      puts "It's a draw!"
-      return
-    else
       puts "Cats Game!"
-      return
     end
   end
 
