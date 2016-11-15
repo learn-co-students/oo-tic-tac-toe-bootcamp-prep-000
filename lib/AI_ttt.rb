@@ -29,7 +29,6 @@ class AiTTT < TicTacToe
     if valid_move?(input)
       move(input, current_player)
       @trav = @trav.next_moves.find {|pos| pos.new_index == input - 1}
-      display_board
     else
       turn
     end
@@ -38,8 +37,9 @@ class AiTTT < TicTacToe
   def ai_play
     puts "Would you like to go first?     y/n:"
     $x_first = gets.strip =~ /[yY]/ ? false : true
+    display_board if !$x_first
     until won? || draw? || over?
-      ($x_first && current_player == 'X') || (!$x_first && current_player == 'O') ? computer_turn : turn
+      current_player == 'X' ? computer_turn : turn
     end
     puts "Congratulations #{winner}!" if won?
     puts "Cats Game!" if draw?
