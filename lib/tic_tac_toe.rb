@@ -24,6 +24,7 @@ def display_board
 end
 
 def move(index, char = "X")
+  index = (index).to_i - 1
   @board[index]=char
 end
 
@@ -32,6 +33,7 @@ def position_taken?(index)
 end
 
 def valid_move?(index)
+  index = (index.to_i - 1)
      !position_taken?(index) && index.between?(0,8)
 end
 
@@ -40,8 +42,8 @@ def turn
   position = gets.strip
   @index = (position.to_i - 1)
     #binding.pry
-  if valid_move?(@index)
-    move(@index,current_player)
+  if valid_move?(position)
+    move(position,current_player)
     display_board
   else
     turn
