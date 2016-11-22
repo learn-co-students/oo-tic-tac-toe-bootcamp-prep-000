@@ -37,6 +37,7 @@ class TicTacToe
   end
 
   def turn
+    display_board
     puts "Please enter 1-9:"
     position = gets.strip
     if valid_move?(position)
@@ -103,7 +104,6 @@ class TicTacToe
   end
 
   def play
-    display_board
     while !over?
         turn
       end
