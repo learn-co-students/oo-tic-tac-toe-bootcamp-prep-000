@@ -73,7 +73,7 @@ class TicTacToe
     is_valid_move = false
     while is_valid_move == false do
       input = gets.strip
-      index = input_to_index(input)
+      index = input
       is_valid_move = valid_move?(index)
     end
     piece = @board.count{ |x| x == " "} % 2 == 0 ? "O" : "X"

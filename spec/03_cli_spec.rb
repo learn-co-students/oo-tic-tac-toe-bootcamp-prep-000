@@ -1,4 +1,3 @@
-<<-DOC
 describe "bin/tictactoe" do
   it 'instantiates an instance of TicTacToe' do
     game = TicTacToe.new
@@ -20,4 +19,3 @@ describe "bin/tictactoe" do
     run_file("./bin/tictactoe")
   end
 end
-DOC
