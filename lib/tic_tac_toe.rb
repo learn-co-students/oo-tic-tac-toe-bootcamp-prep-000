@@ -7,14 +7,14 @@ class TicTacToe
   WIN_COMBINATIONS = [
   [0,1,2], # Top row 0
   [3,4,5], # Middle row 1
-  [6,7,8], # bottom row 2
+  [6,7,8], # Bottom row 2
 
-  [0,3,6], # left column 3
-  [1,4,7], # middle column 4
-  [2,5,8], # right col 5
+  [0,3,6], # Left column 3
+  [1,4,7], # Middle column 4
+  [2,5,8], # Right col 5
 
-  [0,4,8], # right diagonal 6
-  [2,4,6] # left diagonal 7
+  [0,4,8], # Right diagonal 6
+  [2,4,6]  # Left diagonal 7
   ]
 #####################################################
 def position_taken?(index)  #Checks to see if index is empty
@@ -84,7 +84,7 @@ def valid_move?(index)
 end
 #####################################################
 def full?()
-	if @board.include?(" ")       #if the board has any empty spaces, it's not full
+	if @board.include?(" ")           #if the board has any empty spaces, it's not full
 		return false
 	end
 	return true
@@ -102,22 +102,18 @@ def turn()
 end
 #####################################################
 def draw?()
-	if full?() && !won?()        # if board’s full and no one’s won
-		return true                # it’s a draw
-	else
-		return false
-end
+	full?() && !won?()                #if board’s full and no one’s won, it's a draw.
 end
 #####################################################
 def over?()
-	if full?()                   #if the board's full
-		return true                #the game's over
+	if full?()                        #if the board's full
+		return true                     #the game's over
 	end
-return false                   # >_> otherwise it's not
+return false                        # >_> otherwise it's not
 end
 #####################################################
 def winner()
 victor_krum = won?() ? @board[won?[0]] : nil
-return victor_krum            #even though he got Imperiused and didn't win the Triwizard Tournament
+return victor_krum                 #even though he got Imperiused and didn't win the Triwizard Tournament
 end
 end
