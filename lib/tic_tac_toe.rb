@@ -113,7 +113,7 @@ return false                        # >_> otherwise it's not
 end
 #####################################################
 def winner()
-victor_krum = won?() ? @board[won?[0]] : false
+victor_krum = won?() ? @board[won?[0]] : nil
 return victor_krum                 #even though he got Imperiused and didn't win the Triwizard Tournament
 end
 end
