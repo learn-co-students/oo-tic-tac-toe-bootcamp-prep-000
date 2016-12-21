@@ -26,7 +26,8 @@ end
 #####################################################
 def won?() #Fixed! Switched to WIN_COMBINATIONS.each do |x| :)
   WIN_COMBINATIONS.each do |i|
-    if @board[i[0]] == "X" && @board[i[1]] == "X" && @board[i[2]] == "X" || @board[i[0]] == "O" && @board[i[1]] == "O" && @board[i[2]] == "O"
+    if @board[i[0]] == "X" && @board[i[1]] == "X" && @board[i[2]] == "X" \n
+      || @board[i[0]] == "O" && @board[i[1]] == "O" && @board[i[2]] == "O"
       return i
     end
   end
