@@ -60,8 +60,7 @@ end
     end
         puts "Cats Game!"
   end
-  #####################################################
-
+#####################################################
   def display_board()
   puts [" #{@board[0]} | #{@board[1]} | #{@board[2]} "]
   puts ["-----------"]
@@ -84,14 +83,12 @@ def valid_move?(index)
   index.between?(0,8) && !position_taken?(index)
 end
 #####################################################
-
 def full?()
 	if @board.include?(" ")       #if the board has any empty spaces, it's not full
 		return false
 	end
 	return true
 end
-
 #####################################################
 def turn()
   puts "Please enter 1-9:"
