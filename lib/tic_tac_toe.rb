@@ -34,11 +34,14 @@ class TicTacToe
   end
 
   def valid_move?(index)
+<<<<<<< HEAD
     begin
       index = Integer(index)
     rescue Exception
       return false
     end
+=======
+>>>>>>> e84d83ee4ea427944cf5282d0bf57dda2463dfbb
     index.between?(0,8) && !position_taken?(index)
   end
 
@@ -82,15 +85,22 @@ class TicTacToe
     end
   end
 
+<<<<<<< HEAD
   def input_to_index(input)
     index = input.to_i - 1
   end
 
+=======
+>>>>>>> e84d83ee4ea427944cf5282d0bf57dda2463dfbb
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
+<<<<<<< HEAD
     if valid_move?(index)
+=======
+    if valid_move?(board, index)
+>>>>>>> e84d83ee4ea427944cf5282d0bf57dda2463dfbb
       move(index,current_player )
       display_board
     else
@@ -100,6 +110,7 @@ class TicTacToe
 
   def play
     while !(over?)
+    while !(over? )
       turn
    end
    if(won? )
@@ -107,6 +118,5 @@ class TicTacToe
    else
      puts "Cats Game!"
    end
-   
   end
 end
