@@ -124,7 +124,7 @@ describe './lib/tic_tac_toe.rb' do
       end
   end
 
-=begin  describe '#turn_count' do
+  describe '#turn_count' do
       it 'counts occupied positions' do
         game = TicTacToe.new
         board = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
@@ -260,6 +260,5 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.winner).to be_nil
       end
     end
-=end
    end
  end
