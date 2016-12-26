@@ -52,7 +52,8 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
-    describe '#move' do
+
+ describe '#move' do
       it 'allows "X" player in the top left and "O" in the middle' do
         game = TicTacToe.new
         game.move(1, "X")
@@ -64,7 +65,7 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
-    describe '#position_taken?' do
+   describe '#position_taken?' do
       it 'returns true/false based on position in board' do
         game = TicTacToe.new
         board = ["X", " ", " ", " ", " ", " ", " ", " ", "O"]
@@ -101,7 +102,8 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
-    describe '#turn' do
+
+   describe '#turn' do
       it 'makes valid moves and displays the board' do
         game = TicTacToe.new
         allow($stdout).to receive(:puts)
@@ -120,9 +122,9 @@ describe './lib/tic_tac_toe.rb' do
 
         game.turn
       end
-    end
+  end
 
-    describe '#turn_count' do
+  describe '#turn_count' do
       it 'counts occupied positions' do
         game = TicTacToe.new
         board = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
@@ -131,6 +133,8 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.turn_count).to eq(3)
       end
     end
+
+
 
     describe '#current_player' do
       it 'returns the correct player, X, for the third move' do
@@ -178,7 +182,8 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
-    describe '#draw?' do
+
+  describe '#draw?' do
       it 'returns true for a draw' do
         game = TicTacToe.new
         board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
@@ -255,5 +260,5 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.winner).to be_nil
       end
     end
-  end
-end
+   end
+ end
