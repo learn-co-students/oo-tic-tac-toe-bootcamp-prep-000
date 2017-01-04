@@ -1,9 +1,10 @@
-class TicTacToe
+class TicTacToe # all methods below are within class TicTacToe
+
   def initialize(board = nil)
     @board = board || Array.new(9, " ") # Creates an array with 9 elements filled with " "
-    @index
-    @token = "X" || "O" ### is this correct????
-  end
+    # need more global variables here, within initialize method??
+  end # end of method #initialize
+
 
   # Define your WIN_COMBINATIONS constant (note: constants start with capital letters)
   WIN_COMBINATIONS = [
@@ -17,23 +18,6 @@ class TicTacToe
     [2,4,6], # diagonal right to left corner
   ]
 
-  #def move(board, index, token) # "X" is the default value for the token parameter --- we don't want a default value here
-  def move # "X" is the default value for the token parameter --- we don't want a default value here
-    @board[index].replace(@token) # replace board[index] (the position on the board) with the token
-    #board[index].replace(token) # replace board[index] (the position on the board) with the token
-  end #end of method
-
-  def position_taken?
-    !(@board[index].nil? || @board[index] == " ")
-  end
-
-  def current_player
-    turn_count % 2 == 0 ? "X" : "O"
-  end
-
-  def turn_count
-    @board.count{|token| token == "X" || token == "O"}
-  end
 
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
@@ -42,6 +26,59 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
+#this is right (or at least it is for other student), but need to get other methods working::::
+  #def move(index, current_player = "X") # "X" is the default value for the current player (got this code from another learn student)
+
+  def move(index, current_player) # "X" is the default value for the current player (got this code from another learn student)
+    @board[index] = current_player #got this code from another learn student
+  end #end of method
+
+
+###original way::::::
+  # def move(board, index, token) # "X" is the default value for the token parameter --- we don't want a default value here
+  #   board[index].replace(token) # replace board[index] (the position on the board) with the token
+  # end #end of method
+
+
+  def position_taken?(index)
+    !(@board[index].nil? || @board[index] == " ") # position is NOT taken if @board[index] is 'nil' or " "
+  end
+
+###FIX THIS::::
+  def valid_move?(index)  ### change from index to position ???? - ER 2017
+    if (index > 9) || (index < 0) #if index (position on board entered by user) is greater than 9 or less than 0, return false
+      false
+    elsif position_taken?(index) #otherwise, if position on board is taken, return false
+      false
+    else index.between?(0, 8) #finally, if the position isn't taken, and the index (position on board entered by user) is between 0 and 8, return true
+      true
+    end # end if...elsif statements
+  end # end valid_move? method
+
+
+  def turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(index)
+      move(index, current_player) # <<<--- #current_player(board) here, AKA "X" or "O", AKA our token... current_player(board) is defined below
+      display_board
+    else
+      turn
+    end # end if..else statement
+  end # end method
+
+
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
+
+
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+  end
+
 
   def won?
   #for each win_combination in WIN_COMBINATIONS
@@ -58,7 +95,7 @@ class TicTacToe
     position_3 = @board[win_index_3] # load the value of the board at win_index_3
 
       if (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")
-        puts win_combination # output win_combination so i can see what the hell is happening
+        #puts win_combination # output win_combination so i can see what the hell is happening ## <<-- don't need this
         true # not 'return true', just 'true' -- find method looks for what evaluates to true and returns the element that caused the true evaluation
       else
         false # not 'return false', just 'false' -- see above note for 'true'
@@ -66,30 +103,41 @@ class TicTacToe
     end # end for-each-loop... AKA WIN_COMBINATIONS.each do |win_combination|
   end # end method
 
+
+####adding this::::::::::::
+  def input_to_index(user_input) #this method converts the user_input into the 0-8 index, AKA the position on the board
+    user_input = user_input.to_i # assign user_input to (user_input.to_i), which converts the user_input to an integer
+    user_input = user_input-1 # assign user_input to (user_input-1), which substracts 1 from the user_input
+    #the above line with the (user_input-1) also returns -1 for strings without integers
+  end
+
+
   def full?  ###### this method works, but this can be written more clearly <<<----
     @board.all? do |positions|
       #puts "The #{board.length} position is #{positions}"
     if positions == " "
-      puts "The board is NOT full, there are some empty spaces."
+      #puts "The board is NOT full, there are some empty spaces." <<--- don't need this
     #if board.all? { |obj| obj }
       false
     elsif (positions == "X") || (positions == "O")
     #elsif board.all?
-      puts "The board is full!"
+      #puts "The board is full!" <<--- don't need this
       true
       end # end if...else statement
     end # end for each loop
   end # end full? method
 
+
   def draw?
     if !won? && !full? # if not won and board is not full
-      puts "The board is not full yet, so it can't be a draw."
+      #puts "The board is not full yet, so it can't be a draw." <<--- don't need this
       false # it is NOT a draw
     elsif !won? && full? # if not won and full board
       puts "The game is a draw. No one wins."
       true # it is a draw
     end # end if statement
   end # end method
+
 
   def winner
     if won?
@@ -105,6 +153,7 @@ class TicTacToe
     end # end if won?board statement
   end # end method
 
+
   def over?
     if draw?
       puts "Cats Game!"
@@ -113,10 +162,11 @@ class TicTacToe
       winner # call winner(board) method to congratulate X or O
       true
     else
-      puts "The game is not over yet."
+      #puts "The game is not over yet." <<--- don't need this
       false
     end # end if...elsif..else statement
   end # end method
+
 
   #with until loop:::
   def play #play method initiates a simple loop and calls #turn
