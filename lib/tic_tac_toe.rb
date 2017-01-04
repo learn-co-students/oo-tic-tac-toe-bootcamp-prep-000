@@ -28,25 +28,25 @@ class TicTacToe
   end
 
   def move(index, current_player)
-    @board[index] = current_player
+    @board[input_to_index(index)] = current_player
   end
 
 
   def position_taken?(index)
-    !(@board[index].nil? || @board[index] == " ")
+    !(@board[(index)].nil? || @board[index] == " ")
   end
 
 
   def valid_move?(index)
+    index = input_to_index(index)
     index.between?(0,8) && !position_taken?(index)
   end
 
   def turn
       puts "Please enter 1-9:"
       input = gets.chomp
-      index = input_to_index(input)
-      if valid_move?(index)
-        move(index, current_player)
+      if valid_move?(input)
+        move(input, current_player)
       else
         puts "That is not a valid move."
         turn
