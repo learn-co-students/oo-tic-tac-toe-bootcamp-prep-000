@@ -36,12 +36,18 @@ class TicTacToe # all methods below are within class TicTacToe
 #this is right (or at least it is for other student), but need to get other methods working::::
   #def move(index, current_player = "X") # "X" is the default value for the current player (got this code from another learn student)
 
-  def move(index, current_player) # "X" is the default value for the current player (got this code from another learn student)
-    #index = index.to_i-1
-    #index = input_to_index(user_input) # <<-- calls the input_to_index method, to convert the user_input into the 0-8 index, and assigns value of input_to_index(user_input) to local variable 'index'
 
-    @board[index] = current_player #got this code from another learn student < .to_i changes index to an integer, -1 subracts 1 from that integer (so 1 becomes 0, etc.)
-    #@board[index.to_i-1] = current_player #got this code from another learn student < .to_i changes index to an integer, -1 subracts 1 from that integer (so 1 becomes 0, etc.)
+
+  # def move(index, current_player) # "X" is the default value for the current player (got this code from another learn student)
+  #   #index = index.to_i-1
+  #   #index = input_to_index(user_input) # <<-- calls the input_to_index method, to convert the user_input into the 0-8 index, and assigns value of input_to_index(user_input) to local variable 'index'
+  #   @board[index] = current_player #got this code from another learn student < .to_i changes index to an integer, -1 subracts 1 from that integer (so 1 becomes 0, etc.)
+  #   #@board[index.to_i-1] = current_player #got this code from another learn student < .to_i changes index to an integer, -1 subracts 1 from that integer (so 1 becomes 0, etc.)
+  # end #end of method
+
+
+  def move(index, current_player) # "X" is the default value for the token parameter --- we don't want a default value here
+    @board[index] = current_player # replace board[index] (the position on the board) with the token
   end #end of method
 
 
@@ -62,15 +68,17 @@ class TicTacToe # all methods below are within class TicTacToe
   # end
 
 ###what i've been trying:::::::
-  def valid_move?(index)  ### change from index to position ???? - ER 2017
+  def valid_move?(position)  ### change from index to position ???? - ER 2017
+
+    position = position.to_i
     #index = index.to_i-1
     #index = input_to_index(user_input) # <<-- calls the input_to_index method, to convert the user_input into the 0-8 index, and assigns value of input_to_index(user_input) to local variable 'index'
 
-    if (index > 9) || (index < 0) #if index (position on board entered by user) is greater than 9 or less than 0, return false
+    if (position > 9) || (position < 0) #if index (position on board entered by user) is greater than 9 or less than 0, return false
       false
-    elsif position_taken?(index) #adding to_i-1 ###otherwise, if position on board is taken, return false
+    elsif position_taken?(position) #adding to_i-1 ###otherwise, if position on board is taken, return false
       false
-    else index.between?(0, 8) ##added to_i ###finally, if the position isn't taken, and the index (position on board entered by user) is between 0 and 8, return true
+    else position.between?(0, 8) ##added to_i ###finally, if the position isn't taken, and the index (position on board entered by user) is between 0 and 8, return true
       true
     end # end if...elsif statements
   end # end valid_move? method
@@ -223,7 +231,7 @@ class TicTacToe # all methods below are within class TicTacToe
   def play #play method initiates a simple loop and calls #turn
     until over? # if over==true... AKA if the game is over after that last move...
       turn #calls turn method, until game is over
-    end #end until over?(board) loop
+    end #...end until over?(board) loop
   end #end play(board) method
 
 end # end class TicTacToe
