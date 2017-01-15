@@ -142,6 +142,7 @@ describe './lib/tic_tac_toe.rb' do
 
         game.play
       end
+
     end
   end
 end
