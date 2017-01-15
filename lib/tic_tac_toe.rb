@@ -95,7 +95,7 @@ class TicTacToe
       turn
     end
     won? ?
-      puts "Congratulations #{winner(board)}!" :
+      puts `Congratulations #{winner}!` :
       puts "Cats Game!"
   end
 
