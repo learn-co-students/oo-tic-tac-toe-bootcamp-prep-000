@@ -45,7 +45,7 @@ class TicTacToe
     input_to_index(input)
     if valid_move?(@index)
       current_player
-      move(@index, @token)
+      move(@index, current_player)
       display_board
     else
       turn
@@ -58,21 +58,20 @@ class TicTacToe
 
   def current_player
     turn_count % 2 == 0 ?
-    token = "X" : token = "O"
-    @token = token
+    "X" : "O"
   end
 
   def won?
+
     WIN_COMBINATIONS.detect {|winning_array|
       @board[winning_array[0]] == @board[winning_array[1]] &&
       @board[winning_array[1]] == @board[winning_array[2]] &&
       position_taken?(winning_array[0])
-      @winning_array = winning_array
     }
   end
 
   def full?
-  !@board.any?{|i| i == " "}
+  @board.all? {|i| i == "X" || i == "O"}
   end
 
   def draw?
@@ -85,9 +84,7 @@ class TicTacToe
 
   def winner
     if won?
-      @winning_array[0]
-    else
-      nil
+      @board[won?[0]]
     end
   end
 
@@ -98,7 +95,7 @@ class TicTacToe
     if won?
       puts "Congratulations #{winner}!"
     else
-      puts "Cats Game!"
+      puts "Cat's Game!"
     end
   end
 
