@@ -61,4 +61,32 @@ class TicTacToe
     @token = "X" : @token = "O"
   end
 
+  def won?
+    WIN_COMBINATIONS.detect {|winning_array|
+      @board[winning_array[0]] == @board[winning_array[1]] &&
+      @board[winning_array[1]] == @board[winning_array[2]] &&
+      position_taken?(@winning_array[0])
+    }
+  end
+
+  def full?
+  !@board.any?{|i| i == " "}
+  end
+
+  def draw?
+    full? && !won?
+  end
+
+  def over?
+    won? || draw?
+  end
+
+  def winner
+    if won?
+      @winning_array[0]
+    else
+      nil
+    end
+  end
+
 end
