@@ -66,7 +66,8 @@ class TicTacToe
     WIN_COMBINATIONS.detect {|winning_array|
       @board[winning_array[0]] == @board[winning_array[1]] &&
       @board[winning_array[1]] == @board[winning_array[2]] &&
-      position_taken?(@winning_array[0])
+      position_taken?(winning_array[0])
+      @winning_array = winning_array
     }
   end
 
