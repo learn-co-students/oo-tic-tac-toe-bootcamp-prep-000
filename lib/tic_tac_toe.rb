@@ -1,7 +1,10 @@
 class TicTacToe
 
   def initialize
-    @board = [" "," "," "," "," "," "," "," "," "]
+    board = [" "," "," "," "," "," "," "," "," "]
+    @board = board
+    puts "Welcome to Tic Tac Toe!"
+    display_board
   end
 
   WIN_COMBINATIONS = [
@@ -15,7 +18,7 @@ class TicTacToe
     [2,4,6]  # Diagonal right to left
   ]
 
-  def display_board(board)
+  def display_board(board = @board)
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -27,7 +30,7 @@ class TicTacToe
     user_input.to_i - 1
   end
 
-  def move(board, index, current_player)
+  def move(board = @board, index, current_player)
     @board[index] = current_player
   end
 
@@ -35,11 +38,11 @@ class TicTacToe
     @board[location] != " " && @board[location] != ""
   end
 
-  def valid_move?(board, index)
+  def valid_move?(board = @board, index)
     index.between?(0,8) && !position_taken?(index)
   end
 
-  def turn(board)
+  def turn(board = @board)
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -51,7 +54,7 @@ class TicTacToe
     end
   end
 
-  def turn_count(board)
+  def turn_count(board = @board)
     counter = 0
     @board.each do |index|
       if index == "X" || index == "O"
@@ -61,11 +64,11 @@ class TicTacToe
     return counter
   end
 
-  def current_player(board)
+  def current_player(board = @board)
     turn_count(@board) %2 == 0 ? "X" : "O"
   end
 
-  def won?(board)
+  def won?(board = @board)
     WIN_COMBINATIONS.detect do |win_combination|
       win_index_1 = win_combination[0]
       win_index_2 = win_combination[1]
@@ -82,7 +85,7 @@ class TicTacToe
     end
   end
 
-  def full?(board)
+  def full?(board = @board)
     if @board.detect do |index|
       index == " " || index == "" || index == nil
     end
@@ -92,11 +95,11 @@ class TicTacToe
     end
   end
 
-  def draw?(board)
+  def draw?(board = @board)
     won?(@board) != nil ? false : full?(@board) == true ? true : false
   end
 
-  def over?(board)
+  def over?(board = @board)
     if won?(@board) != nil || draw?(@board) == true || full?(@board) == true
       true
     else
@@ -104,7 +107,7 @@ class TicTacToe
     end
   end
 
-  def winner(board)
+  def winner(board = @board)
     if won?(@board) == nil
       nil
     else
@@ -113,7 +116,7 @@ class TicTacToe
     end
   end
 
-  def play
+  def play(board = @board)
     until over?(@board) == true
       turn(@board)
     end
