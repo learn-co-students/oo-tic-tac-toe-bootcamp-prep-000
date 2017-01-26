@@ -1,0 +1,12 @@
+if any WIN_COMBINATION is = all 'X's or all 'Os'
+ win_index_1 = WIN_COMBINATION[0]
+ win_index_2 = WIN_COMBINATION[1]
+ win_index_3 = WIN_COMBINATION[2]
+
+if @board[win_index_1] == "X" && @board[win_index_2] == "X" && @board[win_index_3] == "X"
+  WIN_COMBINATION
+else if @board[win_index_1] == "O" && @board[win_index_2] == "O" && @board[win_index_3] == "O"
+  WIN_COMBINATION
+end
+return false
+ 
