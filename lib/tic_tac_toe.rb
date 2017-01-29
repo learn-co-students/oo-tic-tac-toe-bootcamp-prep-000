@@ -45,7 +45,7 @@ def input_to_index(input)
        counter = 0
      @board.each do |turn|
        if turn == "X" || turn == "O"
-      counter += 1         
+      counter += 1
   end
   end
   return counter
@@ -71,7 +71,7 @@ def input_to_index(input)
     display_board
   end
 
-  def won? 
+  def won?
       WIN_COMBINATIONS.each do |wincombo|
     if (@board[wincombo[0]]) == "X" && (@board[wincombo[1]]) == "X" && (@board[wincombo[2]]) == "X"
       return wincombo
@@ -86,7 +86,7 @@ def input_to_index(input)
      @board.all? {|spot| spot if spot == "X" || spot == "O"}
    end
 
-   
+
    def draw?
       won? == false && full? == true
     end
@@ -105,20 +105,18 @@ def input_to_index(input)
       if win_combo = won?
         index = win_combo[0]
         return @board[index]
-
+      
     end
     end
 
     def play
-      moves = 0
-      while moves < 9
+      until over? == true
         turn
-        moves += 1
-        break
-
+      end
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
     end
-    end
-
-
-  
+end
 end
