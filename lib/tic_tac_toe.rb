@@ -108,5 +108,16 @@ def input_to_index(input)
 
     end
     end
+
+    def play
+      moves = 0
+      while moves < 9
+        turn(@board)
+        moves += 1
+
+    end
+    end
+
+
   
 end
