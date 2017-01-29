@@ -2,6 +2,7 @@ class TicTacToe
 
   def initialize(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
     @board = board
+
 end
 
 
@@ -105,7 +106,7 @@ def input_to_index(input)
       if win_combo = won?
         index = win_combo[0]
         return @board[index]
-      
+
     end
     end
 
