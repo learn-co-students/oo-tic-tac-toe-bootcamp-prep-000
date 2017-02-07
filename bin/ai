@@ -2,8 +2,12 @@
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
 require_relative '../lib/AI_tree.rb'
+require_relative '../lib/AI_ttt.rb'
 
 puts "Welcome to Tic Tac Toe"
-game = TicTacToe.new
-game.display_board
-game.play
+puts "Computer will be 'X'"
+puts "Please wait..."
+ai_game = AiTTT.new
+ai_game.ai_play
+
+# game.play
