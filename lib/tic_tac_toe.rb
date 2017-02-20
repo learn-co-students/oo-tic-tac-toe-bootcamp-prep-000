@@ -95,6 +95,8 @@ class TicTacToe
   end
 
   def play
+    puts "Welcome to Tic Tac Toe!"
+    display_board
     turn until over?
 
     if won?
