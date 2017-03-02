@@ -90,6 +90,7 @@ class TicTacToe
         return win_combination
       end
     end
+
     if @board.empty?
       return false
     end
@@ -109,9 +110,9 @@ class TicTacToe
 
   def winner
     winning_index = won?
-      if winning_index
-        @board[winning_index[0]]
-      end
+    if winning_index
+      @board[winning_index[0]]
+    end
   end
 
   def play
