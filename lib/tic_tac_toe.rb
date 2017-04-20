@@ -29,25 +29,25 @@ class TicTacToe
   end
 
 
-  def move
+  def move(index, user_input)
     board[index] = current_player
     display_board
   end
 
   def valid_move?(index)
-  index.between?(0,8) && !position_taken?
+  index.between?(0,8) && !position_taken?(index)
   end
 
   def position_taken?(index)
     board[index] != " "
   end
 
-  def turn(index)
+  def turn
     puts 'Please enter 1-9:'
     user_input = gets.strip
     index = input_to_index(user_input)
-    if valid_move?
-      move
+    if valid_move?(index)
+      move(index, user_input)
     else
       turn
     end
@@ -66,7 +66,7 @@ class TicTacToe
     WIN_COMBINATIONS.detect do |combo|
       board[combo[0]] == board[combo[1]] &&
       board[combo[1]] == board[combo[2]] &&
-      position_taken?
+      position_taken?(combo[0])
     end
   end
 
