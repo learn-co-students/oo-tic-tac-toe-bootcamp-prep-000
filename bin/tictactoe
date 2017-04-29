@@ -1,3 +1,7 @@
+#learn open oo-tic-tac-toe-bootcamp-prep-000
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+
+ttt = TicTacToe.new
+ttt.play
