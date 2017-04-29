@@ -1,3 +1,14 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+
+puts "Welcome to Tic Tac Toe!"
+puts "Loading game instance"
+puts "..."
+
+
+steve = TicTacToe.new
+
+steve.play
+
+puts "Hope you had fun! This message will now self destruct"
