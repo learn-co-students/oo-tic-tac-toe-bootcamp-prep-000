@@ -27,9 +27,7 @@ class TicTacToe
   end
 
   def move(index, token = "X")
-    if valid_move?(index)
-      @board[index] = token
-    end
+    @board[index] = token
   end
 
   def position_taken?(index)
@@ -55,12 +53,13 @@ class TicTacToe
   end
 
   def turn
-    puts "It's #{current_player}'s turn."
+    player = current_player
+    puts "It's #{player}'s turn."
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-      move(index, current_player)
+      move(index, player)
       display_board
     else
       turn
