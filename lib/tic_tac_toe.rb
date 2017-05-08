@@ -54,7 +54,7 @@ class TicTacToe
   def turn_count
     counter = 0
     @board.each do |cell|
-      if cell != " " && cell == "X" || cell == "O"
+      if cell == "X" || cell == "O"
          counter += 1
       end
     end
@@ -66,8 +66,6 @@ class TicTacToe
   end
 
   def won?
-
-    #!@board.include?([" ", " ", " ", " ", " ", " ", " ", " ", " "])
 
     WIN_COMBINATIONS.each do |winning_combo|
       if @board[winning_combo[0]] == @board[winning_combo[1]] &&
