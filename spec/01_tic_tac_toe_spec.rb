@@ -78,7 +78,7 @@ describe './lib/tic_tac_toe.rb' do
 
         board = game.instance_variable_get(:@board)
 
-        expect(board).to eq(["X", " ", " ", " ", "O", " ", " ", " ", " "])
+        expect(board).to eq([" ", " ", " ", "O", " ", " ", " ", " ", "X"])
       end
     end
 
@@ -108,10 +108,10 @@ describe './lib/tic_tac_toe.rb' do
         board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
         game.instance_variable_set(:@board, board)
 
-        index = 0
+        index = 4
         expect(game.valid_move?(index)).to be_truthy
 
-        index = 4
+        index = 0
         expect(game.valid_move?(index)).to be_falsey
       end
 
