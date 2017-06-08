@@ -7,7 +7,7 @@ class TicTacToe
   ]
 
   def initialize(board=nil)
-    @board = board || Array.new(9," ")
+    @board = board || Array.new(9," ") # a defined board or an empty board 
   end
 
   def display_board
@@ -19,6 +19,7 @@ class TicTacToe
   end
 
   def turn
+    # there's probably a better way to do the turn loop, but this works
     index = 0
     loop do
       puts "Please enter 1-9:"
@@ -56,7 +57,7 @@ class TicTacToe
 
   def won?
         win = WIN_COMBINATIONS.chunk { |n| n.all?{|x| @board[x] == "X"} || n.all?{|x| @board[x] == "O"}}.detect{|win,ary|  win}
-        win ? win[1][0] : nil
+        win ? win[1][0] : nil # returns winning array or nil
   end
 
   def draw?
@@ -70,7 +71,7 @@ class TicTacToe
   def winner
     # won?
     win = won?
-    win ? @board[win[0]] : nil
+    win ? @board[win[0]] : nil # returns the winning token if there is a winner
   end
 
   def full?
