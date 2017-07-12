@@ -89,7 +89,7 @@ class TicTacToe
         end
 
         def over?
-          full? && (draw? || won?)
+          draw? || won?
         end
 
         def winner
@@ -99,16 +99,16 @@ class TicTacToe
         end
 
         def play
-          until over? || won? || draw?
-            turn
+          until over? || won? || draw? #until the game determines that it is over
+            turn #take turns
           end
-          if won?
-            puts "Congratulations #{winner}!"
-          elsif draw?
-            puts "Cat's Game!"
+          if won? #if someone wins, congratulate them
+            puts "Congratulations #{winner}!" #using #winner to pull the @board index of the winner
+          elsif draw? #if draw
+            puts "Cat's Game!" #cat's game, for some reason.
           end
         end
 
 
 
-      end
+      end #all the above methods are available to the TicTacToe class, and the board restarts for every instance!
