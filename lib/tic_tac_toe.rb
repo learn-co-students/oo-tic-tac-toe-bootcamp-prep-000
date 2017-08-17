@@ -90,11 +90,8 @@ class TicTacToe
     puts "Welcome to Tic Tac Toe!"
     display_board
 
-    until over?
-      turn
-    end
+    turn until over?
 
-    puts "Congratulations #{winner}!" if won?
-    puts "Cat's Game!" if draw?
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
   end
 end
