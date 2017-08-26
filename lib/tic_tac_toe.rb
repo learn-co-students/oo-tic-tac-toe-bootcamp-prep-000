@@ -81,7 +81,7 @@ class TicTacToe # data + logic
   end
 
   def over?
-    won? || full?
+    won? || full? || turn_count > 9 || draw? # why is draw necessary?
   end
 
   def winner
@@ -91,5 +91,15 @@ class TicTacToe # data + logic
       @board[combo[0]]
     end
     # places winning combo into combo variable; @board[combo[0]] # takes winners symbol from first position of winning combo on current board
+  end
+
+  def play
+    turn until over?
+
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
   end
 end
