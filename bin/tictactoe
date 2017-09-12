@@ -1,3 +1,10 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+
+puts "Welcome to Tic Tac Toe!"
+tic_tac_toe = TicTacToe.new()
+tic_tac_toe.display_board()
+
+# Make sure to execute #play below
+tic_tac_toe.play()
