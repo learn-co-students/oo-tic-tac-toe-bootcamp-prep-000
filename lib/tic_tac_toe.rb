@@ -10,7 +10,7 @@ class TicTacToe
         [0,3,6],
         [1,4,7],
         [2,5,8],
-        [0,3,8],
+        [0,4,8],
         [6,4,2]
     ]
 
@@ -27,11 +27,11 @@ class TicTacToe
     end
 
     def move(index, player)
-      board[position] = player
+      @board[index] = player
     end
 
     def position_taken?(index)
-      if board[position] == "X" || board[position] == "O"
+      if @board[index] == "X" || @board[index] == "O"
          true
       else
          false
@@ -39,7 +39,7 @@ class TicTacToe
     end
 
     def valid_move?(index)
-      if position.between?(0,8) && !position_taken?(board, position)
+      if index.between?(0,8) && !position_taken?(index)
          true
       else
          false
@@ -52,9 +52,9 @@ class TicTacToe
 
       int = input_to_index(move)
 
-      if valid_move?(board, int)
-          move(board, int, current_player(board))
-          display_board(board)
+      if valid_move?(int)
+          move(int, current_player)
+          display_board
       else
           puts "Please enter 1-9:"
           move = gets.strip
@@ -71,25 +71,25 @@ class TicTacToe
     end
 
     def won?
-      if board.all? { |spot| spot.strip == ""} == false
+      if @board.all? { |spot| spot.strip == ""} == false
          false
       end
 
-      if (board[WIN_COMBINATIONS[0][0]] == "X" && board[WIN_COMBINATIONS[0][1]] == "X" && board[WIN_COMBINATIONS[0][2]] == "X") || (board[WIN_COMBINATIONS[0][0]] == "O" && board[WIN_COMBINATIONS[0][1]] == "O" && board[WIN_COMBINATIONS[0][2]] == "O")
+      if (@board[WIN_COMBINATIONS[0][0]] == "X" && @board[WIN_COMBINATIONS[0][1]] == "X" && @board[WIN_COMBINATIONS[0][2]] == "X") || (@board[WIN_COMBINATIONS[0][0]] == "O" && @board[WIN_COMBINATIONS[0][1]] == "O" && @board[WIN_COMBINATIONS[0][2]] == "O")
          return WIN_COMBINATIONS[0]
-      elsif (board[WIN_COMBINATIONS[1][0]] == "X" && board[WIN_COMBINATIONS[1][1]] == "X" && board[WIN_COMBINATIONS[1][2]] == "X") || (board[WIN_COMBINATIONS[1][0]] == "O" && board[WIN_COMBINATIONS[1][1]] == "O" && board[WIN_COMBINATIONS[1][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[1][0]] == "X" && @board[WIN_COMBINATIONS[1][1]] == "X" && @board[WIN_COMBINATIONS[1][2]] == "X") || (@board[WIN_COMBINATIONS[1][0]] == "O" && @board[WIN_COMBINATIONS[1][1]] == "O" && @board[WIN_COMBINATIONS[1][2]] == "O")
          return WIN_COMBINATIONS[1]
-      elsif (board[WIN_COMBINATIONS[2][0]] == "X" && board[WIN_COMBINATIONS[2][1]] == "X" && board[WIN_COMBINATIONS[2][2]] == "X") || (board[WIN_COMBINATIONS[2][0]] == "O" && board[WIN_COMBINATIONS[2][1]] == "O" && board[WIN_COMBINATIONS[2][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[2][0]] == "X" && @board[WIN_COMBINATIONS[2][1]] == "X" && @board[WIN_COMBINATIONS[2][2]] == "X") || (@board[WIN_COMBINATIONS[2][0]] == "O" && @board[WIN_COMBINATIONS[2][1]] == "O" && @board[WIN_COMBINATIONS[2][2]] == "O")
          return WIN_COMBINATIONS[2]
-      elsif (board[WIN_COMBINATIONS[3][0]] == "X" && board[WIN_COMBINATIONS[3][1]] == "X" && board[WIN_COMBINATIONS[3][2]] == "X") || (board[WIN_COMBINATIONS[3][0]] == "O" && board[WIN_COMBINATIONS[3][1]] == "O" && board[WIN_COMBINATIONS[3][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[3][0]] == "X" && @board[WIN_COMBINATIONS[3][1]] == "X" && @board[WIN_COMBINATIONS[3][2]] == "X") || (@board[WIN_COMBINATIONS[3][0]] == "O" && @board[WIN_COMBINATIONS[3][1]] == "O" && @board[WIN_COMBINATIONS[3][2]] == "O")
          return WIN_COMBINATIONS[3]
-      elsif (board[WIN_COMBINATIONS[4][0]] == "X" && board[WIN_COMBINATIONS[4][1]] == "X" && board[WIN_COMBINATIONS[4][2]] == "X") || (board[WIN_COMBINATIONS[4][0]] == "O" && board[WIN_COMBINATIONS[4][1]] == "O" && board[WIN_COMBINATIONS[4][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[4][0]] == "X" && @board[WIN_COMBINATIONS[4][1]] == "X" && @board[WIN_COMBINATIONS[4][2]] == "X") || (@board[WIN_COMBINATIONS[4][0]] == "O" && @board[WIN_COMBINATIONS[4][1]] == "O" && @board[WIN_COMBINATIONS[4][2]] == "O")
          return WIN_COMBINATIONS[4]
-      elsif (board[WIN_COMBINATIONS[5][0]] == "X" && board[WIN_COMBINATIONS[5][1]] == "X" && board[WIN_COMBINATIONS[5][2]] == "X") || (board[WIN_COMBINATIONS[5][0]] == "O" && board[WIN_COMBINATIONS[5][1]] == "O" && board[WIN_COMBINATIONS[5][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[5][0]] == "X" && @board[WIN_COMBINATIONS[5][1]] == "X" && @board[WIN_COMBINATIONS[5][2]] == "X") || (@board[WIN_COMBINATIONS[5][0]] == "O" && @board[WIN_COMBINATIONS[5][1]] == "O" && @board[WIN_COMBINATIONS[5][2]] == "O")
          return WIN_COMBINATIONS[5]
-      elsif (board[WIN_COMBINATIONS[6][0]] == "X" && board[WIN_COMBINATIONS[6][1]] == "X" && board[WIN_COMBINATIONS[6][2]] == "X") || (board[WIN_COMBINATIONS[6][0]] == "O" && board[WIN_COMBINATIONS[6][1]] == "O" && board[WIN_COMBINATIONS[6][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[6][0]] == "X" && @board[WIN_COMBINATIONS[6][1]] == "X" && @board[WIN_COMBINATIONS[6][2]] == "X") || (@board[WIN_COMBINATIONS[6][0]] == "O" && @board[WIN_COMBINATIONS[6][1]] == "O" && @board[WIN_COMBINATIONS[6][2]] == "O")
          return WIN_COMBINATIONS[6]
-      elsif (board[WIN_COMBINATIONS[7][0]] == "X" && board[WIN_COMBINATIONS[7][1]] == "X" && board[WIN_COMBINATIONS[7][2]] == "X") || (board[WIN_COMBINATIONS[7][0]] == "O" && board[WIN_COMBINATIONS[7][1]] == "O" && board[WIN_COMBINATIONS[7][2]] == "O")
+      elsif (@board[WIN_COMBINATIONS[7][0]] == "X" && @board[WIN_COMBINATIONS[7][1]] == "X" && @board[WIN_COMBINATIONS[7][2]] == "X") || (@board[WIN_COMBINATIONS[7][0]] == "O" && @board[WIN_COMBINATIONS[7][1]] == "O" && @board[WIN_COMBINATIONS[7][2]] == "O")
          return WIN_COMBINATIONS[7]
       else
          false
@@ -97,7 +97,7 @@ class TicTacToe
     end
 
     def full?
-      if board.all? { |spot| spot.strip != ""} == true
+      if @board.all? { |spot| spot.strip != ""} == true
          true
       else
          false
@@ -105,17 +105,17 @@ class TicTacToe
     end
 
     def draw?
-      if full?(board) && !won?(board)
+      if full? && !won?
          true
       end
     end
 
     def over?
-      if draw?(board)
+      if draw?
          true
-      elsif full?(board) && won?(board)
+      elsif full? && won?
          true
-      elsif !full?(board) && won?(board)
+      elsif !full? && won?
          true
       else
          false
@@ -123,28 +123,28 @@ class TicTacToe
     end
 
     def winner
-      if !won?(board) && full?(board)
+      if !won? && full?
          return false
       end
 
-      if won?(board)
-         win = won?(board)
-         if board[win[0]] == "X"
+      if won?
+         win = won?
+         if @board[win[0]] == "X"
             "X"
-         elsif board[win[0]] == "O"
+         elsif @board[win[0]] == "O"
             "O"
          end
       end
     end
 
     def play
-      until over?(board) do
-         turn(board)
+      until over? do
+         turn
       end
 
-      if won?(board)
-         puts "Congratulations #{winner(board)}!"
-      elsif draw?(board)
+      if won?
+         puts "Congratulations #{winner}!"
+      elsif draw?
          puts "Cat's Game!"
       end
     end
