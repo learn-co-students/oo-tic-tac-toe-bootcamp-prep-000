@@ -27,7 +27,7 @@ class TicTacToe
     index
   end
   def move(index, current_player = "X")
-    @board[index] = current_player
+    @board[index] = current_player()
   end
   def position_taken?(index)
     if ((@board[index] == "X") || (@board[index] == "O"))
@@ -64,7 +64,7 @@ class TicTacToe
     puts "please chose a number 1 - 9:"
     input = gets.strip
     index = input_to_index(input)
-    current_player
+    current_player()
     if valid_move?(index)
       move(index)
     else
@@ -96,9 +96,9 @@ class TicTacToe
     end
   end
   def draw?
-    if ((full?) and (!won?))
+    if ((full?) && (!won?))
       return true
-    elsif ((full?) and (won?))
+    else
       return false
     end
   end
