@@ -53,7 +53,7 @@ class TicTacToe
     turn_count = 9 - empty_count
   end
   def current_player
-    turn_count()
+    turn_count
     if turn_count.even?
       return "X"
     else
