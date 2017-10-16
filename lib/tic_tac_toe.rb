@@ -61,8 +61,8 @@ end
 
 def won?
 WIN_COMBINATIONS.find do |win_combination|
-  win_combination.all? {|i| board[i]=="X"} ||
-  win_combination.all? {|i| board[i]=="O"}
+  win_combination.all? {|i| @board[i]=="X"} ||
+  win_combination.all? {|i| @board[i]=="O"}
 end
 end
 
@@ -72,7 +72,7 @@ def full?
   end
 end
 
-def draw|
+def draw?
   full? && !won?
 end
 
@@ -80,9 +80,9 @@ def over?
   draw? || won?
 end
 
-def winner()
-  if won?(@board)
-    won?(@board).each do |i|
+def winner
+  if won?
+    won?.each do |i|
       if @board[i]=="X"
         return "X"
       else
@@ -93,13 +93,14 @@ def winner()
 end
 
 def play
-  until won?
+  until over?
     turn
   end
   if won?
-    puts "Congratulations"
+    winner_game = winner
+    puts "Congratulations #{winner_game}!"
   elsif draw?
-    puts "Cat's game"
+    puts "Cat's Game!"
 end
 end
 
