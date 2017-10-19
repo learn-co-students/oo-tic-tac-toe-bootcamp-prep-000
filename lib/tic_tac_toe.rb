@@ -39,11 +39,12 @@ class TicTacToe
   end
 
   def turn
-    puts "Player #{current_player}: Pick a space (number 1-9)"
+    player = current_player
+    puts "Player #{player}: Pick a space (number 1-9)"
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-      move(index, current_player)
+      move(index, player)
       display_board
     else
       puts "That move is invalid. Please try again."
