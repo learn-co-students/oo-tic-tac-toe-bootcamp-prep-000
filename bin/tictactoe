@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+
+game = TicTacToe.new
+game.display_board
+puts "Select a square to play [1 - 9]:"
+game.play
