@@ -127,9 +127,9 @@ class TicTacToe
         position_3 = @board[win_index_3]
 
         if (position_1 == "X" && position_2 == "X" && position_3 == "X")
-          puts "Congratulations X!"
+          return "X"
         elsif (position_1 == "O" && position_2 == "O" && position_3 == "O")
-          puts "Congratulations O!"
+          return "O"
         end
       end
     else
@@ -144,7 +144,11 @@ class TicTacToe
       counter += 1
     end
     if won?
-      return winner
+      if winner == "X"
+        puts "Congratulations X!"
+      elsif winner == "O"
+        puts "Congratulations O!"
+      end
     elsif draw?
       puts "Cat's Game!"
     end
