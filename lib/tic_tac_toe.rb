@@ -65,7 +65,6 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-    # current_player
       move(index, current_player)
       display_board
     else
@@ -128,9 +127,9 @@ class TicTacToe
         position_3 = @board[win_index_3]
 
         if (position_1 == "X" && position_2 == "X" && position_3 == "X")
-          return "X"
+          puts "Congratulations X!"
         elsif (position_1 == "O" && position_2 == "O" && position_3 == "O")
-          return "O"
+          puts "Congratulations O!"
         end
       end
     else
@@ -138,5 +137,24 @@ class TicTacToe
     end
   end
 
+  # def play(board)
+  #   counter = 0
+  #   until counter == 9
+  #     turn(board)
+  #     counter += 1
+  #   end
+  # end
 
+  def play
+    counter = 0
+    until over?
+      turn
+      counter += 1
+    end
+    if won?
+      return winner
+    elsif draw?
+      puts "Cat's Game!"
+    end
+  end
 end
