@@ -1,7 +1,7 @@
 class TicTacToe
 
-  def initialize(board)
-    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  def initialize(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
+    @board = board
   end
 
   WIN_COMBINATIONS = [
@@ -15,59 +15,59 @@ class TicTacToe
     [2,4,6]  # diagonal right to left
   ]
 
-  def display_board(board)
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  def display_board
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
   def input_to_index(input)
     input.to_i - 1
   end
 
-  def move(board, index, value)
-    board[index] = value
+  def move(index, value)
+    @board[index] = value
   end
 
 
-  def position_taken?(board, index)
-    if board[index] == " "
+  def position_taken?(index)
+    if @board[index] == " "
       return false
-    elsif board[index] == ""
+    elsif @board[index] == ""
       return false
-    elsif board[index] == nil
+    elsif @board[index] == nil
       return false
-    elsif (board[index] == "X") || (board[index] == "O")
+    elsif (@board[index] == "X") || (@board[index] == "O")
       return true
     end
   end
 
-  def valid_move?(board, index)
-    taken = position_taken?(board, index)
+  def valid_move?(index)
+    taken = position_taken?(index)
     if ((index >= 0) && (index <= 8)) && (taken == false)
       return true
     end
   end
 
-  def turn(board)
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-    value = current_player(board)
-    valid = valid_move?(board, index)
+    value = current_player
+    valid = valid_move?(index)
     if valid == true
-      move(board, index, value)
-      display_board(board)
+      move(index, value)
+      display_board
     elsif
-      turn(board)
+      turn
     end
   end
 
-  def turn_count(board)
+  def turn_count
     count = 0
-    board.each do |place|
+    @board.each do |place|
       if place == "X"
         count += 1
       elsif place == "O"
@@ -77,8 +77,8 @@ class TicTacToe
     return count
   end
 
-  def current_player(board)
-    turns = turn_count(board)
+  def current_player
+    turns = turn_count
     if turns % 2 == 0
       return "X"
     else
@@ -86,15 +86,15 @@ class TicTacToe
     end
   end
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do | combination |
         win_index_1 = combination[0]
         win_index_2 = combination[1]
         win_index_3 = combination[2]
         puts "#{win_index_1}, #{win_index_2}, #{win_index_3}"
-        position_1 = board[win_index_1]
-        position_2 = board[win_index_2]
-        position_3 = board[win_index_3]
+        position_1 = @board[win_index_1]
+        position_2 = @board[win_index_2]
+        position_3 = @board[win_index_3]
         puts "#{position_1}, #{position_2}, #{position_3}"
         if (position_1 =="X") && (position_2 == "X") && (position_3 == "X")
           return [win_index_1, win_index_2, win_index_3]
@@ -105,44 +105,43 @@ class TicTacToe
     return false
   end
 
-  def full?(board)
-    board.all? do |space|
+  def full?
+    @board.all? do |space|
       space == "X" || space == "O"
     end
   end
 
-  def draw?(board)
-    if full?(board) == true && won?(board) == false
+  def draw?
+    if full? == true && won? == false
       return true
     else
       return false
     end
   end
 
-  def over?(board)
-    if (won?(board) != false) || (draw?(board) == true)
+  def over?
+    if (won? != false) || (draw? == true)
       return true
     end
   end
 
-  def winner(board)
-    if won?(board) == false
+  def winner
+    if won? == false
       return nil
     else
-      winning = won?(board)
-      return board[winning[0]]
+      winning = won?
+      return @board[winning[0]]
     end
   end
 
-  def play(board)
-    until over?(board) == true
-      turn(board)
+  def play
+    until over? == true
+      turn
     end
-    if won?(board) != false
-      winner = winner(board)
-      puts winner
-      puts "Congratulations #{winner}!"
-    elsif draw?(board) == true
+    if won? != false
+      winner1 = winner
+      puts "Congratulations #{winner1}!"
+    elsif draw? == true
       puts "Cat's Game!"
     end
   end
