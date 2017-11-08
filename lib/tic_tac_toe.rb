@@ -88,7 +88,7 @@ class TicTacToe
 
   def full?
     @board.each do |spot|
-      if spot == " " || spot == "" || spot == nil
+      if (spot == " " || spot == "" || spot == nil)
         return false
       end
     end
@@ -97,12 +97,12 @@ class TicTacToe
 
 
   def draw?
-    full? && !won? ? true : false
+    (full? && !won?) ? true : false
   end
 
 
   def over?
-    won? || full? ? true : false
+    (won? || full?) ? true : false
   end
 
 
