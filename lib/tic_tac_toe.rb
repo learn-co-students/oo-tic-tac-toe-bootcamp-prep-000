@@ -97,7 +97,11 @@ class TicTacToe
 
 
   def draw?
-    (full? && !won?) ? true : false
+    if (full? && !won?)
+      puts "Cat's Game!"
+      return true
+    else return false
+    end
   end
 
 
@@ -107,7 +111,12 @@ class TicTacToe
 
 
   def winner
-    won? ? @board[won?[0]] : nil
+    if (won?)
+      player = @board[won?[0]]
+      puts "Congratulations #{player}!"
+      return player
+    else return nil
+    end
   end
 
 
@@ -115,6 +124,7 @@ class TicTacToe
     while !over?
       turn
     end
+    winner
   end
 
 end
