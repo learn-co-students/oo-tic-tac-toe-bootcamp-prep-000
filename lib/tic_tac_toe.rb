@@ -58,17 +58,23 @@ class TicTacToe
     turn_count.even? ? "X" : "O"
   end
 
+#  def won?
+#    WIN_COMBINATIONS.each do |index_array|
+#      combo = []
+#      index_array.each do |index|
+#        combo << @board[index]
+#      end
+#      if combo.all? { |move| move == "X" } || combo.all? { |move| move == "O" }
+#        return index_array
+#      end
+#    end
+#    return false
+#  end
+
   def won?
-    WIN_COMBINATIONS.each do |index_array|
-      combo = []
-      index_array.each do |index|
-        combo << @board[index]
-      end
-      if combo.all? { |move| move == "X" } || combo.all? { |move| move == "O" }
-        return index_array
-      end
+    WIN_COMBINATIONS.detect do |combo|
+      combo.all? { |index| @board[index] == "X" } || combo.all? { |index| @board[index] == "O"}
     end
-    return false
   end
 
   def full?
