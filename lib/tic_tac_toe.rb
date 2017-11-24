@@ -85,7 +85,6 @@ class TicTacToe
     @board.none?{|space| space == " "}
   end
 
-
   def draw?
     if full? && !won?
       return true
@@ -93,7 +92,6 @@ class TicTacToe
       return false
     end
   end
-
 
   def over?
     if  won? || draw?
@@ -103,12 +101,23 @@ class TicTacToe
     end
   end
 
-
   def winner
     if won?
       winCombo = won?
       index = winCombo[0]
       return @board[index]
+    end
+  end
+
+  def play
+    while !over?
+      turn
+    end
+    if won?
+      champ = winner
+      puts "Congratulations #{champ}!"
+    elsif draw?
+      puts "Cat's Game!"
     end
   end
 
