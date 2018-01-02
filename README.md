@@ -1,4 +1,4 @@
-# OO Tic Tac Toe
+bundle# OO Tic Tac Toe
 
 ## Objectives
 
@@ -17,7 +17,7 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 
 ### Project Structure
 
-```bash 
+```bash
 ├── Gemfile
 ├── Gemfile.lock
 ├── README.md
