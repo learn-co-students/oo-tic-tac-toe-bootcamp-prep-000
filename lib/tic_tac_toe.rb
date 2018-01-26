@@ -42,7 +42,7 @@ def valid_move?(index)
 end
 
 def turn
-  puts "Please enter 1-9:"
+  puts "Pick a square from 1 to 9:"
   input = gets.strip
   input = input_to_index(input)
     if valid_move?(input)
@@ -98,11 +98,7 @@ def over?
 end
 
 def winner
-  winner = nil
-  if won?
-    winner = @board[won?[0]]
-  end
-  winner
+  @board[won?[0]] if won?
 end
 
 def play
