@@ -36,7 +36,11 @@ class TicTacToe
   end
   
   def valid_move?(position)
-    position <= @board.length && !position_taken?(position)
+    if position <= @board.length
+      if !position_taken?(position)
+        true 
+      end
+    end
   end
   
   def turn_count
@@ -55,8 +59,8 @@ class TicTacToe
     puts "Please enter a position from 1 to 9:"
     input = gets.strip
     position = input_to_index(input)
-      
-    if valid_move?(position)
+    
+    if position >= 0 && valid_move?(position)
       move(position, current_player)
       display_board
     else
