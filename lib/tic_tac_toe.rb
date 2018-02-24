@@ -27,4 +27,17 @@ def input_to_index(input)
 @input = input.to_i - 1
 end
 
+def move(index, value)
+  @board[index] = value
+end
+
+def position_taken?(index)
+if @board[index] == " " || @board[index] == "" || @board[index] == nil
+  false
+else
+  true
+end
+
+end
+
 end
