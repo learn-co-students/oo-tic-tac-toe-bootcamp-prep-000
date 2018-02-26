@@ -37,7 +37,24 @@ if @board[index] == " " || @board[index] == "" || @board[index] == nil
 else
   true
 end
-
 end
+
+def valid_move?(index)
+  index.between?(0,8) && !position_taken?(index)
+end
+
+def turn_count
+count = 0
+@board.each do |i|
+  if i != " "
+    count += 1
+  end
+end
+count
+end
+
+def current_player
+  if turn_count % 2 = 0
+
 
 end
