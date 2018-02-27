@@ -24,7 +24,7 @@ def display_board
 end
 
 def input_to_index(input)
-@input = input.to_i - 1
+  @input = input.to_i - 1
 end
 
 def move(index, value)
@@ -32,11 +32,11 @@ def move(index, value)
 end
 
 def position_taken?(index)
-if @board[index] == " " || @board[index] == "" || @board[index] == nil
+  if @board[index] == " " || @board[index] == "" || @board[index] == nil
   false
-else
+  else
   true
-end
+  end
 end
 
 def valid_move?(index)
@@ -44,21 +44,68 @@ def valid_move?(index)
 end
 
 def turn_count
-count = 0
-@board.each do |i|
-  if i != " "
-    count += 1
-  end
-end
-count
+  count = 0
+    @board.each do |i|
+      if i != " "
+      count += 1
+      end
+    end
+  count
 end
 
 def current_player
   if turn_count % 2 == 0
   return "X"
-else
+  else
   return "O"
+  end
 end
+
+def turn
+  puts "Please enter 1-9:"
+  user_input = gets.strip
+  index = input_to_index(user_input)
+    if !valid_move?(index)
+      turn
+    else
+      move(index, current_player)
+    end
+  display_board
+end
+
+def won?
+  WIN_COMBINATIONS.each do |win|
+    if win.all? {|y| @board[y] == "X"} || win.all? {|y| @board[y] == "O"}
+      return win
+    end
+  end
+  false
+end
+
+
+def full?
+  @board.all? {|taken| taken != " "}
+end
+
+def draw?
+  !won? && full?
+end
+
+def over?
+  draw? || full? && won? || full? && !won?
+end
+
+def winner
+  player = won?
+  if player
+    @board[player[0]]
+  end
+end
+
+def play
+  # while !over?
+  #   turn
+  # end
 end
 
 end
