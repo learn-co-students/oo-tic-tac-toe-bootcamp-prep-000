@@ -31,10 +31,10 @@ end
     @board[index] = token
   end
   
-  def position_taken?
-    if @board[input_to_index(input)] =  " "
+  def position_taken?(index)
+    if @board[index] =  " "
       return false
-    end+
+    end
   end
   
 end 
