@@ -32,11 +32,7 @@ def move(index, value)
 end
 
 def position_taken?(index)
-  if @board[index] == " " || @board[index] == "" || @board[index] == nil
-  false
-  else
-  true
-  end
+  @board[index] == "X" || @board[index] == "O"
 end
 
 def valid_move?(index)
@@ -103,9 +99,16 @@ def winner
 end
 
 def play
-  # while !over?
-  #   turn
-  # end
+  while !over? && !won?
+    turn
+  end
+  draw?
+  puts "Cat's Game!"
+  if winner == "X"
+    puts "Congratulations X!"
+  else
+    puts "Congratulations O!"
+  end
 end
 
 end
