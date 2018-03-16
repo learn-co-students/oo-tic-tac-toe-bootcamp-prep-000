@@ -57,7 +57,35 @@ end
 
 
 def current_player
-  if turn_count % 2 == 0 ? "X" : "O"
+  if turn_count % 2 == 0
+    return "X"
+  else return "O"
+  end
+end
+
+def turn 
+  puts "Please enter 1-9"
+    input =  gets.strip
+    current_player
+    index = input_to_index(input)
+    if valid_move?(index)
+      move(index)
+      display_board
+    else
+      turn
+    end
+end
+
+def draw
+  if turn_count == 8
+    return true
+  end
+end
+
+def won?
+  
+  if draw
+    return false
   end
 end
 
