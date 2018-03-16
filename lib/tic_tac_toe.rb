@@ -45,6 +45,14 @@ end
     end
   end
 
-
+def turn_count
+  counter = 0
+  @board.each do |board_pos|
+    if board_pos == "X" || board_pos == "O"
+      counter += 1
+    end
+  end
+  return counter
 end 
 
+end
