@@ -31,7 +31,7 @@ class TicTacToe
   end
   
   def position_taken?(index)
-    !(@board[index].nil? || @board[index] == " ")
+    @board[index] == "X" || @board[index] == "O"
   end
   
   def valid_move?(index)
@@ -78,11 +78,9 @@ class TicTacToe
   
   def won?
     WIN_COMBINATIONS.each do |combo|
-      if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
-        return combo
-      elsif @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
-        return combo
-      end
+      cells = @board[combo[0]] + @board[combo[1]] + @board[combo[2]]
+      
+      return combo if cells == "XXX" || cells == "OOO"
     end
     
     false
@@ -93,9 +91,7 @@ class TicTacToe
   end
   
   def play
-    until over?() do
-      turn()
-    end
+    turn() until over?()
     
     if won?()
       puts "Congratulations #{winner()}!"
