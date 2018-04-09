@@ -51,35 +51,16 @@ class TicTacToe
   end
   
   def draw?
-    if won?()
-      false
-    elsif full?()
-      true
-    else
-      false
-    end
+    full?() && !won?()
   end
   
   def over?
     won?() || draw?()
   end
   
-  def turn
-    puts "Please enter 1-9:"
-    index = input_to_index(gets.strip)
-    
-    if valid_move?(index)
-      move(index, current_player())
-      display_board()
-    else
-      turn()
-    end
-  end
-  
   def won?
     WIN_COMBINATIONS.any? do |combo|
       cells = @board[combo[0]] + @board[combo[1]] + @board[combo[2]]
-      
       return combo if cells == "XXX" || cells == "OOO"
     end
   end
@@ -88,13 +69,15 @@ class TicTacToe
     won?() ? @board[won?()[0]] : nil
   end
   
+  def turn
+    puts "Please enter 1-9:"
+    index = input_to_index(gets.strip)
+    valid_move?(index) ? move(index, current_player()) : turn()
+    display_board()
+  end
+  
   def play
     turn() until over?()
-    
-    if won?()
-      puts "Congratulations #{winner()}!"
-    elsif draw?()
-      puts "Cat's Game!"
-    end
+    puts winner() ? "Congratulations #{winner()}!" : "Cat's Game!"
   end
 end
