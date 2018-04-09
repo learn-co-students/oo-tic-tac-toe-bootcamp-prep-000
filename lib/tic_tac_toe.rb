@@ -38,45 +38,12 @@ class TicTacToe
     index.between?(0, 8) && !position_taken?(index)
   end
   
-  def turn
-    puts "Please enter 1-9:"
-    index = input_to_index(gets.strip)
-    
-    if valid_move?(index)
-      move(index, current_player())
-      display_board()
-    else
-      turn()
-    end
-  end
-  
   def turn_count
-    # @board.select { |cell| cell == "X" || cell == "O" }.length
-    occupied_spaces = 0
-  
-    @board.each do |space|
-      if !(space.nil? || space == " ")
-        occupied_spaces += 1
-      end
-    end
-    
-    occupied_spaces
+    @board.select { |cell| cell == "X" || cell == "O" }.length
   end
   
   def current_player
     turn_count() % 2 == 0 ? "X" : "O"
-  end
-  
-  def won?
-    WIN_COMBINATIONS.each do |combo|
-      if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
-        return combo
-      elsif @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
-        return combo
-      end
-    end
-    
-    false
   end
   
   def full?
@@ -95,6 +62,30 @@ class TicTacToe
   
   def over?
     won?() || draw?() || full?()
+  end
+  
+  def turn
+    puts "Please enter 1-9:"
+    index = input_to_index(gets.strip)
+    
+    if valid_move?(index)
+      move(index, current_player())
+      display_board()
+    else
+      turn()
+    end
+  end
+  
+  def won?
+    WIN_COMBINATIONS.each do |combo|
+      if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
+        return combo
+      elsif @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
+        return combo
+      end
+    end
+    
+    false
   end
   
   def winner
