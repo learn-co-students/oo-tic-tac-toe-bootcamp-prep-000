@@ -77,13 +77,11 @@ class TicTacToe
   end
   
   def won?
-    WIN_COMBINATIONS.each do |combo|
+    WIN_COMBINATIONS.any? do |combo|
       cells = @board[combo[0]] + @board[combo[1]] + @board[combo[2]]
       
       return combo if cells == "XXX" || cells == "OOO"
     end
-    
-    false
   end
   
   def winner
