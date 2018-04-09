@@ -39,7 +39,7 @@ class TicTacToe
   end
   
   def turn_count
-    @board.select { |cell| cell == "X" || cell == "O" }.length
+    @board.select { |cell| cell != " " }.length
   end
   
   def current_player
