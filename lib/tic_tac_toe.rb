@@ -47,7 +47,7 @@ class TicTacToe
   end
   
   def full?
-    @board.none? { |cell| cell.nil? || cell == " " }
+    @board.none? { |cell| cell == " " }
   end
   
   def draw?
