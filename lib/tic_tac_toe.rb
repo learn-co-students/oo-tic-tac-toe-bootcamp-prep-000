@@ -90,7 +90,6 @@ class TicTacToe
       end
       i+=1
     end
-    puts "[#{x_board}, #{o_board}]"
     return [x_board, o_board]
   end
 
@@ -105,8 +104,6 @@ class TicTacToe
           res_o.push(possibility)
         end
       end
-      puts "#{res_o}"
-      puts "#{res_x}"
       if res_o.length == 0 && res_x.length == 0
         return false
       elsif res_o.length > res_x.length
