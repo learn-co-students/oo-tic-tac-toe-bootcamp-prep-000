@@ -99,15 +99,9 @@ def play
   end
 end
 
-def won?
-    winning_combination.first
-end
-
-def winning_combination
-    WIN_COMBINATIONS.select do |win_combo|
-
-    (@board[win_combo[0]] == "X" && @board[win_combo[1]] == "X" && @board[win_combo[2]] == "X") ||  (@board[win_combo[0]] == "O" && @board[win_combo[1]] == "O" && @board[win_combo[2]] == "O")
-end
+  def won?
+    winning_combinations(@board).first
+  end
 
 def winner
   winning_combination = won?
@@ -129,6 +123,4 @@ end
 def draw?
   full? && !won?
 end
-end
-
 end
