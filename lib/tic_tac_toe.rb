@@ -100,8 +100,10 @@ def play
 end
 
   def won?
-    winning_combinations(@board).first
+    WIN_COMBINATIONS.detect do |win_combo|
+      win_combo.all? {|index|@board[index] == "X"} == true || win_combo.all? {|index|@board[index] == "O"}
   end
+end
 
 def winner
   winning_combination = won?
