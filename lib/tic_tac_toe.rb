@@ -60,7 +60,7 @@ def turn_count
 end
 
 def over?
-  full?(@board) || won?(@board) || draw?(@board)
+  full? || won? || draw?
 end
 
 def turn
@@ -88,40 +88,47 @@ end
   end
 end
 
-def play(board)
-  until over?(board)
-    turn(board)
+def play
+  until over?
+    turn
   end
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
+  if won?
+    puts "Congratulations #{winner}!"
+  elsif draw?
     puts "Cat's Game!"
   end
 end
 
 def won?
-    WIN_COMBINATIONS.first
+    winning_combination.first
+end
+
+def winning_combination
+    WIN_COMBINATIONS.select do |win_combo|
+
+    (@board[win_combo[0]] == "X" && @board[win_combo[1]] == "X" && @board[win_combo[2]] == "X") ||  (@board[win_combo[0]] == "O" && @board[win_combo[1]] == "O" && @board[win_combo[2]] == "O")
 end
 
 def winner
-  winning_combination = won?(@board)
+  winning_combination = won?
   if winning_combination == nil
     return nil
-  elsif board[winning_combination[0]] == "X"
+  elsif @board[winning_combination[0]] == "X"
   return "X"
 else
   "O"
   end
 end
 
-def full?(board)
+def full?
     !@board.any? do |board_position|
       board_position == " "
   end
 end
 
-def draw?(board)
-  full?(board) && !won?(board)
+def draw?
+  full? && !won?
+end
 end
 
 end
