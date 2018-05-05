@@ -1,4 +1,5 @@
 class TicTacToe
+<<<<<<< HEAD
 	WIN_COMBINATIONS = [
 		[0, 1, 2],
 		[3, 4, 5],
@@ -96,4 +97,7 @@ class TicTacToe
 			puts "Cat's Game!"
 		end
 	end
+=======
+  
+>>>>>>> 7f30bd8804aeac4a1eceb1140753ea156f9806d0
 end
