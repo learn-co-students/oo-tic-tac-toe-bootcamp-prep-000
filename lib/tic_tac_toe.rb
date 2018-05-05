@@ -52,17 +52,17 @@ class TicTacToe
     end
   end
   
-  def turn()
-    puts "Please enter 1-9"
-    input = gets.strip
-    index = input_to_index(input)
-    if valid_move?(index)
-      move(index, current_player(board))
-      display_board()
-    else 
-      turn()
-    end
-  end
+  # def turn()
+  #   puts "Please enter 1-9"
+  #   input = gets.strip
+  #   index = input_to_index(input)
+  #   if valid_move?(index)
+  #     move(index, current_player(board))
+  #     display_board()
+  #   else 
+  #     turn()
+  #   end
+  # end
 
   def turn_count()
     count = 0
@@ -81,13 +81,25 @@ class TicTacToe
   
   def current_player()
     if turn_count() % 2 == 0 
-      return 'O'
-    else
       return 'X'
+    else
+      return 'O'
     end
     # if turn_count(board) == 3
     #   return 'X'
     # end
+  end
+  
+  def turn()
+    puts "Please enter 1-9"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(index)
+      move(index, current_player())
+      display_board()
+    else 
+      turn()
+    end
   end
   
   def won?()
@@ -99,5 +111,62 @@ class TicTacToe
     return false;
   end
   
+  def full?()
+    index = 0
+    @board.each do |cell|
+      if !position_taken?(index)
+        return false;
+      end
+      index += 1
+    end
+    return true
+  end
+  
+  def draw?()
+    if won?() == false
+      if full?()
+        return true
+      else 
+        return false
+      end
+    else
+      return false
+    end
+  end
+  
+  def over?()
+    if won?() != false || draw?() || full?()
+      return true
+    else
+      return false
+    end
+  end
+  
+  def winner()
+    if !draw?() && over?()
+      comboArray = won?()
+      if @board[comboArray[0]] == "X"
+        return "X"
+      else
+        return "O"
+      end
+    else
+      return nil
+    end
+  end
+  
+  def play()
+    while !over?()
+      turn()
+      if won?() || draw?()
+        break
+      end
+    end
+    if won?()
+      puts "Congratulations #{winner()}!"
+    elsif draw?()
+      puts "Cat\'s Game!"
+    end
+  end
   
 end
