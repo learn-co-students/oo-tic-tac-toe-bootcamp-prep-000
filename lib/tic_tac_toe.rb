@@ -29,90 +29,73 @@ class TicTacToe
     users_index.between?(0,8) && !position_taken?(users_index)
   end
 
-=begin
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index, current_player(board))
-    display_board(board)
-  else
-    turn(board)
-  end
-end
-
-def turn_count(board)
-  turns = 0
-  board.each do |spot|
-    if spot == "X" || spot == "O" then turns += 1 end
-  end
-  turns
-end
-
-  def turn_count(board)
-    board.count{|token| token == "X" || token == "O"}
-  end
-
-
-def current_player(board)
-  turn_count(board).even? ? player = "X" : player = "O" 
-end
-
-  def current_player(board)
-    turn_count(board) % 2 == 0 ? "X" : "O"
-  end
-
-
-def won?(board)
-  result = false
-  WIN_COMBINATIONS.each do |set|
-    if board[set[0]] == "X" && board[set[1]] == "X" && board[set[2]] == "X"
-      result = set
-      break
-    elsif board[set[0]] == "O" && board[set[1]] == "O" && board[set[2]] == "O"
-      result = set
-      break
+  def turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    processed_input = input_to_index(input)
+    if valid_move?(processed_input)
+      move(processed_input, current_player)
+      display_board
+    else
+      turn
     end
   end
-  result
-end
 
-def full?(board)
-  filled = board.all? do |spot|
-    spot != " " && spot != ""
+  def turn_count
+    @board.count{ |chip| chip == "X" || chip == "O" }
   end
-end
 
-def draw?(board)
-  won?(board) == false && full?(board)
-end
-
-def over?(board)
-  won?(board) != false || draw?(board)
-end
-
-def winner(board)
-  outcome = won?(board)
-  if outcome != false
-    board[outcome[0]]
-  else
-    nil
+  def current_player
+    turn_count.even? ? "X" : "O" 
   end
-end
 
-def play(board)
-  until over?(board)
-    turn(board)
+  def won?
+    result = false
+    WIN_COMBINATIONS.each do |set|
+      if @board[set[0]] == "X" && @board[set[1]] == "X" && @board[set[2]] == "X"
+        result = set
+        break
+      elsif @board[set[0]] == "O" && @board[set[1]] == "O" && @board[set[2]] == "O"
+        result = set
+        break
+      end
+    end
+    result
   end
-  letter = winner(board)
-  if letter != nil
-    puts "Congratulations #{letter}!"
-  else
-    puts "Cat's Game!"
-  end
-end
-=end
 
+  def full?
+    filled = @board.all? do |spot|
+      spot.strip != ""
+    end
+  end
+  
+  def draw?
+    won? == false && full?
+  end
+
+  def over?
+    won? != false || draw?
+  end
+  
+  def winner
+    outcome = won?
+    if outcome != false
+      @board[outcome[0]]
+    else
+      nil
+    end
+  end
+
+  def play
+    until over?
+      turn
+    end
+    letter = winner
+    if letter != nil
+      puts "Congratulations #{letter}!"
+    else
+      puts "Cat's Game!"
+    end
+  end
 end
 
