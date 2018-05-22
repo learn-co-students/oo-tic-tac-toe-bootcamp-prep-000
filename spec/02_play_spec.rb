@@ -21,6 +21,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game).to receive(:over?).at_least(:twice).and_return(false, false, true)
 
         game.play
+        
       end
 
       it 'plays the first turn of the game' do

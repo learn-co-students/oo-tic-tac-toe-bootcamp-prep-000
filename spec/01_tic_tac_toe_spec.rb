@@ -73,8 +73,8 @@ describe './lib/tic_tac_toe.rb' do
     describe '#move' do
       it 'allows "X" player in the top left and "O" in the middle' do
         game = TicTacToe.new
-        game.move(0, "X")
-        game.move(4, "O")
+        game.move(0,"X")
+        game.move(4,"O")
 
         board = game.instance_variable_get(:@board)
 
