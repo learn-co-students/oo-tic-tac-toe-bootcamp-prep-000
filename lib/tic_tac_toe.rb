@@ -59,14 +59,14 @@ def turn
   i = input_to_index(input)
   puts "Moving to index - #{i}"
   if(valid_move?(i))
-    return display_board(move(i, current_player))
+    display_board(move(i, current_player))
   else
     turn
   end
 end
 
 def current_player
-  if(turn_count(@board) % 2 == 0)
+  if(turn_count % 2 == 0)
     return "X"
   else
     return "O"
@@ -89,15 +89,15 @@ def full?
 end
 
 def draw?
-  return (full?(@board) && (!(won?(@board))))
+  return (full? && (!(won?)))
 end
 
 def over?
-  return (won?(@board) || full?(@board) || draw?(@board))  
+  return (won? || full? || draw?)  
 end
 
 def winner
-  if(won?
+  if(won?)
     return (@board[won?[0]])
   else
     return nil
@@ -108,7 +108,7 @@ def play
   until over?
     turn
   end
-  if(won?
+  if(won?)
     puts "Congratulations #{winner}!"
   else
     puts "Cat's Game!"
