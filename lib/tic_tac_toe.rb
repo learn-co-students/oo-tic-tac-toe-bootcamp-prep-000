@@ -53,6 +53,69 @@ def turn_count
   return idx
 end
 
+def turn
+  puts "Please enter 1-9?"
+  input = gets.strip
+  i = input_to_index(input)
+  puts "Moving to index - #{i}"
+  if(valid_move?(i))
+    return display_board(move(i, current_player))
+  else
+    turn
+  end
+end
+
+def current_player
+  if(turn_count(@board) % 2 == 0)
+    return "X"
+  else
+    return "O"
+  end
+end
+
+def won?
+    WIN_COMBINATIONS.each do |win_combo|
+      if(@board[win_combo[0]].upcase == "X" && @board[win_combo[1]].upcase == "X" && @board[win_combo[2]].upcase == "X" )
+      return win_combo
+      elsif (@board[win_combo[0]].upcase == "O" && @board[win_combo[1]].upcase == "O" && @board[win_combo[2]].upcase == "O" )
+        return win_combo
+      end
+    end
+  return false
+end
+
+def full?
+  return (!((@board.include?(" ")) || (@board.include?(""))))
+end
+
+def draw?
+  return (full?(@board) && (!(won?(@board))))
+end
+
+def over?
+  return (won?(@board) || full?(@board) || draw?(@board))  
+end
+
+def winner
+  if(won?
+    return (@board[won?[0]])
+  else
+    return nil
+  end
+end
+
+def play 
+  until over?
+    turn
+  end
+  if(won?
+    puts "Congratulations #{winner}!"
+  else
+    puts "Cat's Game!"
+  end
+end
+
+
  WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
