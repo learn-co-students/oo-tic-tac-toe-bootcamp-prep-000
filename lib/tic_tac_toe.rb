@@ -59,7 +59,8 @@ def turn
   i = input_to_index(input)
   puts "Moving to index - #{i}"
   if(valid_move?(i))
-    display_board(move(i, current_player))
+    move(i, current_player)
+    display_board
   else
     turn
   end
@@ -105,6 +106,7 @@ def winner
 end
 
 def play 
+  puts "Welcome to Tic Tac Toe!"
   until over?
     turn
   end
