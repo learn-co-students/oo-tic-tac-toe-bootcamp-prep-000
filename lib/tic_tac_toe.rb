@@ -34,5 +34,17 @@ class TicTacToe
   def position_taken? (index)
     @board[index] != " " && @board[index] != "" && @board[index] != nil
   end
+
+  def valid_move?(index)
+    !position_taken?(index) && index.between?(0,9)
+  end
+  
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
+  
+  def current_player
+    turn_count.even? ? "X" : "O"
+  end
   
 end
