@@ -1,7 +1,7 @@
 class TicTacToe
 
   def initialize
-    @board = [" "," "," "," "," "," "," "," "," "]
+    @board =  board || Array.new(9, " ")
   end
 
   WIN_COMBINATIONS = [
@@ -21,7 +21,6 @@ class TicTacToe
    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
    puts "-----------"
    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
-
   end
 
 
@@ -115,6 +114,7 @@ def winner()
     else
       return "O"
     end
+  end
   else
     nil
   end
@@ -138,3 +138,4 @@ turn()
   elsif (draw?())
     puts "Wolf's Game"
  end
+end
