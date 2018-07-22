@@ -148,9 +148,16 @@ end
   
   def play
     turns = 0 
-    while turns < 9 
+    while (turns < 9 && !over?)
       turn
       turns += 1
+    end
+    if (winner == "X")
+      puts "Congratulations X!"
+    elsif(winner == "O")
+      puts "Congratulations O!"
+    elsif (draw?)
+      puts "Cat's Game!"
     end
   end
 
