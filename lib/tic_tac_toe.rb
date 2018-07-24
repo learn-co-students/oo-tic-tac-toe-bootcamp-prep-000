@@ -88,8 +88,12 @@ class TicTacToe
     while !over?
       turn
     end
-    puts "Congratulations #{winner}!"
-    puts "Cat\'s Game!"
+    if won?
+      puts "Congratulations #{winner}!"
+    end
+    if draw?
+      puts "Cat\'s Game!"
+    end
   end
 
 end
