@@ -63,10 +63,14 @@ class TicTacToe
     @computerTurnCount += 1
   end
   
+  def randomIndex
+    Random.rand(0...9)
+  end
+  
   def computerRandomChoice
-    choice = Random.rand(0...9)
+    choice = randomIndex
     while !valid_move?(choice) 
-      choice = Random.rand(0...9)
+      choice = randomIndex
     end
     return choice
   end
