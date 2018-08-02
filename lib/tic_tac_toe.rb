@@ -68,8 +68,7 @@ class TicTacToe
   end
   
   def computerRandomChoice
-    choice = randomIndex
-    while !valid_move?(choice) 
+    while !valid_move?(choice = randomIndex) 
       choice = randomIndex
     end
     return choice
