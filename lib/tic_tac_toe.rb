@@ -10,8 +10,11 @@ class TicTacToe
     [2,4,6]
   ] 
   
+  @computerTurnCount = 1
+  
   def initialize
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    @computerTurnCount = 1
   end
   
   def display_board
@@ -49,6 +52,23 @@ class TicTacToe
     else
       turn
     end
+  end
+  
+  def computer_turn
+    puts "Computer's turn #{@computerTurnCount} ... thinking (or not)!"
+    sleep(1)
+    index = computerRandomChoice
+    move(index, current_player)
+    display_board
+    @computerTurnCount += 1
+  end
+  
+  def computerRandomChoice
+    choice = Random.rand(0...9)
+    while !valid_move?(choice) 
+      choice = Random.rand(0...9)
+    end
+    return choice
   end
   
   def turn_count
@@ -95,11 +115,9 @@ class TicTacToe
   end
   
   def play
-  
     while !over?
       turn
     end
-  
     if (winnee = winner)
       puts "Congratulations #{winnee}!"
     elsif draw?
@@ -107,5 +125,19 @@ class TicTacToe
     end
   end
   
+  def play_against_computer
+    while !over?
+      if current_player == "X"
+        turn
+      else
+        computer_turn
+      end
+    end
+    if (winnee = winner)
+      puts "Congratulations #{winnee}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
+  end
   
 end #class
