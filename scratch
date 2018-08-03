@@ -1,0 +1,4 @@
+There are three test files that should be completed in order: 
+01_tic_tac_toe_spec.rb sets tests for our helper methods within TicTacToe. 
+02_play_spec.rb tests the main #play method. 
+03_cli_spec.rb tests the CLI.
