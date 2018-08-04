@@ -18,27 +18,27 @@ class TicTacToe
     index = user_input.to_i - 1
   end
  
- def move(index, current_player = "X")
-  @board[index] = current_player
+ def move(index, token = "X")
+  @board[index] = token
 end
 
 def position_taken?(index)
   @board[index] == "O" || @board[index] == "X"
 end
 
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
+def valid_move?(index)
+  index.between?(0,8) && !position_taken?(index)
 end
 
-def turn(board)
+def turn
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input)
-  if valid_move?(board, index)
-    move(board, index, current_player(board))
-    display_board(board)
+  if valid_move?(index)
+    move(index, current_player)
+    display_board
   else
-    turn(board)
+    turn
   end
 end
 
@@ -50,14 +50,14 @@ def turn_count
     turn_count % 2 == 0 ? "X" : "O"
   end
  
-  def won?(board)
+  def won?
   WIN_COMBINATIONS.each do |win_combination|
     win_index_1 = win_combination[0]
     win_index_2 = win_combination[1]
     win_index_3 = win_combination[2]
-    position_1 = board[win_index_1]
-    position_2 = board[win_index_2]
-    position_3 = board[win_index_3]
+    position_1 = @board[win_index_1]
+    position_2 = @board[win_index_2]
+    position_3 = @board[win_index_3]
     if (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")
       return win_combination 
     else 
@@ -69,47 +69,47 @@ def turn_count
   end
 end
  
-def full?(board)
-  board.all? do |board_element| 
+def full?
+  @board.all? do |board_element| 
     board_element == "X" || board_element == "O"
   end
 end
 
-def draw?(board)
-!won?(board) && full?(board)
+def draw?
+!won? && full?
 end
 
-def over?(board)
-  won?(board) || draw?(board) || full?(board)
+def over?
+  won? || draw? || full?
 end
 
-def winner(board)
+def winner
   WIN_COMBINATIONS.each do |win_combination|
     win_index_1 = win_combination[0]
     win_index_2 = win_combination[1]
     win_index_3 = win_combination[2]
-    position_1 = board[win_index_1]
-    position_2 = board[win_index_2]
-    position_3 = board[win_index_3]
+    position_1 = @board[win_index_1]
+    position_2 = @board[win_index_2]
+    position_3 = @board[win_index_3]
     if (position_1 == "X" && position_2 == "X" && position_3 == "X")
       return "X"
       elsif (position_1 == "O" && position_2 == "O" && position_3 == "O")
       return "O"
     end 
-    if !won?(board)
+    if !won?
       return nil 
     end
   end 
 end
 
-def play(board)
-  until over?(board)
-    turn(board)
+def play
+  until over?
+    turn
   end
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
+  if won?
+    puts "Congratulations #{winner}!"
   else 
-    if draw?(board)
+    if draw?
       puts "Cat's Game!"
     end 
   end
