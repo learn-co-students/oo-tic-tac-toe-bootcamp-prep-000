@@ -10,11 +10,8 @@ class TicTacToe
     [2,4,6]
   ] 
   
-  @computerTurnCount = 1
-  
   def initialize
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    @computerTurnCount = 1
   end
   
   def display_board
@@ -31,7 +28,6 @@ class TicTacToe
   
   def move(index, player) 
     @board[index] = player
-    return @board
   end
   
   def position_taken?(index)
@@ -55,12 +51,11 @@ class TicTacToe
   end
   
   def computer_turn
-    puts "Computer's turn #{@computerTurnCount} ... thinking (or not)!"
+    puts "Computer's turn ... thinking (or not)!"
     sleep(1)
     index = computerRandomChoice
     move(index, current_player)
     display_board
-    @computerTurnCount += 1
   end
   
   def randomIndex
@@ -121,8 +116,8 @@ class TicTacToe
     while !over?
       turn
     end
-    if (winnee = winner)
-      puts "Congratulations #{winnee}!"
+    if winner
+      puts "Congratulations #{winner}!"
     elsif draw?
       puts "Cat's Game!"
     end
@@ -136,8 +131,8 @@ class TicTacToe
         computer_turn
       end
     end
-    if (winnee = winner)
-      puts "Congratulations #{winnee}!"
+    if winner
+      puts "Congratulations #{winner}!"
     elsif draw?
       puts "Cat's Game!"
     end
