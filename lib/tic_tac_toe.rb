@@ -40,22 +40,30 @@ class TicTacToe
     @board[index] = current_player
   end
   
-  def position_taken?(location)
-    @board[location] != " " && board[location] != ""
+  def position_taken?(index)
+    @board[index] != " " && @board[index] != ""
   end
   
   def valid_move?(index)
     index.between?(0,8) && position_taken?(index)
   end
   
+   def current_player
+    if turn_count.even?
+      return "X"
+    else
+      return "O"
+    end
+  end
+  
   def turn
     puts "Please enter 1-9:"
-    input = gets.strip
-    index = input_to_index(user_input)
+    input = gets.chomp
+    index = input_to_index(input)
     
-    if valid_move?(@board, index)
-      move(@board, index, current_player(@board))
-      display_board(@board)
+    if valid_move?(index)
+      move(index, current_player)
+      display_board
     else
       turn
     end
@@ -65,19 +73,11 @@ class TicTacToe
     @board.select{|position| position != " "}.count
   end
   
-  def current_player
-    if turn_count.even?
-      return "X"
-    else
-      return "O"
-    end
-  end
-  
   def won?
     WIN_COMBINATIONS.detect do |win_combo|
       @board[win_combo[0]] == @board[win_combo[1]] && 
       @board[win_combo[1]] == @board[win_combo[2]] && 
-      position_taken?(@board, win_combo[0])
+      position_taken?(board, win_combo[0])
     end
   end
   
@@ -106,13 +106,13 @@ class TicTacToe
   end
   
   def play
-    until over?(@board)
-      turn(@board)
+    until over?
+      turn
     end
   
-    if won?(@board)
+    if won?
       puts "Contratulations #{winner(@board)}!"
-    elsif draw?(@board)
+    elsif draw?
       puts "Cat's Game!"
     end
   end
