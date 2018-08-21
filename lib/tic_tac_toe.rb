@@ -1,8 +1,9 @@
-class TicTacToe
-  def initialize(board = Array.new(9, " "))
-    @board = board
-  end
   
+  def input_to_index(input)
+    input.to_i - 1 
+  end 
+
+class TicTacToe
   WIN_COMBINATIONS = [
     [0, 1, 2], # Top row 
     [3, 4, 5], # Middle row
@@ -14,6 +15,10 @@ class TicTacToe
     [2, 4, 6]  # Right diagonal 
   ]
   
+  def initialize(board = Array.new(9, " "))
+    @board = board
+  end
+  
   def display_board
     puts <<-BOARD
  #{@board[0]} | #{@board[1]} | #{@board[2]} 
@@ -23,10 +28,7 @@ class TicTacToe
  #{@board[6]} | #{@board[7]} | #{@board[8]} 
 BOARD
   end
-  
-  def input_to_index(input)
-    input.to_i - 1 
-  end 
+
   
   def move(i, player = "X")
     @board[i] = player
