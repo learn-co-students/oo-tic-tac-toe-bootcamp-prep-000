@@ -61,15 +61,13 @@ class TicTacToe
   end
   
   def current_player
-    return "X" if turn_count % 2 == 0
-    return "O"
+    turn_count % 2 == 0 ? "X" : "O"
   end
   
   def won? #return false if there are no winning combinations
       WIN_COMBINATIONS.each {|combination| 
         return combination if 
-          (combination.all? {|position| @board[position] == "X"}) || 
-          (combination.all? {|position| @board[position] == "O"})}
+          combination.all? {|position| @board[position] == "X"} ||  combination.all? {|position| @board[position] == "O"}}
       return false
     end
   
@@ -82,11 +80,11 @@ class TicTacToe
     end
     
     def over?
-      return true if draw?|| won? != false
+      draw? || won?
     end
     
     def winner
-      return @board[won?[0]] if won? != false
+      return @board[won?[0]] if won?
     end
   
   def play
@@ -100,4 +98,5 @@ class TicTacToe
       puts "Cat's Game!"
     end
   end
+  
 end
