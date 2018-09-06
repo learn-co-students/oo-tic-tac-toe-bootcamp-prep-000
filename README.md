@@ -1,4 +1,12 @@
-c Ta# OO Tic Tac Toe
+1) ./lib/tic_tac_toe.rb TicTacToe#display_board prints arbitrary arrangementsof the board
+     Failure/Error: output = capture_puts{ game.display_board }
+
+     NoMethodError:
+       private method `display_board' called for #<TicTacToe:0x00000002506ef8>
+       Did you mean?  display
+     # ./spec/01_tic_tac_toe_spec.rb:33:in `block (5 levels) in <top (required)>'
+     # ./spec/spec_helper.rb:32:in `capture_puts'
+     # ./spec/01_tic_tac_toe_spec.rb:33:in `block (4 levels) in <top (required)>c Ta# OO Tic Tac Toe
 
 ## Objectives
 
