@@ -1,55 +1,41 @@
 class TicTacToe
   def initialize
-    @board = [
-      [0,1,2],
-      [3,4,5],
-      [6,7,8],
-      [0,3,6],
-      [1,4,7],
-      [2,5,8],
-      [0,4,8],
-      [2,4,6]
-      ]
-      
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  end
+
+  WIN_COMBINATIONS = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+  ]
+
   def display_board
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
-  
+
   def input_to_index(user_input)
-  user_input.to_i - 1
+    user_input.to_i - 1
   end
-  
-  def player_move(board, index, player)
-  board[index] = player
-end
 
-def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
-end
-
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
-end
-
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    player_move(board, index, current_player(board))
-    display_board(board)
-  else
-    turn(board)
+  def move(index, token)
+    @board[index] = token
   end
-end
 
-def turn_count(board)
+  def position_taken?(index)
+    @board[index] != " "
+  end
+
+  def valid_move?(index)
+    !position_taken?(index) && index.between?(0,8)
+  end
+
+def turn_count
   counter = 0
-  board.each do |turn|
+  @board.each do |turn|
   if turn == "X" || turn == "O"
     counter += 1
   end
@@ -57,49 +43,55 @@ end
 counter
 end
 
-def current_player(board)
-  if turn_count(board) % 2 == 0
-   "X"
-  else
-    "O"
+  def current_player
+    if turn_count % 2 == 0
+      "X"
+    else
+      "O"
+    end
   end
-end
 
-def won?(board)
-  WIN_COMBINATIONS.detect do |combo|
-    board[combo[0]] == board[combo[1]] &&
-    board[combo[1]] == board[combo[2]] &&
-    position_taken?(board, combo[1])
+  def turn
+    puts "Please enter a number (1-9):"
+    user_input = gets.strip
+    index = input_to_index(user_input)
+    if valid_move?(index)
+      token = current_player
+      move(index, token)
+    else
+      turn
+    end
+    display_board
   end
-end
-  
-def full?(board)
-  board.all? do |location|
-    location == "X" || location == "O"
-  end
-end
 
-def draw?(board)
-  !won?(board) && full?(board)
-end
-
-def over?(board)
-  won?(board) || draw?(board) || full?(board)
-end
- 
-def winner(board)
-  if winnerChickenDinner = won?(board)
-    board[winnerChickenDinner.first]
+  def won?
+    WIN_COMBINATIONS.any? do |combo|
+      if position_taken?(combo[0]) && @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]]
+        return combo
+      end
+    end
   end
-end
 
-def play(board)
-  while !over?(board)
-    turn(board)
+  def full?
+    @board.all?{|square| square != " " }
   end
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
-    puts "Cat's Game!"
+
+  def draw?
+    full? && !won?
+  end
+
+  def over?
+    won? || draw?
+  end
+
+  def winner
+    if winnerChickenDinner = won?
+      @board[winnerChickenDinner.first]
+    end
+  end
+
+  def play
+    turn until over?
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
   end
 end
