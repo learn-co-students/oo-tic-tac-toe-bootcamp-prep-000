@@ -8,11 +8,11 @@ class TicTacToe
 
 
 def display_board
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
   puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  puts " #{@oard[6]} | #{@board[7]} | #{@board[8]} "
 end
 
 
@@ -22,16 +22,12 @@ end
 
 
 def move(index, current_player="X")
-  board[index] = current_player
-  return board
-  
+  @board[index] = current_player
 end
 
 
 def position_taken?(index)
-  
- if !(board[index] == " " || board[index] == "" || board[index] == nil)
-   
+  if !(@board[index] == " " || @board[index] == "" || @board[index] == nil)
    return true
  else
   return false
@@ -53,7 +49,7 @@ def turn
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(index)
-    move(index,current_player(board))
+    move(index,current_player)
     display_board
   else
     
@@ -92,9 +88,9 @@ def won?
   win_index_2 = win_combination[1]
   win_index_3 = win_combination[2]
   
-  position_1 = board[win_index_1]
-  position_2 = board[win_index_2]
-  position_3 = board[win_index_3]
+  position_1 = @board[win_index_1]
+  position_2 = @board[win_index_2]
+  position_3 =@ board[win_index_3]
   
    if position_1 == "X" && position_2 == "X" && position_3 == "X"
      return win_combination
@@ -108,9 +104,9 @@ end
 
 
  def full?
-  if board.any?{|i| i != "X" && i != "O"}
+  if @board.any?{|i| i != "X" && i != "O"}
     return false
-  elsif board.all?{|i| i != " "}
+  elsif @board.all?{|i| i != " "}
     return true
   end
 end
