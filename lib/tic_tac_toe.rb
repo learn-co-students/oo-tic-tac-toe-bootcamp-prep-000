@@ -52,7 +52,6 @@ def turn
     move(index,current_player)
     display_board
   else
-    
     puts "That move was not vaild please try again"
     turn
   end
@@ -90,7 +89,7 @@ def won?
   
   position_1 = @board[win_index_1]
   position_2 = @board[win_index_2]
-  position_3 =@ board[win_index_3]
+  position_3 = @board[win_index_3]
   
    if position_1 == "X" && position_2 == "X" && position_3 == "X"
      return win_combination
@@ -104,55 +103,36 @@ end
 
 
  def full?
-  if @board.any?{|i| i != "X" && i != "O"}
-    return false
-  elsif @board.all?{|i| i != " "}
-    return true
-  end
+    @board.all? {|i| i == "X" || i == "O"}
 end
-
-
- def draw?
-  if won?
-    return false
-  elsif full?
-    return true
-  else
-    return false
-    end
+  
+  def draw?
+    full? && !won?
   end
-
-
- def over?
-  if won?|| draw?
-    return true
-  else
-    return false
+  
+  
+  def over?
+    won? || draw?
   end
-end
 
 
 def winner
-  if won?
-    return board[won?(board)[0]]
-  end
+    if won?
+      @board[won?[0]]
+    end
 end
   
+  
 def play
-
-  until over?
-    turn
-    
+    while !over?
+      turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    else
+      puts "Cat's Game!"
+    end
   end
-  
-  
-  if won?
-    puts "Congratulations #{winner}!"
-  elsif draw?
-    puts "Cat's Game!"
-  end
- end
- 
  
  end
  
