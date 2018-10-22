@@ -82,7 +82,6 @@ class TicTacToe
       i1 = comb[0]
       i2 = comb[1]
       i3 = comb[2]
-   
       pos1 = @board[i1]
       pos2 = @board[i2]
       pos3 = @board[i3]
