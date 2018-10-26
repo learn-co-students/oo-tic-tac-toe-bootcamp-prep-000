@@ -29,21 +29,27 @@ class TicTacToe
   end
   
   def position_taken?(index)
-    ((@board[index] == "X") || (@board[index] == "O"))
+    if (@board[index] == "X") || (@board[index] == "O")
+      return true
+    else
+      return false
+    end
   end
   
   def valid_move?(index)
-    index.between?(0,8) && !position_taken?(index)
+    if index.between?(0,8) && !position_taken?(index)
+      return true 
+    end 
   end
 
   def turn_count
-    number_of_turns = 0
+    counter = 0
     @board.each do |space|
     if space == "X" || space == "O"
-        number_of_turns += 1
+        counter  += 1
     end
     end
-  return number_of_turns
+  return counter 
   end
 
   def current_player
@@ -53,13 +59,14 @@ class TicTacToe
       return "O"
     end
   end
+  
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-    char = current_player
+    counter = current_player
     if valid_move?(index)
-      move(index, char)
+      move(index, counter)
       display_board
     else
       turn
@@ -89,7 +96,7 @@ class TicTacToe
   end
 
   def over?
-    if won? || full? || draw?
+    if won? || draw?
       return true 
     end
   end
