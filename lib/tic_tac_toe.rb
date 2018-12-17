@@ -1,6 +1,6 @@
 class TicTacToe
-    def initialize(board = nil)
-        @board = board || Array.new(9, " ")
+    def initialize(board = Array.new(9, " "))
+        @board = board
     end
     WIN_COMBINATIONS = [
         [0,1,2],
@@ -12,53 +12,41 @@ class TicTacToe
         [0,4,8],
         [2,4,6]
     ]
-        
-    def display_board
-        puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
-        puts "-----------"
-        puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
-        puts "-----------"
-        puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
-    end
-    
-    def input_to_index
-        input.to_i - 1
-    end
-    
-    def move
-    end
-    
-    def burn
-    end
-    
-    def valid_move? 
-    end
-    
-    def position_taken
-    end
-    
-    def turn_count
-    end
-    
-    def current_player(board)
-        turn_count(board) % 2 == ? "X : "O"
-    end
-    
-    def valid_move? 
-    end
-    
-    def won?
-    end
-    
-    def draw?
-    end
-    
-    def over?
-    end
-    
-    def winner
-    end
     
     def play
+        def display_board
+            puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
+            puts "-----------"
+            puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
+            puts "-----------"
+            puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
+        end
+        while !over
+            def turn
+                def turn_count
+                end
+                def move
+                end
+                def current_player
+                end
+                puts "Please enter 1-9:"
+                def input_to_index(input)
+                end
+                def valid_move?
+                end
+
+                def position_taken?
+                end
+                
+                def won?
+                end
+                
+                def draw?
+                end
+                
+                def winner
+                end
+            end
+        end
     end
 end
