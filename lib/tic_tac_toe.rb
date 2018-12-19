@@ -21,32 +21,5 @@ class TicTacToe
             puts "-----------"
             puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
         end
-        while !over
-            def turn
-                def turn_count
-                end
-                def move
-                end
-                def current_player
-                end
-                puts "Please enter 1-9:"
-                def input_to_index(input)
-                end
-                def valid_move?
-                end
-
-                def position_taken?
-                end
-                
-                def won?
-                end
-                
-                def draw?
-                end
-                
-                def winner
-                end
-            end
-        end
     end
 end
