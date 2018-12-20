@@ -1,5 +1,5 @@
 class TicTacToe
-    
+
     def initialize(board = Array.new(9, " "))
         @board = board
     end
@@ -29,5 +29,39 @@ class TicTacToe
     
     def move(index, token)
         @board[index] = token 
+    end
+    
+    def position_taken?(index)
+        @board[index] == "X" || @board[index] == "O"
+    end
+    
+    def valid_move?(index)
+        !position_taken?(index) && index.between?(0, 8)
+    end
+    
+    def turn_count
+        @board.count {|x| x == "X" || x == "O" }
+    end
+    
+    def current_player
+        turn_count % 2 == 0 ? "X" : "O"
+    end
+    
+    def turn
+        puts "Please enter the space number for your move."
+        input = gets.strip
+        index = input_to_index(input)
+        if valid_move?(index)
+            move(index, current_player)
+            display_board
+        else
+            turn
+        end
+    end
+    def won?
+        WIN_COMBINATIONS.detect {|combo|
+        @board[combo[0]] ==  @board[combo[1]] && @board[combo[2]] == @board[combo[0]] &&
+        @board[combo[0]] == "O" || @board[combo[O] == "X"]
+        }
     end
 end
