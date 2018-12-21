@@ -100,17 +100,16 @@ class TicTacToe
     return nil
   end  
   
-end
-
-def play(game)
-  until game.over?()
-    game.turn() 
-  end 
-  winner = game.winner()
-  if winner != nil
-    puts("Congratulations #{winner}!")
-  end
-  if game.draw?()
-    puts("Cat's Game!")
+  def play()
+    until over?()
+      turn() 
+    end 
+    winner = winner()
+    if winner != nil
+      puts("Congratulations #{winner}!")
+    end
+    if draw?()
+      puts("Cat's Game!")
+    end
   end
 end
