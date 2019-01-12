@@ -52,7 +52,7 @@ class TicTacToe
 
 
   def turn
-    player = current_player(@board)
+    player = current_player
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -95,9 +95,9 @@ class TicTacToe
       win_index_2 = win_combination[1]
       win_index_3 = win_combination[2]
     
-      position_1 = board[win_index_1] 
-      position_2 = board[win_index_2] 
-      position_3 = board[win_index_3] 
+      position_1 = @board[win_index_1] 
+      position_2 = @board[win_index_2] 
+      position_3 = @board[win_index_3] 
     
       if position_1 == "X" && position_2 == "X" && position_3 == "X"
         return win_combination
@@ -115,8 +115,8 @@ class TicTacToe
   end
 
     
-  def full?(board)  
-    if board.include? " "
+  def full?  
+    if @board.include? " "
       false
     else
       true
@@ -124,10 +124,10 @@ class TicTacToe
   end
   
   
-  def draw?(board)
-    if full?(board) && !won?(board) 
+  def draw?
+    if full? && !won?
       true
-    elsif won?(board)
+    elsif won?
       false
     else
       false
@@ -135,26 +135,26 @@ class TicTacToe
   end
   
   
-  def over?(board)
-    won?(board) || draw?(board) || full?(board)
+  def over?
+    won? || draw? || full?
   end
    
    
-  def winner(board)
-    if won?(board)
-      board[won?(board)[0]]
-    elsif !won?(board)
+  def winner
+    if won?
+      @board[won?[0]]
+    elsif !won?
       nil
     end
   end
 
-    def play(board)
-    until over?(board)
-      turn(board)
+    def play
+    until over?
+      turn
     end
     
-    if won?(board)
-      puts "Congratulations #{winner(board)}!"
+    if won?
+      puts "Congratulations #{winner}!"
     else
       puts "Cat's Game!"
     end
