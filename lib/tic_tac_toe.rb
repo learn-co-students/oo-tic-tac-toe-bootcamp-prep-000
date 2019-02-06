@@ -11,6 +11,16 @@ class TicTacToe
     @board.count{|token| token == "X" || token == "O"}
   end
   
+  def play
+  
+  while !over?
+    turn
+  end
+  if(won?)
+    puts "Congratulations #{winner}!"
+  end
+end
+  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -29,6 +39,7 @@ class TicTacToe
   [0,4,8],
   [2,4,6]
 ]
+
   def input_to_index(user_input)
     user_input.to_i - 1
   end
@@ -70,8 +81,13 @@ class TicTacToe
     @board.none? {|ele| ele == " "}
   end
 
-  def draw?
-    full? ? !won? : false
+ def draw?
+    if(full?)
+      puts "Cat's Game!"
+      return !won?
+    else
+      return false
+    end
   end
   
   def over?
