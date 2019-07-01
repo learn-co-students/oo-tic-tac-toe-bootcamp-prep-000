@@ -87,7 +87,7 @@ describe './lib/tic_tac_toe.rb' do
         game.instance_variable_set(:@board, board)
         allow($stdout).to receive(:puts)
 
-        expect($stdout).to receive(:puts).with("Congratulations X!")
+        expect($stdout).to receive(:puts).with("Congratulations, X!")
 
         game.play
       end
@@ -99,7 +99,7 @@ describe './lib/tic_tac_toe.rb' do
 
         allow($stdout).to receive(:puts)
 
-        expect($stdout).to receive(:puts).with("Congratulations O!")
+        expect($stdout).to receive(:puts).with("Congratulations, O!")
 
         game.play
       end
@@ -115,13 +115,13 @@ describe './lib/tic_tac_toe.rb' do
         game.play
       end
 
-      it 'prints "Cat\'s Game!" on a draw' do
+      it 'prints "Cat\'s game!" in a draw' do
         game = TicTacToe.new
         board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
         game.instance_variable_set(:@board, board)
         allow($stdout).to receive(:puts)
 
-        expect($stdout).to receive(:puts).with("Cat's Game!")
+        expect($stdout).to receive(:puts).with("Cat's game!")
 
         game.play
       end
@@ -138,7 +138,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game).to receive(:gets).and_return("6")
         expect(game).to receive(:gets).and_return("7")
 
-        expect($stdout).to receive(:puts).with("Congratulations X!")
+        expect($stdout).to receive(:puts).with("Congratulations, X!")
 
         game.play
       end
