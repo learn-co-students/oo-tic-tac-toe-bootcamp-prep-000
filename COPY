@@ -22,16 +22,9 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
-  
-  def input_to_index(user_input)
-    user_input.to_i - 1
-  end
-
-
-
 
   def move(location, character = "X")
-    @board[location.to_i] = character
+    @board[location.to_i - 1] = character
   end
 
   def position_taken?(position)
@@ -43,7 +36,7 @@ class TicTacToe
   end
 
   def valid_move?(position)
-    position = position.to_i
+    position = position.to_i - 1
     if position.between?(0,8) && !position_taken?(position)
       true
     else
@@ -51,42 +44,16 @@ class TicTacToe
     end
   end
 
-  # def turn
-  #   puts "Please enter 1-9:"
-  #   input = gets.strip
-  #   if valid_move?(input)
-  #     move(input, current_player)
-  #   else
-  #     turn
-  #   end
-  #   display_board
-  # end
-  
-  # def turn
-  #   display_board
-  #   puts "Please enter 1-9:"
-  #   input = gets.strip
-  #   if !valid_move?(input)
-  #     turn
-  #   end
-  #   move(input, current_player)
-  #   display_board
-  # end
-  
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
-    index = input_to_index(input)
-    char = current_player
-    if valid_move?(index)
-      move(index, char)
-      display_board
+    if valid_move?(input)
+      move(input, current_player)
     else
       turn
     end
-end
-
-
+    display_board
+  end
 
   def turn_count
     counter = 0
@@ -151,7 +118,7 @@ end
     if won? 
       puts "Congratulations #{winner}!"
     elsif draw?
-      puts "Cat's Game!"
+      puts "Cats Game!"
     end
   end
 
