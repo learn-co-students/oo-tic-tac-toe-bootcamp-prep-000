@@ -307,7 +307,7 @@ describe './lib/tic_tac_toe.rb' do
         board = ["X", "O", " ", " ", " ", " ", " ", "O", "X"]
         game.instance_variable_set(:@board, board)
 
-        expect(game.winner).to eq(" ")
+        expect(game.winner).to be_nil
       end
     end
   end

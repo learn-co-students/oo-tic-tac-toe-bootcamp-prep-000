@@ -59,6 +59,89 @@ describe './lib/tic_tac_toe.rb' do
         game.play
       end
 
-        end
+      it 'checks if the game is draw after every turn' do
+        game = TicTacToe.new
+        allow($stdout).to receive(:puts)
+        allow(game).to receive(:gets).and_return("1", "2", "3")
+
+        expect(game).to receive(:draw?).at_least(:twice).and_return(false, false, true)
+
+        game.play
+      end
+
+      it 'stops playing if someone has won' do
+        game = TicTacToe.new
+        board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
+        game.instance_variable_set(:@board, board)
+
+        allow($stdout).to receive(:puts)
+
+        expect(game).to_not receive(:turn)
+
+        game.play
+      end
+
+      it 'congratulates the winner X' do
+        game = TicTacToe.new
+        board = ["X", "X", "X", "O", "O", " ", " ", " ", " "]
+        game.instance_variable_set(:@board, board)
+        allow($stdout).to receive(:puts)
+
+        expect($stdout).to receive(:puts).with("Congratulations X!")
+
+        game.play
+      end
+
+      it 'congratulates the winner O' do
+        game = TicTacToe.new
+        board = ["X", "X", " ", "X", " ", " ", "O", "O", "O"]
+        game.instance_variable_set(:@board, board)
+
+        allow($stdout).to receive(:puts)
+
+        expect($stdout).to receive(:puts).with("Congratulations O!")
+
+        game.play
+      end
+
+      it 'stops playing in a draw' do
+        game = TicTacToe.new
+        board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+        game.instance_variable_set(:@board, board)
+        allow($stdout).to receive(:puts)
+
+        expect(game).to_not receive(:turn)
+
+        game.play
+      end
+
+      it 'prints "Cat\'s Game!" on a draw' do
+        game = TicTacToe.new
+        board = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
+        game.instance_variable_set(:@board, board)
+        allow($stdout).to receive(:puts)
+
+        expect($stdout).to receive(:puts).with("Cat's Game!")
+
+        game.play
+      end
+
+      it 'plays through an entire game' do
+        game = TicTacToe.new
+        allow($stdout).to receive(:puts)
+
+        expect(game).to receive(:gets).and_return("1")
+        expect(game).to receive(:gets).and_return("2")
+        expect(game).to receive(:gets).and_return("3")
+        expect(game).to receive(:gets).and_return("4")
+        expect(game).to receive(:gets).and_return("5")
+        expect(game).to receive(:gets).and_return("6")
+        expect(game).to receive(:gets).and_return("7")
+
+        expect($stdout).to receive(:puts).with("Congratulations X!")
+
+        game.play
+      end
+    end
   end
 end
