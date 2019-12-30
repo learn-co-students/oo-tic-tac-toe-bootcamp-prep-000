@@ -52,106 +52,56 @@ WIN_COMBINATIONS=[
     @board[index]=="X" || @board[index]=="O"
   end
 
-def valid_move?(board, index)
-  if (index.between?(0,8)) && (!position_taken?(board,index))
-    return true
-  else 
-    return false 
+  def valid_move?(index)
+    index.between?(0,8) && !position_taken?(index)
   end 
-end 
 
-def move(board, index, player_char)
-    board[index] = player_char
+  def move(index, player_char)
+      @board[index] = player_char
   end 
-  
-  
-  
   
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-    # if valid_move?
-    #   move
-    #   display_board
-    # else
-    #   turn
-    # end
+    if valid_move?(index)
+       move(index, player_char)
+       display_board
+    else
+      turn
+    end
+    
   end
   
-end 
 
-tic = TicTacToe.new
 
-#   def move(index, player_char="X")
-#     get_board_element = player_char
-#   end 
-
-#   def position_taken?(index)
-#   # if (get_board_element =="X" || get_board_element == "O")
-#     {|token| token == "X" || token == "O"}
-# end
-
- 
-#   def valid_move?
-#   if (index.between?(0,8)) && (!position_taken?)
-#     true
-#   else 
-#     false
-#   end 
-#   end 
-
+  def won?
+        WIN_COMBINATIONS.each do |combination| 
+          win_index_1 = combination[0]
+          win_index_2 = combination[1]
+          win_index_3 = combination[2]
+          @board[win_index_1] == "X" && @board[win_index_2] == "X" && @board[win_index_3] == "X" || 
+          @board[win_index_1] == "O" && @board[win_index_2] == "O" && @board[win_index_3] == "O"
+          return combination 
+        end 
+    end
+   
+  def full?
+    @board.all?{|token| token == "X" || token == "O"}
+  end
   
-
-# #   def won?(@board)
-# #       # check win combination
-# #         WIN_COMBINATIONS.each do |combination| 
-# #           win_index_1 = combination[0]
-# #           win_index_2 = combination[1]
-# #           win_index_3 = combination[2]
-# #           position_1 = @board[win_index_1] 
-# #           position_2 = @board[win_index_2] 
-# #           position_3 = @board[win_index_3] 
-# #           if (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")
-# #             return combination 
-# #           else 
-# #             false
-# #           end 
-# #     end
-# #     false
-# #   end
-
-
-# #   def full?(@board)
-# #         if     (@board.all? do |element|
-# #               element == " " || element == nil || element==""
-# #               end)
-# #           # puts "borad empty"
-# #           return false
-# #         elsif (@board.any?{|element| element ==" " || element== nil})#=> true
-# #           # puts "borad in progress"
-# #           return false 
-# #         else
-# #           # puts "borad full"
-# #           true
-# #         end 
-# #         # return true
-# #   end
+  def draw?
+    !won? && full?
+  end
   
-# #   def draw?(@board)
-# #     !won?(@board) && full?(@board)
-# #   end
-  
-# #   def over?(@board)
-# #     won?(@board) || draw?(@board) || full?(@board) 
-# #   end
+  def over?
+    won? || draw? || full?
+  end
 
-# #   def winner(@board)
-# #     combo = won?(@board)
-# #     if combo
-# #       return @board[combo[0]]
-# #     end
-# #   end
+  def winner
+    combo = won?
+    return @board[combo[0]]
+  end
 
 # #   def play(@board)
 # #     until over?(@board)
@@ -164,5 +114,5 @@ tic = TicTacToe.new
 # #   end
 # # end
 
-# end
+end
   
