@@ -36,18 +36,6 @@ WIN_COMBINATIONS=[
     arg = arg - 1
   end
   
-  ######
-  
-   #get board element
-  # def get_board_element
-  #   @borad[index]
-  # end
-  
-  # #set borad element
-  # def set_board= value 
-  #   @borad[index] = value 
-  # end 
-  
   def position_taken?(index)
     @board[index]=="X" || @board[index]=="O"
   end
@@ -65,25 +53,24 @@ WIN_COMBINATIONS=[
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-       move(index, player_char)
-       display_board
+      move(index, current_player)
+      display_board
     else
       turn
     end
     
   end
   
-
-
   def won?
         WIN_COMBINATIONS.each do |combination| 
           win_index_1 = combination[0]
           win_index_2 = combination[1]
           win_index_3 = combination[2]
-          @board[win_index_1] == "X" && @board[win_index_2] == "X" && @board[win_index_3] == "X" || 
-          @board[win_index_1] == "O" && @board[win_index_2] == "O" && @board[win_index_3] == "O"
-          return combination 
+          if @board[win_index_1] == "X" && @board[win_index_2] == "X" && @board[win_index_3] == "X" || @board[win_index_1] == "O" && @board[win_index_2] == "O" && @board[win_index_3] == "O"
+          return combination
+       end 
         end 
+        false 
     end
    
   def full?
@@ -99,20 +86,23 @@ WIN_COMBINATIONS=[
   end
 
   def winner
-    combo = won?
+    if combo = won?
     return @board[combo[0]]
+  end 
   end
 
-# #   def play(@board)
-# #     until over?(@board)
-# #       turn(@board)
-# #     end
-# #     if won?(@board)
-# #       puts "Congratulations #{winner(@board)}!"
-# #     elsif draw?(@board)
-# #     puts "Cat's Game!"
-# #   end
-# # end
-
+  def play
+    until over?
+      turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+    puts "Cat's Game!"
+  end
 end
+end
+
+
+
   
