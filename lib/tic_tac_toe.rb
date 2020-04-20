@@ -74,12 +74,55 @@ end
 
 def won?
   WIN_COMBINATIONS.detect do |win_combo|
-    if position_taken?(@board[win_combo[0]]) && @board[win_combo[0]] == @board[win_combo[1]] && @board[win_combo[1]] == @board[win_combo[2]]
-      return true
-    else
-      return false
+    if position_taken?(win_combo[0]) && @board[win_combo[0]] == @board[win_combo[1]] && @board[win_combo[1]] == @board[win_combo[2]]
+      return win_combo
   end
 end
+end
+
+def full?
+  if @board.all? {|i| i == "X" || i == "O"}
+    return true
+  else
+    return false
+  end
+end
+
+def draw?
+  if !won? && full?
+    return true
+  elsif won?
+    return false
+  else !full?
+    return false
+  end
+end
+
+def over?
+  if won? || full? || draw?
+    return true
+  else
+    return false
+  end
+end
+
+def winner
+  win_token = won?
+  if won?
+    return @board[win_token[0]]
+  end
+end
+
+def play
+  until over?
+    turn
+  end
+  if won?
+    winner == "X" || winner == "O"
+    puts "Congratulations #{winner}!"
+  elsif draw?
+    puts "Cat's Game!"
+  end
 end
 
 end
