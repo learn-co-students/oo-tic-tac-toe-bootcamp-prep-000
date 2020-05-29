@@ -17,7 +17,7 @@ def TicTacToe
     [2,4,6]   #/ diagonal
   ]
 
-  def display_board(@board)
+  def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
     puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -29,81 +29,81 @@ def TicTacToe
     input.to_i - 1 
   end
 
-  def move(@board,index,char) 
+  def move(index,char) 
     @board[index] = char 
   end
 
-  def valid_move?(@board,index)
-    index.between?(0,8) && !position_taken?(@board,index)
+  def valid_move?(index)
+    index.between?(0,8) && !position_taken?(index)
   end  
 
-  def position_taken?(@board,index)
+  def position_taken?(index)
     @board[index] == "X" || @board[index] == "O"
   end
 
-  def turn(@board)
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-       if valid_move?(@board,index) 
-          move(@board, index, current_player(@board))
-        display_board(@board)
+       if valid_move?(index) 
+          move( index, current_player)
+        display_board
        else 
-        turn(@board)
+        turn
     end
   end
 
-  def turn_count(@board)
+  def turn_count
     @board.count do |board_element|
       board_element == "X" || board_element == "O"
     end
   end 
 
-  def current_player(@board)
-        if turn_count(@board) % 2 == 0 
+  def current_player
+        if turn_count % 2 == 0 
           "X"  
         else 
           "O"
     end
   end  
 
-  def won?(@board)
+  def won?
     WIN_COMBINATIONS.detect do |winning_array|
       @board[winning_array[0]] == @board[winning_array[1]] && 
       @board[winning_array[1]] == @board[winning_array[2]] &&
-      position_taken?(@board, winning_array[0])
+      position_taken?( winning_array[0])
     end  
   end
 
-  def full?(@board)
+  def full?
     @board.all? do |token|
       token == "X" || token == "O"
     end 
   end
 
-  def draw?(@board)
-    full?(@board) && !won?(@board)
+  def draw?
+    full? && !won?
   end
 
-  def over?(@board)
-    won?(@board) || draw?(@board)
+  def over?
+    won? || draw?
   end
 
-  def winner(@board) 
-    winning_array = won?(@board)
+  def winner 
+    winning_array = won?
       if winning_array
         @board.at(winning_array[0])   
       end
   end
 
-  def play(@board)
-    winning_array = won?(@board)
-    until over?(@board)
-        turn(@board)
+  def play
+    winning_array = won?
+    until over?
+        turn
     end
-    if won?(@board)
-      puts "Congratulations #{winner(@board)}!"
-    elsif draw?(@board)
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
       puts "Cat's Game!"
     end
   end
