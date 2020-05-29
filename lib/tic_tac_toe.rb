@@ -1,6 +1,6 @@
 require "pry"
 
-def TicTacToe
+class TicTacToe
   
   def initialize(board)
     @board = [" "," "," "," "," "," "," "," "," "]
@@ -29,15 +29,15 @@ def TicTacToe
     input.to_i - 1 
   end
 
-  def move(index,char) 
+  def move(board,index,char) 
     @board[index] = char 
   end
 
   def valid_move?(index)
-    index.between?(0,8) && !position_taken?(index)
+    index.between?(0,8) && !position_taken?(board,index)
   end  
 
-  def position_taken?(index)
+  def position_taken?(board,index)
     @board[index] == "X" || @board[index] == "O"
   end
 
@@ -45,8 +45,8 @@ def TicTacToe
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-       if valid_move?(index) 
-          move( index, current_player)
+       if valid_move?(board,index) 
+          move(board, index, current_player)
         display_board
        else 
         turn
@@ -67,7 +67,7 @@ def TicTacToe
     end
   end  
 
-  def won?
+  def won?(board)
     WIN_COMBINATIONS.detect do |winning_array|
       @board[winning_array[0]] == @board[winning_array[1]] && 
       @board[winning_array[1]] == @board[winning_array[2]] &&
@@ -75,17 +75,17 @@ def TicTacToe
     end  
   end
 
-  def full?
+  def full?(board)
     @board.all? do |token|
       token == "X" || token == "O"
     end 
   end
 
-  def draw?
+  def draw?(board)
     full? && !won?
   end
 
-  def over?
+  def over?(board)
     won? || draw?
   end
 
