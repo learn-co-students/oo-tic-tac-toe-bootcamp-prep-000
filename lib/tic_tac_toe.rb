@@ -82,11 +82,11 @@ class TicTacToe
   end
 
   def draw?(board)
-    full? && !won?
+    full?(board) && !won?(board)
   end
 
   def over?(board)
-    won? || draw?
+    won?(board) || draw?(board)
   end
 
   def winner 
@@ -97,13 +97,13 @@ class TicTacToe
   end
 
   def play
-    winning_array = won?
-    until over?
+    winning_array = won?(board)
+    until over?(board)
         turn
     end
-    if won?
+    if won?(board)
       puts "Congratulations #{winner}!"
-    elsif draw?
+    elsif draw?(board)
       puts "Cat's Game!"
     end
   end
