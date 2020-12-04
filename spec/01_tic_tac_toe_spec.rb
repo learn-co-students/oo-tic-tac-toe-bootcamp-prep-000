@@ -52,7 +52,7 @@ describe './lib/tic_tac_toe.rb' do
       end
     end
 
-    describe '#input_to_index' do
+    describe "#input_to_index" do
       it "accepts the user's input (a string) as an argument" do
         game = TicTacToe.new
         expect{game.input_to_index}.to raise_error(ArgumentError)
