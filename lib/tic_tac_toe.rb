@@ -33,11 +33,25 @@ class TicTacToe
     @board[input_to_index] = token
     
    end
-   def position_taken(input_to_index)
+   def position_taken?(input_to_index)
      if @board[input_to_index] == "X" || @board[input_to_index] == "O"
        true 
      else
      false 
    end
+  end
+  def valid_move?(input_to_index)
+    !position_taken?(input_to_index) && @board[input_to_index]
+  end
+  
+  def turn_count
+    count = 0 
+    @board.each do |input|
+      count +=1 if input == 'X' || input == 'O'
+    end
+    count
+  end
+  def current_player
+    turn_count % 2 == 0 ? "x" : "O"
   end
   end
