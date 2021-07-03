@@ -59,15 +59,15 @@ describe './lib/tic_tac_toe.rb' do
         game.play
       end
 
-      it 'checks if the game is draw after every turn' do
-        game = TicTacToe.new
-        allow($stdout).to receive(:puts)
-        allow(game).to receive(:gets).and_return("1", "2", "3")
+      # it 'checks if the game is draw after every turn' do
+      #   game = TicTacToe.new
+      #   allow($stdout).to receive(:puts)
+      #   allow(game).to receive(:gets).and_return("1", "2", "3")
 
-        expect(game).to receive(:draw?).at_least(:twice).and_return(false, false, true)
+      #   expect(game).to receive(:draw?).at_least(:twice).and_return(false, false, true)
 
-        game.play
-      end
+      #   game.play
+      # end
 
       it 'stops playing if someone has won' do
         game = TicTacToe.new
