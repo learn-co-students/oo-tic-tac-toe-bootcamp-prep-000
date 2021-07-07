@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
+ttc_round = TicTacToe.new
+ttc_round.play
