@@ -101,7 +101,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.position_taken?(index)).to be(false)
       end
     end
-
+#
     describe '#valid_move?' do
       it 'returns true/false based on whether the position is already occupied' do
         game = TicTacToe.new
@@ -121,7 +121,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.valid_move?(99)).to be_falsey
       end
     end
-
+    #
     describe '#turn_count' do
       it 'counts occupied positions' do
         game = TicTacToe.new
@@ -136,7 +136,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.turn_count).to eq(4)
       end
     end
-
+#
     describe '#current_player' do
       it 'returns the correct player, X, for the third move' do
         game = TicTacToe.new
@@ -154,7 +154,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.current_player).to eq("O")
       end
     end
-
+#
     describe '#turn' do
       let(:game) { TicTacToe.new }
 
@@ -196,7 +196,7 @@ describe './lib/tic_tac_toe.rb' do
         game.turn
       end
     end
-
+#
     describe "#won?" do
       it 'returns false for a draw' do
         game = TicTacToe.new
@@ -214,7 +214,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.won?).to contain_exactly(0,4,8)
       end
     end
-
+#
     describe '#full?' do
       it 'returns true for a draw' do
         game = TicTacToe.new
@@ -232,7 +232,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.full?).to be_falsey
       end
     end
-
+#
     describe '#draw?' do
       it 'returns true for a draw' do
         game = TicTacToe.new
@@ -258,7 +258,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.draw?).to be_falsey
       end
     end
-
+#
     describe '#over?' do
       it 'returns true for a draw' do
         game = TicTacToe.new
@@ -284,7 +284,7 @@ describe './lib/tic_tac_toe.rb' do
         expect(game.over?).to be_falsey
       end
     end
-
+#
     describe '#winner' do
       it 'return X when X won' do
         game = TicTacToe.new

@@ -1,4 +1,4 @@
-# OO Tic Tac Toe
+bundle# OO Tic Tac Toe
 
 ## Objectives
 
@@ -22,7 +22,7 @@ go *and* pay close attention to the test output.
 
 ### Project Structure
 
-```bash 
+```bash
 ├── Gemfile
 ├── Gemfile.lock
 ├── README.md
